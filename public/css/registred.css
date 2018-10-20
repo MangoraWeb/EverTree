@@ -1,0 +1,454 @@
+body{
+    width: 1250px;
+    height: 550px;
+    background-color: #28b381;
+    margin: 0;
+    font-family: 'Cabin Condensed', sans-serif;
+    background-image: url("evertree/sadq.png");
+    background-repeat: no-repeat;
+    background-position: right;
+}
+#big{
+    margin: 40px;
+    width: 1285px;
+    height: 350px;
+    position: absolute;
+    background-color: blueviolet;
+    border-radius: 10px;
+}
+#row1{
+    width: 45%;
+    height: 400px;
+    position: relative;
+    margin: 0;
+    top: 0;
+    left: 0;
+    background-color: #f9f9f9;
+    float: left; 
+    border-top-left-radius: 10px;
+}
+#row2{
+    width: 55%;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    float: right;
+    border-top-right-radius: 10px;
+}
+header{
+    width: 100%;
+}
+header li{
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 12px;
+    color: #b5b5b5;
+}
+.header-wrap{
+    width: 80%;
+    margin: 0;
+    display: inline-block;
+    justify-content: space-between; 
+}
+a{
+    text-decoration: none;
+}
+.text1{
+    color: #b5b5b5;
+    font-size: 14px;
+}
+.active{
+    color: #2ba886;
+    font-size: 14px;
+}
+a :hover{
+    color: #2ba886;
+}
+.logopng{
+    width: 15%;
+    height: 60%;
+    position: relative;
+    float: left;
+    top: -5px;
+}
+.name{
+    position: relative;
+    top: 13px;
+    float: left;
+    color: #2ba886;
+    right: 5%;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+․about{
+    position: relative;
+    background-color: #ffffff;
+    width: 10%;
+    height: 20px;
+    float: right;
+    color: #2ba886;
+    left: 80%;
+    font-size: 18px;
+    font-family: 'Cabin Condensed', sans-serif;
+}
+article{
+    width: 650px;
+    height: 418px;
+    position: relative;
+    background-color: #f9f9f9;
+}
+aside{
+    width: 707px;
+    height: 380px;
+    position: relative;
+    background-color: #ffffff;
+}
+footer{
+    width: 100%;
+    height: 75px;
+    background-color: #f9f9f9;
+    position: relative;
+    border-bottom-left-radius: 10px;
+}
+.footer1{
+    background-color: #ffffff;
+    position: relative;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+}
+.fly{
+    width: 400px;
+    height: 200px;
+    position: relative;
+    bottom: 800px;
+    left: 290px;
+    z-index: 1;
+}
+.contact{
+    width: 60px;
+    height: 60px;
+    background-color: #2ba886;
+    float: left;
+    top: 180px;
+    z-index: 1;
+    right: 480px;
+    border-radius: 50px;
+    position: relative;
+}
+.chat{
+    width: 35px;
+    height: 35px;
+    position: relative;
+    top: 13px;
+    left: 10px;
+}
+.cc :hover{
+    background-color: #149430;
+}
+.potofly{
+    width:300px;
+    height: 100px;
+    position: relative;
+    top: 70px;
+    left: 90px;
+}
+.big-logo{
+    width: 145px;
+    height: 110px;
+    position: relative;
+    float: left;
+    left: 215px;
+}
+.g1{
+    position: relative;
+    top: 100px;
+    left: 20px;
+    font-size: 12px;
+    color: #9c9b9b;
+    font-family: 'Cabin Condensed', sans-serif;
+}
+.g2{
+    position: relative;
+    top: 60px;
+    left: -20px;
+    color: #9c9b9b;
+    font-size: 40px;
+    font-family: 'Cabin Condensed', sans-serif;
+}
+h1{
+    font-size: 40px;
+    color: #2ba886;
+    position: relative;
+    font-family: 'Cabin Condensed', sans-serif;
+    left: 177px;
+    bottom: 85px;
+}
+.erkar{
+    position: relative;
+    top: -170px;
+    left: 160px;
+    font-size: 12px;
+    color: #757474;
+    font-family: 'Cabin Condensed', sans-serif;
+}
+.point{
+    width: 140px;
+    height: 300px;
+    position: relative;
+    top: -470px;
+    left: 100px;
+}
+.pon{
+    width: 100%;
+    height: 100%;
+}
+.set{
+    width: 23px;
+    height: 23px;
+    position: relative;
+    color: black;
+    top: -45px;
+    float: left;
+    left: 610px;
+}
+.settings{
+   width: 23px;
+   height: 23px;
+}
+.log{
+    width: 23px;
+    height: 23px;
+    position: relative;
+    color: black;
+    top: -45px;
+    float: left;
+    left: 620px;
+}
+.logout{
+   width: 23px;
+   height: 23px;
+}
+.slides{
+    width: 400px;
+    height: 10px;
+    position: relative;
+    float: left;
+    bottom: 410px;
+    left: 140px
+}
+.activslide{
+    background-color: #2ba886 !important;
+}
+.slide1{
+    width: 35px;
+    height: 7px;
+    background-color: #c3c4cd;
+    display: inline-block;
+    justify-content: space-between;
+    margin-left: 15px;
+}
+.about{
+    position: relative;
+    float: right;
+    bottom: 613px;
+    font-size: 14px;
+    color: #757474;
+    font-family: 'Cabin Condensed', sans-serif;
+    right: 90px;
+}
+.serch{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    float: right;
+    bottom: 607px;
+    right: 110px;
+}
+.serchicon{
+    width: 100%;
+    height: 100%;
+}
+.foots{
+    width: 600px;
+    height: 150px;
+    position: relative;
+    display: inline-block;
+    justify-content: space-between;
+    margin-left: 15px;
+    top: 100px;
+    left: 65px;
+}
+.paper{
+    width: 130px;
+    height: 130px;
+    position: relative;
+    display: inline-block;
+    justify-content: space-between;
+    margin-left: 30px;
+    border: 2px solid #c3c4cd;
+    left: 10px;
+    border-radius: 10px;
+}
+.img1{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    top: 39px;
+    left: 39px;
+}
+.activediv{
+    border: 2px solid  #2ba886; 
+}
+p{
+    position: relative;
+    float: left;
+    color: #2ba886;
+    font-size: 13px;
+    left: 14px;
+    top: 35px;
+}
+.type{
+    position: relative;
+    width: 33px;
+    height: 30px;
+    top: -15px;
+    left: 45px;
+}
+.textbar{
+    position: relative;
+    width: 63%;
+    height: 50px;
+    float: left;
+    top: 120px;
+    left: 140px;
+}
+.inp{
+    width: 100px;
+    height: 50%;
+    position: relative;
+    float: left;
+    border-radius: 5px;
+    left: 120px;
+    border-radius: 5px;
+    border: 1px solid #b5b5b5;
+}
+input{
+    width: 100%;
+    height: 90%;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    color: #b5b5b5;
+}
+.cool{
+    width: 200px;
+    height: 53%;
+    position: relative;
+    float: right;
+    border-radius: 5px;
+    border: none;
+    right: 0px;
+}
+.sss{
+        width: 100%;
+        height: 100%;
+        border: 1px solid #b5b5b5;
+        border: none;
+        text-decoration: none;
+        border-radius: 5px;
+}
+.a1{
+    width: 100%;
+    height: 100%;
+    color:#b5b5b5;
+    border: 1px solid #b5b5b5;
+    border-radius: 5px;
+    font-family: 'Cabin Condensed', sans-serif;
+}
+option{
+    color: #2ba886;
+    font-family: 'Cabin Condensed', sans-serif;
+    font-size: 15px;
+}
+.button{
+    width: 32%;
+    height: 25px;
+    position: relative;
+    float: right;
+    right: 140px;
+    top: 180px;
+}
+.next{
+    width: 45%;
+    height: 100%;
+    position: relative;
+    float: right;
+    border-radius: 5px;
+    border: none;
+}
+.b2{
+    width: 100%;
+    height: 100%;
+    background-color: #2ba886;
+    border-radius: 5px;
+    border: 2px solid #2ba886;
+    font-size: 14px;
+    color:#fff;
+}
+.b22 :hover{
+    background-color: #149430;
+    border: 2px solid #149430;
+    color: #fff;
+}
+.account{
+    width: 200px;
+    height: 50px;
+    position: relative;
+    float: right;
+    left: 30px;
+    bottom: 60px;
+}
+.avatar{
+    width: 35px;
+    height: 35px;
+    float: left;
+    position: relative;
+    top: 6px;
+}
+h5{
+    font-size: 13px;
+    position: relative;
+    top: -10px;
+    color: #2ba886;
+    left: 5px;
+}
+h6{
+    color: #757474;
+    font-size: 11px;
+    position: relative;
+    top: -35px;
+    left: 40px;
+}
+.slides{
+    width: 400px;
+    height: 10px;
+    position: relative;
+    float: left;
+    bottom: 450px;
+    left: 140px
+}
+.activslide{
+    background-color: #2ba886 !important;
+}
+.slide1{
+    width: 35px;
+    height: 7px;
+    background-color: #c3c4cd;
+    display: inline-block;
+    justify-content: space-between;
+    margin-left: 15px;
+}

@@ -1,0 +1,495 @@
+body{
+    background-color: #28b381 !important;
+    font-family: 'Cabin Condensed', sans-serif;
+    background-image: url("evertree/sadq.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    overflow:hidden;
+
+}
+
+
+#big{
+
+    position: absolute;
+    background-color: blueviolet;
+}
+.row1{
+    background-color: #f9f9f9;
+    background-image: url(evertree/points.png);
+    background-repeat: no-repeat;
+    background-size: 130px;
+    background-position-x: 100px;
+    background-position-y: 150px;
+    height: 850px !important;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.row2{
+    background-color: #ffffff;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+.account{
+    width: 200px;
+    height: 50px;
+    position: relative;
+    float: right;
+    left: 30px;
+    bottom: 60px;
+}
+.avatar{
+    width: 35px;
+    height: 35px;
+    float: left;
+    position: relative;
+    top: 6px;
+}
+
+.flags {
+    
+        margin-left: 15%;
+  
+}
+.top {
+    margin-top: 100px;
+}
+
+.box {
+    width: 94% !important;
+}
+
+a{
+    text-decoration: none;
+}
+.text1{
+    color: #b5b5b5;
+    font-size: 14px;
+}
+.activet{
+    color: #2ba886;
+    font-size: 14px;
+}
+a :hover{
+    color: #2ba886;
+}
+.pass {
+    color: #414B48;
+}
+
+.quote {
+    display: flex;
+    font-size: 15px;
+    margin: 35px 70px;
+    /* padding: 60px; */
+    color: #A0A0A0;
+}
+
+.logopng{
+    width: 15%;
+    height: 60%;
+    position: relative;
+    float: left;
+    top: -5px;
+}
+.contact{
+    width: 60px;
+    height: 60px;
+    background-color: #2ba886;
+    float: left;
+    top: 180px;
+    z-index: 1;
+    right: 480px;
+    border-radius: 50px;
+    border-radius: 50%!important;
+    position: relative;
+    right: 46px;
+}
+.cc :hover{
+    background-color: #149430;
+}
+.chat{
+    width: 35px;
+    height: 35px;
+    position: relative;
+    top: 13px;
+    left: 10px;
+}
+.fly{
+    width: 400px;
+    z-index: 1;
+    left: 500px;
+    bottom: 455px;
+    position: relative;
+ 
+}
+.potofly{
+    width:300px;
+    height: 100px;
+    position: relative;
+    top: 70px;
+    left: 90px;
+}
+.name{
+    position: relative;
+    top: 10px;
+    float: left;
+    color: #2ba886;
+    right: 5%;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+․about{
+    height: 20px;
+    color: #2ba886;
+
+    font-size: 18px;
+    font-family: 'Cabin Condensed', sans-serif;
+}
+article{
+    width: 650px;
+    height: 470px;
+    position: relative;
+    background-color: #f9f9f9;
+}
+aside{
+    width: 786px;
+    height: 439px;
+    position: relative;
+    background-color: #ffffff;
+}
+footer{
+    width: 100%;
+    height: 75px;
+    background-color: #f9f9f9;
+    position: relative;
+}
+.footer1{
+    background-color: #ffffff;
+    position: relative;
+}
+.big-logo{
+    width: 145px;
+    height: 110px;
+    position: relative;
+
+}
+.g1{
+    position: relative;
+    top: 100px;
+    left: 20px;
+    font-size: 12px;
+    color: #9c9b9b;
+    font-family: 'Cabin Condensed', sans-serif;
+}
+.g2{
+    position: relative;
+    top: 60px;
+    left: -20px;
+    color: #9c9b9b;
+    font-size: 40px;
+    font-family: 'Cabin Condensed', sans-serif;
+}
+h1{
+    font-size: 40px;
+    color: #2ba886;
+    position: relative;
+    font-family: 'Cabin Condensed', sans-serif;
+    left: 177px;
+    bottom: 85px;
+}
+.erkar{
+    position: relative;
+    top: -170px;
+    left: 160px;
+    font-size: 12px;
+    color: #757474;
+    font-family: 'Cabin Condensed', sans-serif;
+}
+.point{
+    width: 140px;
+    height: 300px;
+}
+.pon{
+    width: 100%;
+    height: 100%;
+}
+.arm{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    float: left;
+}
+.armflag{
+   width: 30px;
+   height: 35px;
+}
+.eng{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    color: black;
+ 
+    float: left;
+ 
+}
+
+.slogan {
+    font-size: 64px;
+    margin-left: 10%;
+    margin-top: 110px;
+}
+.engflag{
+   width: 30px;
+   height: 35px;
+   margin-left: 5px;
+}
+.slides{
+    width: 400px;
+    height: 10px;
+    position: relative;
+}
+.activslide{
+    background-color: #2ba886 !important;
+}
+.slide1{
+    width: 35px;
+    height: 7px;
+    background-color: #c3c4cd;
+    display: inline-block;
+    justify-content: space-between;
+    margin-left: 15px;
+}
+.about{
+    position: relative;
+    float: right;
+    bottom: 613px;
+    font-size: 14px;
+    color: #757474;
+    font-family: 'Cabin Condensed', sans-serif;
+    right: 90px;
+}
+.serch{
+    width: 30px;
+    height: 30px;
+    bottom: 607px;
+}
+.serchicon{
+    width: 5%;
+}
+.foots{
+    width: 600px;
+    height: 150px;
+    position: relative;
+    display: inline-block;
+    justify-content: space-between;
+    margin-left: 15px;
+    top: 100px;
+    left: 65px;
+}
+.paper{
+    width: 176px !important;
+    height: 165px;
+    position: relative;
+    display: inline-table;
+    justify-content: space-between;
+    margin-left: 30px;
+    border: 2px solid #c3c4cd;
+    border-radius: 10px;
+}
+
+
+
+.formbut {
+    margin-top: 100px;
+}
+.papertext {
+    font-size: 14px;
+    margin-top: 100px;
+}
+
+.active {
+    color: #00c88e;
+}
+
+.bg1 {
+    background-image: url(evertree/papericon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bg2 {
+    background-image: url(evertree/officeicongrey.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bg2active {
+    background-image: url(evertree/officeicongrey.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bg3 {
+    background-image: url(evertree/successicongrey.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.activediv{
+    border: 2px solid  #2ba886; 
+}
+p{
+    color: #2ba886;
+    font-size: 11px;
+
+}
+
+.roundeds {
+    text-align: left;
+
+}
+
+.headling {
+    text-align: center;
+}
+.type{
+    position: relative;
+    width: 33px;
+    height: 30px;
+    top: 7px;
+    left: 57px;
+}
+.textbar{
+    position: relative;
+    width: 63%;
+    height: 50px;
+    float: left;
+    top: 120px;
+    left: 140px;
+}
+.inp{
+    width: 100px;
+    height: 50%;
+    position: relative;
+    float: left;
+    border-radius: 5px;
+    left: 120px;
+    border-radius: 5px;
+    border: 1px solid #b5b5b5;
+}
+input{
+    width: 100%;
+    height: 90%;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    color: #b5b5b5;
+}
+.cool{
+    width: 200px;
+    height: 53%;
+    position: relative;
+    float: right;
+    border-radius: 5px;
+    border: none;
+    right: 0px;
+}
+.sss{
+        width: 100%;
+        height: 100%;
+        border: 1px solid #b5b5b5;
+        border: none;
+        text-decoration: none;
+        border-radius: 5px;
+}
+.a1{
+    width: 100%;
+    height: 100%;
+    color:#b5b5b5;
+    border: 1px solid #b5b5b5;
+    border-radius: 5px;
+    font-family: 'Cabin Condensed', sans-serif;
+}
+.png{
+    width: 70px;
+    height: 50px;
+}
+option{
+    color: #2ba886;
+    font-family: 'Cabin Condensed', sans-serif;
+    font-size: 15px;
+}
+.but {
+    height: 36px !important;
+    margin-right: 15px;
+    background-color: #00c88e !important;
+    position: relative;
+    top: 110px;
+    right: 100px;
+}
+.flo {
+    display: inline-block;
+   
+}
+form{
+    display: inline-flex;
+}
+.button{
+    width: 32%;
+    height: 25px;
+    float: right;
+    right: 140px;
+    top: 180px;
+}
+.next{
+    width: 45%;
+    height: 100%;
+    position: relative;
+    float: right;
+    border-radius: 5px;
+    border: none;
+}
+.b2{
+    width: 100%;
+    height: 100%;
+    background-color: #2ba886;
+    border-radius: 5px;
+    border: 2px solid #2ba886;
+    font-size: 14px;
+    color:#fff;
+}
+.b22 :hover{
+    background-color: #149430;
+    border: 2px solid #149430;
+    color: #fff;
+}
+.account{
+    width: 200px;
+    height: 50px;
+    position: relative;
+    float: right;
+    left: 30px;
+    bottom: 60px;
+}
+.slides{
+    width: 400px;
+    height: 10px;
+    position: relative;
+    float: left;
+
+}
+.activslide{
+    background-color: #2ba886 !important;
+}
+.slide1{
+    width: 35px;
+    height: 7px;
+    background-color: #c3c4cd;
+    display: inline-block;
+    justify-content: space-between;
+    margin-left: 15px;
+}
