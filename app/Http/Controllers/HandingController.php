@@ -53,42 +53,43 @@ class HandingController extends Controller
        
           
         $pages = Pages::all();
-        return redirect('/handstep2')->with('menu', $pages);
+        return redirect('/handstep/2')->with('menu', $pages);
     }
 
-public function step2g(Request $request) {
 
-    $handing = $request->session()->get('hand1');
+public function step2(Request $request) {
 
-    $address = Auth::user()->address;
-
-
-        $pages = Pages::all();
-        return view('hand.step2',compact('hand1', $handing))->with('menu', $pages)->with('han1',$handing)->with('add',$address);
-
+                            $handing = $request->session()->get('hand1');
+                            if($user = Auth::user())
+                        {
+                            $address = Auth::user()->address;
+                        }
+                                $pages = Pages::all();
+                                return view('hand.step2',compact('hand1', $handing))
+                                    ->with('menu', $pages)
+                                    ->with('han1',$handing)
+                                    ->with('add',$address);
 }
 
-     public function step2(Request $request){
+     public function step2g(Request $request){
 
-      
+
         $validatedData = $request->validate([
-            'city' => 'required',
             'address' => 'required',
-            'tel' => 'required',
-            'type' => 'required',
         ]);
+       
 
         if(empty($request->session()->get('hand1'))){
-
-             
             $pages = Pages::all();
             return redirect()->route('handstep1')->with('menu', $pages);
 
         }else{
-            $handing = $request->session()->get('hand1');
-            $handing->fill($validatedData);
-            $request->session()->put('hand1', $handing);
-        }
+            
+            $request->session()->put('key', 'value');
+
+       }
+
+
 
 
         $pages = Pages::all();
@@ -97,9 +98,15 @@ public function step2g(Request $request) {
         dd($request->session()->get('hand1'));
 
         return redirect('/handstep3')->with('menu', $pages);
-
-
      }
+
+
+
+
+
+
+
+
 
      public function step3() {
         $pages = Pages::all();

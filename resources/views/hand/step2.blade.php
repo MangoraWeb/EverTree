@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/global.css') }}"/>
     <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed" rel="stylesheet">
-    <title>evertree</title>
+    <title>EverTree</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 </head>
@@ -225,17 +225,13 @@
                                           <div class="col-md-3 bg1 paper  activediv text-center">
                                               <img class="type" src="evertree/activetype.png"/>
                                               <h4 class="papertext active mx-auto">Թղթերի քանակը</h4>
-                                              @if ($han1)
-                                             
-                                              {{$han1['count']}}  {{$han1['unit']}} 
-  
-                                              @endif
+
+                                          
+
                                             </div>
 
-                                            <div class="col-md-3 bg2act paper  activediv text-center">
-                                              <img class="type" src="evertree/activetype.png"/>
-                                              <h4 class="papertext active mx-auto">Հասցեն</h4>
-
+                                            <div class="col-md-3 bg2 paper text-center">
+                                              <img class="type" src="evertree/type.png"/>
                                             </div>
 
                                             <div class="col-md-3 bg3 paper text-center">
@@ -248,57 +244,36 @@
                          
                                               <div class="row formbut">
                                                  
-                                                <form class="col-md-12">
-
-                                              
-
-                                          
-                                                  <div class="bd-example">
-                                                    <form>
-                                                      <div class="form-group">
-                                                        <label for="inputAddress">Հասցե</label>
-                                                        <input type="text" class="form-control" id="inputAddress" placeholder="{{$add}}">
-                                                      </div>
-                                                    
-                                                      <div class="form-row">
-                                                        <div class="form-group col-md-4">
-                                                          <label for="inputState">Քաղաքը</label>
-                                                          <select id="inputState" class="form-control">
-                                                            <option selected="">Ընտրեք...</option>
-                                                            <option>...</option>
-                                                          </select>
-                                                        </div>
-                                                        <div class="form-group col-md-4">
-                                                          <label for="inputState">Մարզը</label>
-                                                          <select id="inputState" class="form-control">
-                                                            <option selected="">Ընտրեք...</option>
-                                                            <option>...</option>
-                                                          </select>
-                                                        </div>
-                                                        <div class="form-group col-md-4">
-                                                          <label for="inputZip">Հեռախոսահամար</label>
-                                                          <input type="text" class="form-control" id="inputZip">
-                                                        </div>
-                                                      </div>
-                                                   
-                                                    </form>
-                                                    </div>
+                                                <form action="{{route('step2post')}}" method="post" class="col-md-12">
                                                 
-                                                <button type="button" class="but float-right btn btn-success" >ՀԱՋՈՐԴԸ ></button>
+                                                  {{ csrf_field() }}
+
+
+                                                  @if ($errors->has('address'))
+                                                 
+                                                  <div class="invalid-feedback">
+                                                      {{ $errors->first('address') }}</div>
+                                                      @endif
+                                                  <div class="form-group col-md-12">
+                                                    <label  for="address">Հասցե</label>
+                                                    <input type="text" class="form-control" name="address" id="address" value="{{$add}}">
+                                                  </div>
+
+                          
+                                                </div>
+                                                
+                                              <button type="submit" class="but float-right btn btn-success" >ՀԱՋՈՐԴԸ ></button>
 
                                               </form>
 
                                                 
                                                 </div>
   
-  
-                                       
-  
-  
+
                                     </div>
 
 
-
+   
                                           </div>
 
                                           

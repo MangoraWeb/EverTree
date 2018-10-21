@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/global.css') }}"/>
     <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed" rel="stylesheet">
-    <title>EverTree</title>
+    <title>EverTree -Make the world greener</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 </head>
@@ -30,7 +30,6 @@
                                               <nav class="nav d-flex justify-content-between">
                                                 <img class="png" src="/img/logo.png"/>
                                                     <a style="margin-right: 190px; margin-top: 8px; text-decoration: none;" class="p-2 text-muted" href="#"><h2 class="activet">EverTree</h2></a>
-
                                             </nav>
                                             
 
@@ -133,9 +132,7 @@
    
                                                                 @endforeach
 
-                                                               
-                                                               
-                                  
+                                                              
                                                                
                                                               </div>
 
