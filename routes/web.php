@@ -50,6 +50,17 @@ Route::group(['prefix' => 'handstep'], function(){
     ]);
 
 
+    Route::get('/3', [
+        'as' => 'step3',
+        'uses' => 'HandingController@step3'
+    ]);
+
+    Route::post('/3', [
+        'as' => 'step3post',
+        'uses' => 'HandingController@step3g'
+    ]);
+
+
 });
 //EverTree beta routes
 //Powered by MangoraWeb

@@ -240,31 +240,14 @@
                                           <div class="forms container col-lg-11 ">
                          
                                               <div class="row formbut">
-                                                 
-                                                <form class="col-md-12">
-                                                
-                                                <div class="col-md-6 flo mb-3">
-                                                    <label for="firstName">Քանակը</label>
-                                                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
-                                                    <div class="invalid-feedback">
-                                                      Valid first name is required.
-                                                    </div>
-                                                </div>
+                                                 <p> 
+Շնորհակալություն հարգելի <b> {{Auth::user()->name}}</b> բնությունը փրկելու համար։ 
+Դուք հանձնեցիք  {{$step1['count']}} կիլոգրամ թուղթ և փրկեցիք «{{$trees}}» ծառ։ 
+Մեր աշխատակազմը կմոտենա ձեր բնակարան {{$step2['address']}} հասցեյով և կվերցնի Ձեր թուղթը։
 
+Շնորհակալություն
 
-
-                                                <div class="col-md-6 flo mb-3">
-                                                    <label for="lastName">Չափման միավորը</label>
-                                                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
-                                                    <div class="invalid-feedback">
-                                                      Valid last name is required.
-                                                    </div>
-                                                </div>
-                                                
-                                                <button type="button" class="but float-right btn btn-success" >ՀԱՋՈՐԴԸ ></button>
-
-                                              </form>
-
+                                                 </p>
                                                 
                                                 </div>
   

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Transvers;
 use App\Pages;
 use Auth;
+use Session;
 
 class HandingController extends Controller
 {
@@ -77,40 +78,41 @@ public function step2(Request $request) {
         $validatedData = $request->validate([
             'address' => 'required',
         ]);
-       
 
-        if(empty($request->session()->get('hand1'))){
-            $pages = Pages::all();
-            return redirect()->route('handstep1')->with('menu', $pages);
 
+        if(empty($request->session()->get('hand2'))){
+            $handing = new Handings();
+            $handing->fill($validatedData);
+            $request->session()->put('hand2', $handing);
         }else{
-            
-            $request->session()->put('key', 'value');
-
-       }
-
-
+            $handing = $request->session()->get('hand2');
+            $handing->fill($validatedData);
+            $request->session()->put('hand2', $handing);
+        }
 
 
         $pages = Pages::all();
 
-        
-        dd($request->session()->get('hand1'));
-
-        return redirect('/handstep3')->with('menu', $pages);
+        return redirect('/handstep/3')->with('menu', $pages);
      }
 
 
 
-
-
-
-
-
-
-     public function step3() {
+     public function step3(Request $request) {
         $pages = Pages::all();
-        return view('hand.step3')->with('menu', $pages);
+
+
+        $step1 = $request->session()->get('hand1');
+        $step2 = $request->session()->get('hand2');
+
+        $count = $step1['count'];
+        $trees = ($count / 60);
+
+        return view('hand.step3')
+                ->with('menu', $pages)
+                ->with('step1',$step1)
+                ->with('step2',$step2)
+                ->with('trees',$trees);
      }
 
 
