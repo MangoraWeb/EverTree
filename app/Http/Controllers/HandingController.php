@@ -14,86 +14,80 @@ class HandingController extends Controller
  
     public function step1(Request $request)
     {
-        $handing = $request->session()->get('hand1');
-       
-
-        $pages = Pages::all();
-        return view('hand.step1',compact('hand1', $handing))->with('menu', $pages);
+            //handing registrated main page
+                $handing = $request->session()->get('hand1');
+                $pages = Pages::all();
+                return view('hand.step1',compact('hand1', $handing))->with('menu', $pages);
     }
 
-    /**
-     * Post Request to store step1 info in session
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+  
     public function handstep1(Request $request)
     {
-        $count = $request['count'];
-        $unit = $request['unit'];
-     
+       
+            //validate form
+                $validatedData = $request->validate([
+                    'count' => 'required|integer',
+                    'unit' => 'required',
+                ]);
 
-
-        $validatedData = $request->validate([
-            'count' => 'required|integer',
-            'unit' => 'required',
-        ]);
-
-        
-        
-        if(empty($request->session()->get('hand1'))){
-            $handing = new Handings();
-            $handing->fill($validatedData);
-            $request->session()->put('hand1', $handing);
-        }else{
-            $handing = $request->session()->get('hand1');
-            $handing->fill($validatedData);
-            $request->session()->put('hand1', $handing);
-        }
+                                //saving into session hand1
+                                
+                                if(empty($request->session()->get('hand1'))){
+                                    $handing = new Handings();
+                                    $handing->fill($validatedData);
+                                    $request->session()->put('hand1', $handing);
+                                }else{
+                                    $handing = $request->session()->get('hand1');
+                                    $handing->fill($validatedData);
+                                    $request->session()->put('hand1', $handing);
+                                }
 
        
-          
-        $pages = Pages::all();
-        return redirect('/handstep/2')->with('menu', $pages);
+                                        //return all data into page 2
+                                        $pages = Pages::all();
+                                        return redirect('/handstep/2')->with('menu', $pages);
     }
 
 
 public function step2(Request $request) {
 
-                            $handing = $request->session()->get('hand1');
-                            if($user = Auth::user())
-                        {
-                            $address = Auth::user()->address;
-                        }
-                                $pages = Pages::all();
-                                return view('hand.step2',compact('hand1', $handing))
-                                    ->with('menu', $pages)
-                                    ->with('han1',$handing)
-                                    ->with('add',$address);
-}
+                                //step2 main page
+
+                                        $handing = $request->session()->get('hand1');
+                                        if($user = Auth::user())
+                                    {
+                                        $address = Auth::user()->address;
+                                    }
+                                            $pages = Pages::all();
+                                            return view('hand.step2',compact('hand1', $handing))
+                                                ->with('menu', $pages)
+                                                ->with('han1',$handing)
+                                                ->with('add',$address);
+            }
 
      public function step2g(Request $request){
 
-
-        $validatedData = $request->validate([
-            'address' => 'required',
-        ]);
-
-
-        if(empty($request->session()->get('hand2'))){
-            $handing = new Handings();
-            $handing->fill($validatedData);
-            $request->session()->put('hand2', $handing);
-        }else{
-            $handing = $request->session()->get('hand2');
-            $handing->fill($validatedData);
-            $request->session()->put('hand2', $handing);
-        }
+                                            //validate step 2 forms
+                                            $validatedData = $request->validate([
+                                                'address' => 'required',
+                                            ]);
 
 
-        $pages = Pages::all();
+                            //saving form into session hand2
 
-        return redirect('/handstep/3')->with('menu', $pages);
+                            if(empty($request->session()->get('hand2'))){
+                                $handing = new Handings();
+                                $handing->fill($validatedData);
+                                $request->session()->put('hand2', $handing);
+                            }else{
+                                $handing = $request->session()->get('hand2');
+                                $handing->fill($validatedData);
+                                $request->session()->put('hand2', $handing);
+                            }
+
+                                //return all data into hand3
+                                    $pages = Pages::all();
+                                    return redirect('/handstep/3')->with('menu', $pages);
      }
 
 

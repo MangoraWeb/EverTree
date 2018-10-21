@@ -62,6 +62,17 @@ Route::group(['prefix' => 'handstep'], function(){
 
 
 });
+
+
+
+Route::group(['prefix' => 'admin'], function(){
+
+    Route::get('/', [
+        'as' => 'admin',
+        'uses' => 'AdminController@index'
+    ]);
+
+});
 //EverTree beta routes
 //Powered by MangoraWeb
 // v 0.0.0.1 / 10
