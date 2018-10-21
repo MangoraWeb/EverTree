@@ -45,9 +45,7 @@
                                               </div>
                                               </a>
                                               <a style="float:right; text-decoration: none;"  href="#"><h2 class="text1 p-2 text-muted">Մեր մասին</h2></a>
-                                             
-                                              
-                                            
+
                                             </div>
                                           </div>
 

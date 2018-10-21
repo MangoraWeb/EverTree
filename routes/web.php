@@ -21,7 +21,8 @@ Route::post('/handstep2','HandingController@step2')->name('handstep2');
 
 
 
-Route::get('/handstep3','HandingController@step3')->name('handstep3');
+Route::get('/handstep3','HandingController@step3g')->name('handstep3g');
+Route::post('/handstep3','HandingController@step3')->name('handstep3');
 
 
 //EverTree beta routes

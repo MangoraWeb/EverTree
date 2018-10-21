@@ -253,24 +253,36 @@
                                               
 
                                           
-                                                
-                                                <div class="col-md-6 flo mb-3">
-                                                    <label for="firstName">Քանակը</label>
-                                                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
-                                                    <div class="invalid-feedback">
-                                                      Valid first name is required.
+                                                  <div class="bd-example">
+                                                    <form>
+                                                      <div class="form-group">
+                                                        <label for="inputAddress">Հասցե</label>
+                                                        <input type="text" class="form-control" id="inputAddress" placeholder="{{$add}}">
+                                                      </div>
+                                                    
+                                                      <div class="form-row">
+                                                        <div class="form-group col-md-4">
+                                                          <label for="inputState">Քաղաքը</label>
+                                                          <select id="inputState" class="form-control">
+                                                            <option selected="">Ընտրեք...</option>
+                                                            <option>...</option>
+                                                          </select>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                          <label for="inputState">Մարզը</label>
+                                                          <select id="inputState" class="form-control">
+                                                            <option selected="">Ընտրեք...</option>
+                                                            <option>...</option>
+                                                          </select>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                          <label for="inputZip">Հեռախոսահամար</label>
+                                                          <input type="text" class="form-control" id="inputZip">
+                                                        </div>
+                                                      </div>
+                                                   
+                                                    </form>
                                                     </div>
-                                                </div>
-
-
-
-                                                <div class="col-md-6 flo mb-3">
-                                                    <label for="lastName">Չափման միավորը</label>
-                                                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
-                                                    <div class="invalid-feedback">
-                                                      Valid last name is required.
-                                                    </div>
-                                                </div>
                                                 
                                                 <button type="button" class="but float-right btn btn-success" >ՀԱՋՈՐԴԸ ></button>
 

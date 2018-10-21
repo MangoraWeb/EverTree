@@ -6,6 +6,7 @@ use App\Handings;
 use Illuminate\Http\Request;
 use App\Transvers;
 use App\Pages;
+use Auth;
 
 class HandingController extends Controller
 {
@@ -59,8 +60,11 @@ public function step2g(Request $request) {
 
     $handing = $request->session()->get('hand1');
 
+    $address = Auth::user()->address;
+
+
         $pages = Pages::all();
-        return view('hand.step2',compact('hand1', $handing))->with('menu', $pages)->with('han1',$handing);
+        return view('hand.step2',compact('hand1', $handing))->with('menu', $pages)->with('han1',$handing)->with('add',$address);
 
 }
 
