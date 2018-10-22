@@ -63,6 +63,13 @@ Route::group(['prefix' => 'handstep'], function(){
 
 });
 
+Route::get('/test', function() {
+   $city = App\Province::find(23)->City()->where('name', 'Նոր Հաճն')->first();
+   return $city->name;
+
+});
+
+
 
 
 Route::group(['prefix' => 'admin'], function(){
