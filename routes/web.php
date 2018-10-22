@@ -26,6 +26,32 @@ Route::get('/','MainController@index')->name('main');
 Route::get('/handstep3','HandingController@step3g')->name('handstep3g');
 Route::post('/handstep3','HandingController@step3')->name('handstep3');
 
+Route::group(['prefix' => 'profile'], function(){
+   
+    Route::get('/{id}', [
+        'as' => 'profile',
+        'uses' => 'ProfileController@index'
+    ]);
+
+});
+
+
+
+
+Route::group(['prefix' => 'news'], function(){
+    
+    Route::get('/', [
+        'as' => 'newsmain',
+        'uses' => 'NewsController@index'
+    ]);
+
+    Route::get('/{id}', [
+        'as' => 'article',
+        'uses' => 'NewsController@show'
+    ]);
+
+});
+
 
 Route::group(['prefix' => 'handstep'], function(){
    

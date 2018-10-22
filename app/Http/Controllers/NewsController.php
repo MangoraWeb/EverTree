@@ -12,9 +12,12 @@ class NewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        //
+        $news = News::orderBy('id', 'desc')->take(3)->get();
+        
+        return view('news')->with('article',$news);
     }
 
     /**
