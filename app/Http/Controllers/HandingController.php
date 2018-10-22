@@ -57,12 +57,24 @@ public function step2(Request $request) {
                                         if($user = Auth::user())
                                     {
                                         $address = Auth::user()->address;
-                                    }
+                                        $city = Auth::user()->city;
+                                        $tel = Auth::user()->telephone;
+
+                                        $pages = Pages::all();
+                                        return view('hand.step2',compact('hand1', $handing))
+                                        ->with('menu', $pages)
+                                        ->with('han1',$handing)
+                                        ->with('add',$address)  
+                                        ->with('city',$city)
+                                        ->with('tel',$tel);
+
+                                    } else {
                                             $pages = Pages::all();
                                             return view('hand.step2',compact('hand1', $handing))
                                                 ->with('menu', $pages)
-                                                ->with('han1',$handing)
-                                                ->with('add',$address);
+                                                ->with('han1',$handing);
+                      
+                                    }
             }
 
      public function step2g(Request $request){
@@ -70,6 +82,8 @@ public function step2(Request $request) {
                                             //validate step 2 forms
                                             $validatedData = $request->validate([
                                                 'address' => 'required',
+                                                'tel' => 'required',
+                                                'city' => 'required',
                                             ]);
 
 
@@ -93,9 +107,9 @@ public function step2(Request $request) {
 
 
      public function step3(Request $request) {
+        
+                        
         $pages = Pages::all();
-
-
         $step1 = $request->session()->get('hand1');
         $step2 = $request->session()->get('hand2');
 

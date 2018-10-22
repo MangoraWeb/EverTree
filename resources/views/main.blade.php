@@ -115,16 +115,12 @@
                                                               
                                                                   @foreach($menu as $pages) 
 
-                                                                  <a style="text-decoration: none;" class="p-2 text-muted" href="#">
+                                                                  <a style="text-decoration: none;" class="p-2 text-muted" href="{{$pages['slug']}}">
                                                                     
-                                                                      @if(Request::url() === '/')
                                                               
               
-                                                                    <h2 class="activet">
-                                                                      @else
 
                                                                       <h2 class="text1">
-                                                                        @endif
 
                                                                       {{$pages['title']}}
 
@@ -237,30 +233,61 @@
                          
                                               <div class="row formbut">
                                                  
-                                                <form style="display: inline-flex;" class="col-md-12">
+                                                <form action="/handstep" method="post" class="col-md-12">
                                                 
+                                                  {{ csrf_field() }}
+
+                                               
+                                      
                                                 <div class="col-md-6 flo mb-3">
-                                                    <label for="firstName">Քանակը</label>
-                                                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                                                    <label for="count">Քանակը</label>
+
+                                                    @if ($errors->has('count'))
+                                                    <input type="text" name="count" class="form-control is-invalid" id="count" placeholder="" value="{{ old('count') }}" required="">
+                                                   
                                                     <div class="invalid-feedback">
-                                                      Valid first name is required.
-                                                    </div>
+                                                        {{ $errors->first('count') }}</div>
+                                                    @else 
+
+                                                    <input type="text" name="count" class="form-control" id="count" placeholder="" value="" required="">
+                                                   @endif
+
+                                                   
                                                 </div>
 
 
 
                                                 <div class="col-md-6 flo mb-3">
-                                                    <label for="lastName">Չափման միավորը</label>
-                                                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
-                                                    <div class="invalid-feedback">
-                                                      Valid last name is required.
-                                                    </div>
+                                                    <label for="unit">Չափման միավորը</label>
+
+                                                    @if ($errors->has('unit'))
+
+                                                        <select value="{{ old('unit') }}"  required="" class=" is-invalid custom-select mr-sm-2" name="unit" id="unit">
+                                                            <option value="Կիլոգրամ">Կիլոգրամ</option>
+                                                            <option value="box">Արկղ</option>
+                                                          <option value="ton">Տոննա</option>
+                                                        </select>
+
+                                                        <div class="invalid-feedback">
+                                                            {{ $errors->first('unit') }}</div>
+
+                                                          </div>
+
+ @else 
+
+ <select value="{{ old('unit') }}"  required="" class="custom-select mr-sm-2" name="unit" id="unit">
+    <option value="kilogram">Կիլոգրամ</option>
+    <option value="box">Արկղ</option>
+  <option value="ton">Տոննա</option>
+</select>
+
+ @endif
+                                                   
                                                 </div>
                                                 
-                                                <button type="button" class="but float-right btn btn-success" >ՀԱՋՈՐԴԸ ></button>
+                                              <button type="submit" class="but float-right btn btn-success" >ՀԱՋՈՐԴԸ ></button>
 
                                               </form>
-
                                                 
                                                 </div>
   

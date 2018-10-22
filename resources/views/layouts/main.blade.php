@@ -16,6 +16,9 @@
     <div class="box container-fluid ">
 
                 <div class="row">
+
+                    <!-- First row -->
+
                         <div class="col-xl-5 col-lg-4 col-md-3 hidden-xs row1">
 
                           <div class="ever">
@@ -89,28 +92,24 @@
                             </div>
                           </div>
                         </div>
-
-            
-                               
-                                 <div class="head">
-                                     
-            
-            
-                                       
-                                </div>  
+                         
+                                <!-- End --> 
             
                                 
 
                         </div>
+
+
+
                         <div class="col-sm-7 row2">
                             
                                 <div class="ever">
                                         <div class="header-wrap">
-                                      
+                                    
                                       
                                                 <div class="d-flex flex-column flex-md-row p-3 px-md-4 mb-3">
                                                
-
+                                                        @section('content')
 
                                                               <div  style="margin-top:6px;" class="col-sm-5 col-md-8 nav justify-content">
 
@@ -118,18 +117,16 @@
                                                                   @foreach($menu as $pages) 
 
                                                                   <a style="text-decoration: none;" class="p-2 text-muted" href="#">
-                         
-                                                                   
-                                                                       
-                                                                        @if( $pages['slug'] == '/handstep')
+                                                                    
+                                                                      @if(Request::url() === '/')
+                                                              
+              
+                                                                    <h2 class="activet">
+                                                                      @else
 
-                                                                        <h2 class="active text1">
-                                                                          
-                                                                          @else 
+                                                                      <h2 class="text1">
+                                                                        @endif
 
-                                                                          <h2 class="text1">
-
-                                                                          @endif
                                                                       {{$pages['title']}}
 
                                                                    </h2></a>
@@ -196,12 +193,12 @@
                                                                         <div class="flags">
                                                                         <a href="#">
                                                                           <div class="arm d-flex">
-                                                                          <img class="armflag " src="evertree/001-armenia.png"/>
+                                                                          <img class="armflag " src="{{asset('evertree/001-armenia.png')}}"/>
                                                                         </a>
                                                                        
                                                                         <a href="#">
                                                                         <div class="eng">
-                                                                        <img class="engflag" src="evertree/002-uk.png"/>
+                                                                        <img class="engflag" src="{{('evertree/002-uk.png')}}"/>
                                                                         </div>
                                                                       </a>
                                                                       </div>
@@ -314,7 +311,11 @@
 
                                           
                                         </div>
+
+                                        @endsection
                       </div>
+
+
 
 
                       <div class="rounded-circle contact img-responsive center-block">

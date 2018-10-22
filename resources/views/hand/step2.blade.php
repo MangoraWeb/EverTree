@@ -40,7 +40,7 @@
 
                                             <div style="display:inline-block; margin-top: 5px; float:right;" class="nav justify-content-end">
                                                <a href="#"><div style="float:left;" class="serch">
-                                                  <img class="serch" src="evertree/search.png"/>
+                                                  <img class="serch" src="{{ asset('evertree/search.png')}}"/>
                                               </div>
                                               </a>
                                               <a style="float:right; text-decoration: none;"  href="#"><h2 class="text1 p-2 text-muted">Մեր մասին</h2></a>
@@ -63,7 +63,7 @@
                             <div class="col-xl-12">
                               
                               <div class="col-md-12 roundeds">
-                                <img class="big-logo rounded mx-auto d-block center-block" src="evertree/43333376_579577592462250_96139591630716928_n.png">
+                                <img class="big-logo rounded mx-auto d-block center-block" src="{{ asset('images/big.png')}}">
                                 <p class="headling">ԱՄԵՆ ԹՂԹԻ ԿՏՈՐ ԿՏՐՎԱԾ ԾԱՌԻ ՄԻ ՄԱՍ Է</p>
                               </div>
 
@@ -81,7 +81,7 @@
                                     Հանձնելով՝  որպես   աղբ  դիտարկվող  թուղթը,
                                     դուք   կկարողանաք  կյանք  տալ  բնությանը ։ »
                                   </div>
-                              <img class="fly" src="evertree/paperfly.png"/>
+                              <img class="fly" src="{{asset('evertree/paperfly.png')}}"/>
                              
                               </div>
                              
@@ -110,35 +110,36 @@
                                       
                                                 <div class="d-flex flex-column flex-md-row p-3 px-md-4 mb-3">
                                                
-
-
-                                                              <div  style="margin-top:6px;" class="col-sm-5 col-md-8 nav justify-content">
+                                               
+                                                    <div  style="margin-top:6px;" class="col-sm-5 col-md-8 nav justify-content">
 
                                                               
-                                                                  @foreach($menu as $pages) 
+                                                        @foreach($menu as $pages) 
 
-                                                                  <a style="text-decoration: none;" class="p-2 text-muted" href="#">
-                                                                    
-                                                                      @if(Request::url() === '/')
-                                                              
-              
-                                                                    <h2 class="activet">
-                                                                      @else
+                                                        <a style="text-decoration: none;" class="p-2 text-muted" href="#">
+                                                          
+                                                            @if(Request::url() === '/')
+                                                    
+    
+                                                          <h2 class="activet">
+                                                            @else
 
-                                                                      <h2 class="text1">
-                                                                        @endif
+                                                            <h2 class="text1">
+                                                              @endif
 
-                                                                      {{$pages['title']}}
+                                                            {{$pages['title']}}
 
-                                                                   </h2></a>
-   
-                                                                @endforeach
+                                                         </h2></a>
 
-                                                               
-                                                               
-                                  
-                                                               
-                                                              </div>
+                                                      @endforeach
+
+                                                     
+                                                     
+                        
+                                                     
+                                                    </div>
+
+
 
                                                               @if (Auth::check())
  
@@ -147,7 +148,7 @@
 
                                                               <div class="col-sm-6 col-md-4 nav justify-content-end">
                                                                     <a href="#"> 
-                                                                        <img class="avatar" src="evertree/avatar.png"/>
+                                                                        <img class="avatar" src="{{asset('evertree/avatar.png')}}"/>
                                                                     </a>
                                                                     <a class="p-2 text-muted" href="#">
                                                                     <h5 style="
@@ -159,7 +160,7 @@
 
                                                                         <a class="p-2 text-muted" href="{{ route('register') }}">
                                                                             <h2 class="text1">  
-                                                                                <img style="position:relative; top:5px;" class="settings" src="evertree/settings.png"/>
+                                                                                <img style="position:relative; top:5px;" class="settings" src="{{asset('evertree/settings.png')}}"/>
                                                                             </h2></a>
 
 
@@ -169,7 +170,7 @@
                                                                             <a style="position:relative; top:15px;" class="p-2 text-muted" href="{{ route('logout') }}"
                                                                             onclick="event.preventDefault();
                                                                                           document.getElementById('logout-form').submit();">
-                                                                             <img class="logout" src="evertree/exit.png"/>
+                                                                             <img class="logout" src="{{asset('evertree/exit.png')}}"/>
                                                                             </a>   </div>
          
                                                                         </h2>
@@ -190,19 +191,18 @@
                                                                    <div class="col-sm-5 col-md-4 nav justify-content-end">
                                                                         <a class="p-2 text-muted" href="{{ route('login') }}"><h2 class="text1">Մուտք</h2></a>
                                                                         <a class="p-2 text-muted" href="{{ route('register') }}"><h2 class="text1">Գրանցվել</h2></a>
-                                                                        
                                                                         <div class="flags">
-                                                                        <a href="#">
-                                                                          <div class="arm d-flex">
-                                                                          <img class="armflag " src="evertree/001-armenia.png"/>
-                                                                        </a>
-                                                                       
-                                                                        <a href="#">
-                                                                        <div class="eng">
-                                                                        <img class="engflag" src="evertree/002-uk.png"/>
-                                                                        </div>
-                                                                      </a>
-                                                                      </div>
+                                                                            <a href="#">
+                                                                              <div class="arm d-flex">
+                                                                              <img class="armflag " src="{{asset('evertree/001-armenia.png')}}"/>
+                                                                            </a>
+                                                                           
+                                                                            <a href="#">
+                                                                            <div class="eng">
+                                                                            <img class="engflag" src="{{asset('evertree/002-uk.png')}}"/>
+                                                                            </div>
+                                                                          </a>
+                                                                          </div>
                                                                     </div>   </div>
 
 
@@ -223,19 +223,21 @@
                                            <div class="container col-md-8 row-eq-height top">
 
                                           <div class="col-md-3 bg1 paper  activediv text-center">
-                                              <img class="type" src="evertree/activetype.png"/>
+                                              <img class="type" src="{{asset('evertree/activetype.png')}}"/>
                                               <h4 class="papertext active mx-auto">Թղթերի քանակը</h4>
 
                                           
 
                                             </div>
 
-                                            <div class="col-md-3 bg2 paper text-center">
-                                              <img class="type" src="evertree/type.png"/>
+                                            <div class="col-md-3 bg2 paper activediv text-center">
+                                              <img class="type" src="{{asset('evertree/activetype.png')}}"/>
+                                              <h4 class="papertext active mx-auto">Հասցե</h4>
+
                                             </div>
 
                                             <div class="col-md-3 bg3 paper text-center">
-                                              <img class="type" src="evertree/type.png"/>
+                                              <img class="type" src="{{asset('evertree/type.png')}}"/>
                                            
                                           </div>
 
@@ -244,6 +246,8 @@
                          
                                               <div class="row formbut">
                                                  
+
+                                                
                                                 <form action="{{route('step2post')}}" method="post" class="col-md-12">
                                                 
                                                   {{ csrf_field() }}
@@ -254,13 +258,63 @@
                                                   <div class="invalid-feedback">
                                                       {{ $errors->first('address') }}</div>
                                                       @endif
+
+
+                                                    <div class="container">  
                                                   <div class="form-group col-md-12">
                                                     <label  for="address">Հասցե</label>
+
+                                                    @if(isset($add))
+
                                                     <input type="text" class="form-control" name="address" id="address" value="{{$add}}">
+
+                                                    @else 
+                                                    <input type="text" class="form-control" name="address" id="address" placeholder="Հասցե">
+
+                                                    @endif
+
                                                   </div>
+
+
+                                                  <div class="form-row col-md-12">
+                                                      <div class="form-group col-md-6">
+                                                        <label for="city">Քաղաքը</label>
+                                                        @if(isset($city))
+
+                                                        <input type="text" name="city" class="form-control" value="{{$city}}" id="city">
+    
+                                                        @else 
+                                                        <input type="text" name="city" class="form-control" placeholder="Քաղաքը" id="city">
+    
+                                                        @endif
+
+                                                      </div>
+                                                    
+                                                      <div class="form-group col-md-6">
+                                                        <label for="tel">Հեռախոսահամար</label>
+
+
+                                                        @if(isset($tel))
+
+                                                        <input type="text" name="tel" class="form-control" value="{{$tel}}" id="tel">
+    
+                                                        @else 
+                                                        <input type="text" name="tel" class="form-control" placeholder="+374" id="tel">
+    
+                                                        @endif
+
+                                                       
+
+                                                      </div>
+                                                    </div>
 
                           
                                                 </div>
+
+                                              </div>
+
+
+
                                                 
                                               <button type="submit" class="but float-right btn btn-success" >ՀԱՋՈՐԴԸ ></button>
 

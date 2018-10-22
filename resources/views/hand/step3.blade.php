@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/global.css') }}"/>
     <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed" rel="stylesheet">
-    <title>evertree</title>
+    <title>EverTree</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 </head>
@@ -40,7 +40,7 @@
 
                                             <div style="display:inline-block; margin-top: 5px; float:right;" class="nav justify-content-end">
                                                <a href="#"><div style="float:left;" class="serch">
-                                                  <img class="serch" src="evertree/search.png"/>
+                                                  <img class="serch" src="{{ asset('evertree/search.png')}}"/>
                                               </div>
                                               </a>
                                               <a style="float:right; text-decoration: none;"  href="#"><h2 class="text1 p-2 text-muted">Մեր մասին</h2></a>
@@ -63,7 +63,7 @@
                             <div class="col-xl-12">
                               
                               <div class="col-md-12 roundeds">
-                                <img class="big-logo rounded mx-auto d-block center-block" src="evertree/43333376_579577592462250_96139591630716928_n.png">
+                                <img class="big-logo rounded mx-auto d-block center-block" src="{{ asset('images/big.png')}}">
                                 <p class="headling">ԱՄԵՆ ԹՂԹԻ ԿՏՈՐ ԿՏՐՎԱԾ ԾԱՌԻ ՄԻ ՄԱՍ Է</p>
                               </div>
 
@@ -81,7 +81,7 @@
                                     Հանձնելով՝  որպես   աղբ  դիտարկվող  թուղթը,
                                     դուք   կկարողանաք  կյանք  տալ  բնությանը ։ »
                                   </div>
-                              <img class="fly" src="evertree/paperfly.png"/>
+                              <img class="fly" src="{{asset('evertree/paperfly.png')}}"/>
                              
                               </div>
                              
@@ -147,7 +147,7 @@
 
                                                               <div class="col-sm-6 col-md-4 nav justify-content-end">
                                                                     <a href="#"> 
-                                                                        <img class="avatar" src="evertree/avatar.png"/>
+                                                                        <img class="avatar" src="{{asset('evertree/avatar.png')}}"/>
                                                                     </a>
                                                                     <a class="p-2 text-muted" href="#">
                                                                     <h5 style="
@@ -159,7 +159,7 @@
 
                                                                         <a class="p-2 text-muted" href="{{ route('register') }}">
                                                                             <h2 class="text1">  
-                                                                                <img style="position:relative; top:5px;" class="settings" src="evertree/settings.png"/>
+                                                                                <img style="position:relative; top:5px;" class="settings" src="{{asset('evertree/settings.png')}}"/>
                                                                             </h2></a>
 
 
@@ -169,7 +169,7 @@
                                                                             <a style="position:relative; top:15px;" class="p-2 text-muted" href="{{ route('logout') }}"
                                                                             onclick="event.preventDefault();
                                                                                           document.getElementById('logout-form').submit();">
-                                                                             <img class="logout" src="evertree/exit.png"/>
+                                                                             <img class="logout" src="{{asset('evertree/exit.png')}}"/>
                                                                             </a>   </div>
          
                                                                         </h2>
@@ -223,42 +223,54 @@
                                            <div class="container col-md-8 row-eq-height top">
 
                                           <div class="col-md-3 bg1 paper  activediv text-center">
-                                              <img class="type" src="evertree/activetype.png"/>
+                                              <img class="type" src="{{asset('evertree/activetype.png')}}"/>
                                               <h4 class="papertext active mx-auto">Թղթերի քանակը</h4>
+
+                                          
+
                                             </div>
 
-                                            <div class="col-md-3 bg2 paper text-center">
-                                              <img class="type" src="evertree/type.png"/>
+                                          
+                                            <div class="col-md-3 bg2 paper activediv text-center">
+                                              <img class="type" src="{{asset('evertree/activetype.png')}}"/>
+                                              <h4 class="papertext active mx-auto">Հասցե</h4>
+
                                             </div>
 
-                                            <div class="col-md-3 bg3 paper text-center">
-                                              <img class="type" src="evertree/type.png"/>
-                                           
+                                            <div class="col-md-3 bg3 paper activediv text-center">
+                                              <img class="type" src="{{asset('evertree/activetype.png')}}"/>
+                                              <h4 class="papertext active mx-auto">Շնորհակալություն</h4>
+
                                           </div>
 
 
                                           <div class="forms container col-lg-11 ">
                          
                                               <div class="row formbut">
-                                                 <p> 
-Շնորհակալություն հարգելի <b> {{Auth::user()->name}}</b> բնությունը փրկելու համար։ 
-Դուք հանձնեցիք  {{$step1['count']}} կիլոգրամ թուղթ և փրկեցիք «{{$trees}}» ծառ։ 
-Մեր աշխատակազմը կմոտենա ձեր բնակարան {{$step2['address']}} հասցեյով և կվերցնի Ձեր թուղթը։
+                                                 
+                                            
+                                                <h3 class="papertext active mx-auto">
+                                                  Շնորհակալություն։ Մեր թիմը ստացավ ձեր տվյալները։ Մենք շատ կարճ ժամանակում 
+                                                  կփորձենք վերցնել թուղթը {{$step2['city']}} {{$step2['address']}} հասցեյից։<br>
+                                                  ԹՈՒՇԹԸ ԱՂԲ ՉԷ։<br>
 
-Շնորհակալություն
+                                                  Ձեր տվյալները՝
+                                                        Թղթ քանակը - {{$step1['count']}} կիլոգրամ <br>
+                                                        Քաղաքը - {{$step2['city']}}<br>
+                                                        Հասցեն - {{$step2['address']}}<br>
+                                                        Հեռախոսահամարը - {{$step2['tel']}}<br>
+                                                  
+                                                </h3>
 
-                                                 </p>
+                                                
                                                 
                                                 </div>
   
-  
-                                       
-  
-  
+
                                     </div>
 
 
-
+   
                                           </div>
 
                                           
