@@ -1,0 +1,7 @@
+-rw-rw-r-- 1 karen karen 2501 Հոկ 23 02:37 about.blade.php
+-rw-rw-r-- 1 karen karen 2507 Հոկ 23 02:55 article.blade.php
+-rw-rw-r-- 1 karen karen 2724 Հոկ 23 02:40 garden.blade.php
+-rwxrwxrwx 1 karen karen  645 Հոկ  9 22:12 home.blade.php
+-rwxrwxrwx 1 karen karen 4862 Հոկ 23 01:26 main.blade.php
+-rw-rw-r-- 1 karen karen 4435 Հոկ 23 02:37 news.blade.php
+-rw-rw-r-- 1 karen karen   24 Հոկ 23 18:19 test.blade.php
