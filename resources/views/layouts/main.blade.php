@@ -17,7 +17,7 @@
     <div class="box container-fluid ">
 
                 <div class="row">
-                        <div class="col-xl-5 col-lg-4 col-md-3 hidden-xs row1">
+                        <div class="none col-xl-5 col-lg-4 col-md-3 hidden-xs row1">
                           
                             <div class="ever">
                             <div class="header-wrap">
@@ -51,7 +51,7 @@
                         </div> <!-- First row end -->
 
 
-                        <div class="col-sm-7 row2">
+                        <div class="viwe col-sm-7 row2">
                             
                                 <div class="ever">
                                         <div class="header-wrap">
@@ -71,25 +71,25 @@
                                                                     </a>
 
                                                                     <a style="text-decoration: none;" class="p-2 text-muted" href="{{route('profile')}}">
-                                                                    <h5 style=" font-size: 12px;">
+                                                                    <h5 class="fls" style=" font-size: 12px;">
                                                                       {{ Auth::user()->name }} {{ Auth::user()->surname }}
                                                                     </h5>
                                                                     
-                                                                    <h6 style="font-size: 11px;">{{ Auth::user()->coins }} միավոր</h6></a>
+                                                                    <h6 class="fls" style="font-size: 11px;">{{ Auth::user()->coins }} միավոր</h6></a>
 
                                                                       <a class="p-2 text-muted" href="{{ route('register') }}">
                                                                          <h2 class="text1">  
-                                                                            <img style="position:relative; top:5px;" class="settings" src="{{asset('evertree/settings.png')}}"/>
+                                                                            <img style="position:relative; top:5px;" class="fls settings" src="{{asset('evertree/settings.png')}}"/>
                                                                          </h2></a>
 
 
                                                                          
-                                                                        <h2 class="text1">  
-                                                                          <div class="settings">
+                                                                        <h2 class="fls text1">  
+                                                                          <div class="fls settings">
                                                                             <a style="position:relative; top:15px;" class="p-2 text-muted" href="{{ route('logout') }}"
                                                                             onclick="event.preventDefault();
                                                                                           document.getElementById('logout-form').submit();">
-                                                                             <img class="logout" src="{{asset('evertree/exit.png')}}"/>
+                                                                             <img class="fls logout" src="{{asset('evertree/exit.png')}}"/>
                                                                             </a>   </div>
          
                                                                         </h2>

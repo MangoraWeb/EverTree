@@ -494,3 +494,73 @@ form{
     justify-content: space-between;
     margin-left: 15px;
 }
+@media only screen and (min-width: 480px) {
+    .none{
+        display: none;
+    } 
+    .viwe{
+        width: 100%;
+        display: inline-block;
+    }
+    .fls{
+        display: none;
+    }
+    .avatar{
+        margin-top: -46px;
+        left: 45px;
+    }
+    .qur1{
+        width: 34% !important;
+    height: 150px !important;
+    left: -48px;
+    }
+    .qur2{
+        width: 33% !important;
+    height: 150px;
+    margin-left: -37px;
+    }
+    .qur3{
+        width: 34% !important;
+    height: 150px;
+    float: right;
+    margin-top: -151px;
+    right: -18px;
+    }
+    .tp{
+        left: 43px;
+        width: 27px;
+        height: 26px;
+    }
+    .papertext{
+        font-size: 12px;
+    }
+    .stt{
+    width: 100%;
+    }
+    .row2{
+        border-bottom-left-radius: 10px !important;
+        border-top-left-radius: 10px !important;
+    }
+    .inn{
+        width: 240%;
+    z-index: 1;
+    left: -35px;
+    }
+    .out{
+        bottom: 55px;
+    left: -5px;
+    font-size: 12px;
+    }
+    .inn2{
+        width: 150px !important;
+    }
+    #inn3{
+        width: 207px;
+    }
+    #count{
+        width: 150px !important;
+    }
+    .but{
+        margin-left: 56px;
+    }
+}
