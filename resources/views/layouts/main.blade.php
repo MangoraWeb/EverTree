@@ -33,10 +33,10 @@
                                             <div class="col-md-5">
                                             <div style="display:inline-block; margin-top: 5px; float:right;" class="nav justify-content-end">
                                                <a href="#"><div style="float:left;" class="serch">
-                                                  <img class="serch" src="evertree/search.png"/>
+                                                  <img class="serch" src="{{asset('evertree/search.png')}}"/>
                                               </div>
                                               </a>
-                                              <a style="float:right; text-decoration: none;"  href="#"><h2 class="text1 p-2 text-muted">Մեր մասին</h2></a>
+                                              <a style="float:right; text-decoration: none;"  href="/about"><h2 class="text1 p-2 text-muted">Մեր մասին</h2></a>
                                             </div>
                                           </div>
                                           </div>
@@ -66,11 +66,11 @@
 
                                                               <div class="col-sm-6 col-md-4 nav justify-content-end">
                                                                    
-                                                                <a href="#"> 
-                                                                        <img class="avatar" src="evertree/avatar.png"/>
+                                                                <a href="{{route('profile')}}"> 
+                                                                        <img class="avatar" src="{{asset('evertree/avatar.png')}}"/>
                                                                     </a>
 
-                                                                    <a class="p-2 text-muted" href="#">
+                                                                    <a style="text-decoration: none;" class="p-2 text-muted" href="{{route('profile')}}">
                                                                     <h5 style=" font-size: 12px;">
                                                                       {{ Auth::user()->name }} {{ Auth::user()->surname }}
                                                                     </h5>
@@ -79,7 +79,7 @@
 
                                                                       <a class="p-2 text-muted" href="{{ route('register') }}">
                                                                          <h2 class="text1">  
-                                                                            <img style="position:relative; top:5px;" class="settings" src="evertree/settings.png"/>
+                                                                            <img style="position:relative; top:5px;" class="settings" src="{{asset('evertree/settings.png')}}"/>
                                                                          </h2></a>
 
 
@@ -89,7 +89,7 @@
                                                                             <a style="position:relative; top:15px;" class="p-2 text-muted" href="{{ route('logout') }}"
                                                                             onclick="event.preventDefault();
                                                                                           document.getElementById('logout-form').submit();">
-                                                                             <img class="logout" src="evertree/exit.png"/>
+                                                                             <img class="logout" src="{{asset('evertree/exit.png')}}"/>
                                                                             </a>   </div>
          
                                                                         </h2>
@@ -116,12 +116,12 @@
                                                                         <div class="flags">
                                                                         <a href="#">
                                                                           <div class="arm d-flex">
-                                                                          <img class="armflag " src="evertree/001-armenia.png"/>
+                                                                          <img class="armflag " src="{{asset('evertree/001-armenia.png')}}"/>
                                                                         </a>
                                                                        
                                                                         <a href="#">
                                                                         <div class="eng">
-                                                                        <img class="engflag" src="evertree/002-uk.png"/>
+                                                                        <img class="engflag" src="{{asset('evertree/002-uk.png')}}"/>
                                                                         </div>
                                                                       </a>
                                                                       </div>
@@ -157,7 +157,7 @@
                      
 
                       <div class="rounded-circle contact img-responsive center-block">
-                          <img class="chat" src="evertree/chat.png"/>
+                          <img class="chat" src="{{asset('evertree/chat.png')}}"/>
                       </div>
                       
 

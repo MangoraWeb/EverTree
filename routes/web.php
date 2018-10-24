@@ -36,21 +36,41 @@ Route::group(['prefix' => 'profile'], function(){
 });
 
 
-
-
-Route::group(['prefix' => 'news'], function(){
+ 
+Route::get('/gardens', [
+    'as' => 'gardens',
+    'uses' => 'GardenController@allgardens'
+]);
     
-    Route::get('/', [
+    Route::get('/news', [
         'as' => 'newsmain',
         'uses' => 'NewsController@index'
     ]);
 
-    Route::get('/{id}', [
+    Route::get('/news/{id}', [
         'as' => 'article',
         'uses' => 'NewsController@show'
     ]);
 
+Route::get('/home', function() {
+    return redirect('/handstep');
 });
+
+Route::get('/about',[
+    'as'=>'about',
+    'uses'=>'MainController@about'
+]);
+
+
+Route::get('/test',function() {
+    return view('test');
+});
+
+
+Route::get('/mygarden',[
+    'as' => 'garden',
+    'uses' => 'GardenController@index'
+]);
 
 
 Route::group(['prefix' => 'handstep'], function(){
@@ -89,12 +109,6 @@ Route::group(['prefix' => 'handstep'], function(){
 
 });
 
-Route::get('/test', function() {
-   $city = App\Province::find(23)->City()->where('name', 'Նոր Հաճն')->first();
-   return $city->name;
-
-});
-
 
 
 
@@ -106,14 +120,42 @@ Route::group(['prefix' => 'admin'], function(){
     ]);
 
 });
+
+
+Route::group(['prefix' => 'profile','middleware'=>'auth'], function(){
+
+    Route::get('/', [
+        'as' => 'profile',
+        'uses' => 'ProfileController@index'
+    ]);
+    Route::get('/{id}', [
+        'as' => 'profileUser',
+        'uses' => 'ProfileController@profileod'
+    ]);
+});
+
+
 //EverTree beta routes
 //Powered by MangoraWeb
 // v 0.0.0.1 / 10
 
-Route::get('/delivery', function () {
-    return view('welcome');
-});//Թղթի հանձնում
 
 
-Auth::routes();
+//Auth::routes();
+
+
+// Authentication Routes...
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+// Registration Routes...
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
+
+// Password Reset Routes...
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 

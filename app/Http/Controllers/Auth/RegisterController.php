@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Province;
+use App\City;
 
 class RegisterController extends Controller
 {
@@ -55,6 +57,21 @@ class RegisterController extends Controller
         ]);
     }
 
+    public function showRegistrationForm() {
+
+        $city = City::all();
+        $province = Province::all();
+
+
+       
+
+
+        return view ('auth.register')
+            ->with('city',$city)
+            ->with('province',$province);
+
+    }
+
     /**
      * Create a new user instance after a valid registration.
      *
@@ -71,7 +88,6 @@ class RegisterController extends Controller
             'city' =>$data['city'],
             'address' => $data['address'],
             'telephone' => $data['tel'],
-            'bdate' => $data['bdate'],
 
 
         ]);

@@ -1,184 +1,215 @@
-@extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EverTree - Login | Make the world greener</title>
+    <link rel="stylesheet" type="text/css" href="{{asset('auth/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('auth/css/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('auth/css/mainreg.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('auth/css/logreg.css')}}">
+</head>
+<body>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-
-
-                          
-
-
-
-                        </div>
-
-                        <div class="form-group row">
-
-                        <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
-
-                        <div class="col-md-6">
-                            <input id="surname" type="text" class="form-control{{ $errors->has('surname') ? ' is-invalid' : '' }}" name="surname" value="{{ old('surname') }}" required autofocus>
-
-                            @if ($errors->has('surname'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('surname') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-
-                         
-                        <div class="form-group row">
-
-                            <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('City') }}</label>
     
-                            <div class="col-md-6">
-                                <input id="city" type="text" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" name="city" value="{{ old('city') }}" required autofocus>
-    
-                                @if ($errors->has('city'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('city') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+    <div class="form-body" class="container-fluid">
+        <div class="website-logo">
+            <a href="index.html">
+                <div class="logo">
+                    <img class="logo-size" src="images/logo-light.svg" alt="">
+                </div>
+            </a>
+        </div>
+        <div class="row">
+
+            <div class="img-holder">
+                    <div class="bg" style="background-color: #fff;opacity: 1;"></div>                
+                    <div class="info-holder">
+                    <h3 style="color:#5cbc7c"> Հանձնելով թուղթը դուք կփորկեք բնությանը։ </h3>
+                    <p style="color:#39aa5e">Դուք ոչ միայն կկարողանաք ստանալ միավորներ և դրանցով գնել նոր ծառեր. այլ նաև կփորկեք բնությանը։</p>
+                    <img src="auth/images/little.gif" alt="">                
+                </div>
+
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <div class="website-logo-inside">
+                            <a href="index.html">
+                                <div class="logo">
+                                    <img class="logo-size" src="images/logo-light.svg" alt="">
+                                </div>
+                            </a>
                         </div>
-
-  
-                        <div class="form-group row">
-
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
-    
-                            <div class="col-md-6">
-                                <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" required autofocus>
-    
-                                @if ($errors->has('address'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('address') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                        <div class="page-links">
+                            <a href="/login">Մուտք</a><a class="active" href="/register">Գրանցվել</a>
                         </div>
-
-                        <div class="form-group row">
-
-                            <label for="tel" class="col-md-4 col-form-label text-md-right">{{ __('Telephone') }}</label>
+                       
+                        <form method="POST" action="{{ route('register') }}">
+                            @csrf
     
-                            <div class="col-md-6">
-                                <input id="tel" type="text" class="form-control{{ $errors->has('tel') ? ' is-invalid' : '' }}" name="tel" value="{{ old('tel') }}" required autofocus>
+                            <select id="actype" class="image-picker show-html" >
+                                    <option data-img-src="http://127.0.0.1:8000/auth/images/little.gif" data-img-class="first" data-img-alt="Page 1" value="1">  Page 1  </option>
+                                    <option data-img-src="http://127.0.0.1:8000/auth/images/little.gif" data-img-alt="Page 2" value="2">  Page 2  </option>
+                                    <option data-img-src="http://127.0.0.1:8000/auth/images/little.gif" data-img-alt="Page 3" value="3">  Page 3  </option>
+
+                                  </select>
+                                  <div class="bd-example">
+                                        <form>
+
+
+
+                                          <div class="form-row">
+                                            <div class="form-group col-md-6">
+
+
+                                                <!-- Name --> 
+                                                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" placeholder="Անուն" value="{{ old('name') }}" required autofocus>
+
+                                                    @if ($errors->has('name'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('name') }}</strong>
+                                                        </span>
+                                                    @endif
+                                                <!-- Name --> 
+
+
+                                            </div>
+
+                                                <!-- SurName --> 
+
+                                                <div class="form-group col-md-6">
+                                                        <input id="surname" placeholder="Ազգանուն" type="text" class="form-control{{ $errors->has('surname') ? ' is-invalid' : '' }}" name="surname" value="{{ old('surname') }}" required autofocus>
+
+                                                        @if ($errors->has('surname'))
+                                                            <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $errors->first('surname') }}</strong>
+                                                            </span>
+                                                        @endif                                                </div>
+                                                <!-- SurName --> 
+
+                                          </div>
+
+
+                                           
+                                          <div class="form-row">
+                                                <div class="form-group col-md-4">
+
+                                                    
+                                                        <select aria-valuemax="" id="inp" name="province" class="form-control">
+                                                                <option value="" disabled selected hidden>Մարզ</option>
+    
+        
+                                                            @foreach($province as $provinces)
+                                                              <option value="{{$provinces->name}}">{{$provinces->name}}</option>
+                                                             @endforeach
+                                                             <option value="Երևան">Երևան</option>
+
+                                                        </select>
+                                                      </div>
+
+                                                <div class="form-group col-md-4">
+                                                  <select name='city' id="inpProv" style="display: flex !important;" class="form-control">
+
+                                                    <option value=""  disabled selected hidden>Քաղաք</option>
+
+
+                                                        @foreach($city as $cityes)
+                                                          <option value="{{$cityes->name}}">{{$cityes->name}}</option>
+                                                         @endforeach
+                                                  </select>
+                                                </div>
+
+                                                <div class="form-group col-md-4">
+
+
+            <input id="tel" type="text" placeholder="Հեռ." class="form-control{{ $errors->has('tel') ? ' is-invalid' : '' }}" name="tel" value="{{ old('tel') }}" required autofocus>
     
                                 @if ($errors->has('tel'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('tel') }}</strong>
                                     </span>
                                 @endif
-                            </div>
-                        </div>
+                                                </div>
+                                              </div>
 
-                        <div class="form-group row">
 
-                            <label for="bdate" class="col-md-4 col-form-label text-md-right">{{ __('Birthday') }}</label>
+                                        
+                                          <div class="form-group">
+                                                <input id="address" placeholder="Հասցե" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" required autofocus>
     
-                            <div class="col-md-6">
-                                <input id="bdate" type="text" class="form-control{{ $errors->has('bdate') ? ' is-invalid' : '' }}" name="bdate" value="{{ old('bdate') }}" required autofocus>
-    
-                                @if ($errors->has('bdate'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('bdate') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                                                @if ($errors->has('address'))
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $errors->first('address') }}</strong>
+                                                    </span>
+                                                @endif
+                                          </div>
+
+
+
+                                          <div class="form-group">
+
+                                          <input id="email" placeholder="Էլ. փոստ" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                                          @if ($errors->has('email'))
+                                              <span class="invalid-feedback" role="alert">
+                                                  <strong>{{ $errors->first('email') }}</strong>
+                                              </span>
+                                          @endif
+
+                                        </div>
+
+
+
+                                           
+                                        <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    
+                                                        <input placeholder="Ծածկագիր" id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                                                        @if ($errors->has('password'))
+                                                            <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $errors->first('password') }}</strong>
+                                                            </span>
+                                                        @endif
+                                                </div>
+
+                                                <div class="form-group col-md-6">
+                                                    
+     <input id="password-confirm" placeholder="Ծածկագրի հաստատում" type="password" class="form-control" name="password_confirmation" required>
+
+                                                </div>
+                                        </div>
+
+                                        <div class="form-button">
+                                                <button id="submit" type="submit" class="ibtn">Գրանցվել</button>
+                                            </div>                                        </form>
+                                        </div>
+                        </form>
+
+                        <div class="other-links">
+                            <span>Մուտք սոց. ցանցերով</span><a href="#">Facebook</a><a href="#">Google</a><a href="#">Linkedin</a>
                         </div>
-
-                        <div class="form-group row">
-
-                            <label for="actype" class="col-md-4 col-form-label text-md-right">{{ __('Account type') }}</label>
-    
-                            <div class="col-md-6">
-
-                                <select class="custom-select d-block w-100" id="actype" required="">
-                                    <option value="0">Choose...</option>
-                                    <option value="individual">Individual</option>
-                                    <option value="individual">Office</option>
-
-                                    <option value="individual">Valanteer</option>
-
-                                  </select>
-                                
-                                @if ($errors->has('actype'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('actype') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-@endsection
+<script type="text/javascript" src="{{asset('auth/js/jquery.min.js')}}"></script>
+<script type="text/javascript" src="https://rvera.github.io/image-picker/image-picker/image-picker.js"></script>
+<script type="text/javascript" src="https://rvera.github.io/image-picker/js/prettify.js
+"></script>
+<script>
+        $("select").imagepicker({
+            show_label  : false
+          })
+        </script>
+
+<script type="text/javascript" src="{{asset('auth/js/popper.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('auth/js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('auth/js/main.js')}}"></script>
+
+
+</body>
+</html>

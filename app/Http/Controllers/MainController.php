@@ -15,6 +15,12 @@ class MainController extends Controller
         return view('main')->with('menu', $pages);
     }
 
+    public function about() {
+
+        return view('about');
+
+    }
+
 
    
 }

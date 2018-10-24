@@ -6,7 +6,7 @@
       <div class="col-xl-12">
         
         <div class="col-md-12 roundeds">
-          <img class="big-logo rounded mx-auto d-block center-block" src="evertree/43333376_579577592462250_96139591630716928_n.png">
+          <img class="big-logo rounded mx-auto d-block center-block" src="{{asset('images/big.png')}}">
           <p class="headling">ԱՄԵՆ ԹՂԹԻ ԿՏՈՐ ԿՏՐՎԱԾ ԾԱՌԻ ՄԻ ՄԱՍ Է</p>
         </div>
 
@@ -54,7 +54,13 @@
 
 
 <a style="text-decoration: none;" class="p-2 text-muted" href="/">
-  <h2 class="text1">Ծանուցումներ</h2>  
+  <h2 class="text1">Ծանուցումներ<div class="notbox" style="
+    float: right;
+    margin: -4px 10px;
+    background-color: #00c88e;
+    padding: 5px 10px;
+    color: #fff;
+">0</div></h2>  
 </a>
 
 @else
