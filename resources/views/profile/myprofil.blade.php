@@ -295,6 +295,19 @@ background-color: #edf2f6;
                     Իրադարձություններ <span class="items-round-little bg-breez">2</span>
                   <div class="ripple-container"></div></a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#notifications" role="tab" aria-expanded="false">
+                     Օգնություն կարիքավորներին <span class="items-round-little bg-breez">8</span>
+                    <div class="ripple-container"></div></a>
+                  </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#settings" role="tab" aria-expanded="false">
+                      Կարգավորումներ 
+                    <div class="ripple-container"></div></a>
+                  </li>
+      
     
               </ul>
               <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg></a>
@@ -405,8 +418,8 @@ background-color: #edf2f6;
                                       <img style="width:40px" src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/44091855_1735051296617076_8666010493015556096_n.jpg?_nc_cat=102&_nc_ht=scontent-frx5-1.xx&oh=70179141517d7efbe5bba0098a65be7f&oe=5C856A68" alt="author">
                                   </div>
                                   <div class="notification-event">
-                                    <a href="#" class="h6 notification-friend">Կարենը</a> commented on your new <a href="#" class="notification-link">profile status</a>.
-                                    <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
+                                    <a href="#" class="h6 notification-friend">Կարեն Հովսեփյան</a>-ը որպես կամավոր կմասնակցի <a href="#" class="notification-link">Նոր Հաճն քաղաքի ծառատունկին</a>.
+                                    <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 ժամ առաջ</time></span>
                                   </div>
                                   <span class="notification-icon">
                                               <svg class="olymp-comments-post-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-comments-post-icon"></use></svg>
@@ -422,8 +435,8 @@ background-color: #edf2f6;
                                       <img style="width:40px" src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/44091855_1735051296617076_8666010493015556096_n.jpg?_nc_cat=102&_nc_ht=scontent-frx5-1.xx&oh=70179141517d7efbe5bba0098a65be7f&oe=5C856A68" alt="author">
                                     </div>
                                     <div class="notification-event">
-                                      <a href="#" class="h6 notification-friend">Mathilda Brinker</a> commented on your new <a href="#" class="notification-link">profile status</a>.
-                                      <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
+                                      <a href="#" class="h6 notification-friend">Կարեն Հովսեփյան</a>-ը վերբեռնել է նոր<a href="#" class="notification-link">անձնական էջի նկար</a>.
+                                      <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 ժամ առաջ</time></span>
                                     </div>
                                     <span class="notification-icon">
                                                 <svg class="olymp-comments-post-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-comments-post-icon"></use></svg>
