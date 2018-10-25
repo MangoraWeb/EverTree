@@ -83,7 +83,7 @@ background-color: #edf2f6;
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="ui-block">
 				<div class="top-header top-header-favorit">
-            <div class="top-header-thumb content-bg-wrap bg-profile" style="height: 213px; background-image: url({{asset('webprofile/img/defcover.png')}});">						
+            <div class="top-header-thumb content-bg-wrap bg-profile" style="height: 213px; background-image: url(https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/44091855_1735051296617076_8666010493015556096_n.jpg?_nc_cat=102&_nc_ht=scontent-frt3-2.xx&oh=bb32748ac6c7341ee1e6182448a63a54&oe=5C856A68);">						
               <div class="top-header-author">
 							<div class="author-thumb">
 								<img src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/44091855_1735051296617076_8666010493015556096_n.jpg?_nc_cat=102&_nc_ht=scontent-frx5-1.xx&oh=70179141517d7efbe5bba0098a65be7f&oe=5C856A68" alt="author">

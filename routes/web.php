@@ -134,7 +134,16 @@ Route::group(['prefix' => 'profile','middleware'=>'auth'], function(){
     ]);
 });
 
+Route::get('/qr/{id}', function ($id) 
+{
 
+
+    
+   $mainlink =  "http://127.0.0.1:8000/profile" . $id;
+    
+    
+    return QRCode::text($mainlink)->svg();
+});    
 //EverTree beta routes
 //Powered by MangoraWeb
 // v 0.0.0.1 / 10

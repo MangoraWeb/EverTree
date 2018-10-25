@@ -24,7 +24,6 @@ class NewsController extends Controller
     public function show($id) {
         $article = News::where('id', $id)->first();
         return view('article')->with('art',$article);
-
     }
 
     /**

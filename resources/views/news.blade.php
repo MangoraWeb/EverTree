@@ -1,6 +1,38 @@
 @extends('layouts.main')
 
-<link rel="stylesheet" href="{{ asset('css/newsstyle.css') }}"/>
+
+@section('header')
+
+<link rel="stylesheet" href="{{asset('webprofile/css/main.min.css')}}">
+<link rel="stylesheet" href="{{asset('webprofile/css/fonts.min.css')}}" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="{{asset('webprofile/css/blocks.css')}}" >
+<link rel="stylesheet" href="{{asset('webprofile/css/bootstrap.css')}}" >
+<link rel="stylesheet" href="{{asset('webprofile/css/bootstrap-grid.css')}}" >
+<link rel="stylesheet" href="{{asset('webprofile/css/bootstrap-reboot.css')}}" >
+<!-- Main Font -->
+<script src="{{asset('webprofile/js/webfontloader.min.js')}}"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Roboto:300,400,500,700:latin']
+    }
+  });
+</script>
+
+
+
+<link rel="stylesheet" type="text/css" href="css/fonts.css">
+
+<!-- Styles for plugins -->
+<link rel="stylesheet" type="text/css" href="{{asset('webprofile/css/jquery.mCustomScrollbar.min.css')}}">
+<link rel='stylesheet' href='{{asset('webprofile/css/fullcalendar.css')}}'/>
+<link rel='stylesheet' href='{{asset('webprofile/css/simplecalendar.css')}}'/>
+<link rel="stylesheet" type="text/css" href="{{asset('webprofile/css/bootstrap-select.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('webprofile/css/daterangepicker.css')}}">
+
+
+@endsection
+
 
 
 @section('slider')
@@ -78,58 +110,238 @@
 
 
 <div class="container">
-        <!-- row -->
-        <div class="row">	
-            <!-- post -->
-            @foreach($article as $art)
-
-            <div class="col-md-6">
-                <div class="post post-thumb">
-                    <a class="post-img" href="{{url('news/'. $art->id )}}">
-                        <img src="{{$art->pic}}" alt="">
+    <div class="container">
+        <div class="row">
+          <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="ui-block responsive-flex1200">
+              <div class="ui-block-title">
+                <ul class="filter-icons">
+                  <li>
+                    <a href="#">
+                      <img src="{{asset('webprofile/emoji/icon-chat2.png')}}" alt="icon">
                     </a>
-                    <div class="post-body">
-                        <div class="post-meta">
-                            <a class="post-category cat-2" href="category.html">{{$art->category}}</a>
-                            <span class="post-date">{{ date('d m Y', $art->created_at->timestamp) }}</span>
-                        </div>
-                        <h3 class="post-title"><a href="{{url('news/'. $art->id )}}">
-                                {{$art->description}}
-                        </a></h3>
-                    </div>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="{{asset('webprofile/emoji/icon-chat3.png')}}" alt="icon">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="{{asset('webprofile/emoji/icon-chat4.png')}}" alt="icon">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="{{asset('webprofile/emoji/icon-chat5.png')}}" alt="icon">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="{{asset('webprofile/emoji/icon-chat6.png')}}" alt="icon">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="{{asset('webprofile/emoji/icon-chat7.png')}}" alt="icon">
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="{{asset('webprofile/emoji/icon-chat8.png')}}" alt="icon">
+                    </a>
+                  </li>
+                </ul>
+                <div class="w-select">
+                  <div class="title">Filter By:</div>
+                  <fieldset class="form-group">
+                    <div class="btn-group bootstrap-select form-control"><button type="button" class="btn dropdown-toggle btn-secondary" data-toggle="dropdown" role="button" title="All Categories"><span class="filter-option pull-left">All Categories</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><ul class="dropdown-menu inner" role="listbox" aria-expanded="false"><li data-original-index="0" class="selected"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">All Categories</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Favourite</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Likes</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select class="selectpicker form-control" tabindex="-98">
+                      <option value="NU">All Categories</option>
+                      <option value="NU">Favourite</option>
+                      <option value="NU">Likes</option>
+                    </select></div>
+                  <span class="material-input"></span></fieldset>
                 </div>
+      
+               
+      
+                <form class="w-search">
+                  <div class="form-group with-button is-empty">
+                    <input class="form-control" type="text" placeholder="Search Blog Posts......">
+                    <button>
+                      <svg class="olymp-magnifying-glass-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-magnifying-glass-icon"></use></svg>
+                    </button>
+                  <span class="material-input"></span></div>
+                </form>
+              </div>
             </div>
-            <!-- /post -->
+          </div>
+        </div>
+      </div>
 
-            @endforeach
 
+      <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="ui-block">
+    
+            
+            <!-- Post -->
+            
+            <article class="col-12 hentry blog-post blog-post-v3">
+            
+              <div class="post-thumb">
+                <img src="https://html.crumina.net/html-olympus/img/post1.jpg" alt="photo">
+                <a href="#" class="post-category bg-blue-light">THE COMMUNITY</a>
+              </div>
+            
+              <div class="post-content">
+            
+                <div class="author-date">
+                  by
+                  <a class="h6 post__author-name fn" href="#">Maddy Simmons</a>
+                  <div class="post__date">
+                    <time class="published" datetime="2017-03-24T18:18">
+                      - 7 hours ago
+                    </time>
+                  </div>
+                </div>
+            
+                <a href="#" class="h3 post-title">Here’s the Featured Urban photo of August! </a>
+                <p>Here’s a photo from last month’s photoshoot. We had a lot of fun doing it and got really
+                  awesome shots for the new summer catalog.
+                </p>
+            
+                <div class="post-additional-info inline-items">
+            
+                  <ul class="friends-harmonic">
+                    <li>
+                      <a href="#">
+                        <img src="{{asset('webprofile/emoji/icon-chat16.png')}}" alt="icon">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img src="{{asset('webprofile/emoji/icon-chat17.png')}}" alt="icon">
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="names-people-likes">
+                    26
+                  </div>
+            
+                  <div class="comments-shared">
+                    <a href="#" class="post-add-icon inline-items">
+                      <svg class="olymp-speech-balloon-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-speech-balloon-icon"></use></svg>
+                      <span>0</span>
+                    </a>
+                  </div>
+            
+                </div>
+              </div>
+            
+            </article>
+            
+            <!-- ... end Post -->
+    
+          </div>
+    
+          <div class="ui-block">
+    
+            
+            <!-- Post -->
+            
+            <article class="col-12 hentry blog-post blog-post-v3">
+            
+              <div class="post-thumb">
+                <img src="https://html.crumina.net/html-olympus/img/post1.jpg" alt="photo">
+                <a href="#" class="post-category bg-primary">OLYMPUS NEWS</a>
+              </div>
+            
+              <div class="post-content">
+            
+                <div class="author-date">
+                  by
+                  <a class="h6 post__author-name fn" href="#">JACK SCORPIO</a>
+                  <div class="post__date">
+                    <time class="published" datetime="2017-03-24T18:18">
+                      - 12 hours ago
+                    </time>
+                  </div>
+                </div>
+            
+                <a href="#" class="h3 post-title">Olympus Network added new photo filters!</a>
+                <p>Here’s a photo from last month’s photoshoot. We had a lot of fun doing it and got really
+                  awesome shots for the new summer catalog.
+                </p>
+            
+                <div class="post-additional-info inline-items">
+            
+                  <ul class="friends-harmonic">
+                    <li>
+                      <a href="#">
+                        <img src="{{asset('webprofile/emoji/icon-chat4.png')}}" alt="icon">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img src="{{asset('webprofile/emoji/icon-chat26.png')}}" alt="icon">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img src="{{asset('webprofile/emoji/icon-chat16.png')}}" alt="icon">
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="names-people-likes">
+                    82
+                  </div>
+            
+                  <div class="comments-shared">
+                    <a href="#" class="post-add-icon inline-items">
+                      <svg class="olymp-speech-balloon-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-speech-balloon-icon"></use></svg>
+                      <span>14</span>
+                    </a>
+                  </div>
+            
+                </div>
+              </div>
+            
+            </article>
+            
+            <!-- ... end Post -->
+    
+          </div>
+    
+    
+    
           
+          <!-- Pagination -->
+          
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1<div class="ripple-container"><div class="ripple ripple-on ripple-out" style="left: -10.3833px; top: -16.8333px; background-color: rgb(255, 255, 255); transform: scale(16.7857);"></div></div></a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">...</a></li>
+              <li class="page-item"><a class="page-link" href="#">12</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+          
+          <!-- ... end Pagination -->
+    
+        </div>
         </div>
         <!-- /row -->
 
         
 
         
-
-
-
-
-
-     <!--   <div class="col-md-6">
-                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
-                  <div class="card-body d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-primary">{{$art->category}}</strong>
-                    <h3 class="mb-0">
-                      <a style=" text-decoration:none;" class="text-dark head" href="#"><h2 style="font-size: 20px;">{{$art->title}}</h2></a>
-                    </h3>
-                    <div class="mb-1 text-muted">{{ date('d m Y', $art->created_at->timestamp) }}</div> 
-                    <p class="card-text mb-auto">{{$art->description}}</p>
-                    <a href="{{url('news/'. $art->id )}}">Շարունակել կարդալ</a>
-                  </div>
-                  <img class="card-img-right flex-auto d-none d-lg-block" style="width: 200px; height: 250px;" src="{{$art->pic}}" data-holder-rendered="true">
-                </div>
-              </div> -->
-
 
 
 
