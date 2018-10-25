@@ -494,7 +494,7 @@ form{
     justify-content: space-between;
     margin-left: 15px;
 }
-@media only screen and (max-width: 480px) {
+/* @media only screen and (max-width: 480px) {
     .none{
         display: none;
     } 
@@ -563,4 +563,4 @@ form{
     .but{
         margin-left: 56px;
     }
-}
+} */
