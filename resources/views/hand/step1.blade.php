@@ -3,7 +3,7 @@
 @section('slider')
 <div class="container">
     <div class="row">
-      <div class="col-xl-12">
+      <div class="col-xl-12 ">
         
         <div class="col-md-12 roundeds">
           <img class="big-logo rounded mx-auto d-block center-block" src="{{asset('images/big.png')}}">
@@ -80,7 +80,7 @@
 
 
     <div class="choose">
-       <div class="container col-md-8 row-eq-height top">
+       <div class="container col-md-9 col-xl-9 row-eq-height top">
 
       <div class="qur1 col-md-3 bg1 paper  activediv text-center">
           <img class="tp type" src="evertree/activetype.png"/>
