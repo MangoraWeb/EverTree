@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{{asset('webprofile/css/main.min.css')}}">
 <link rel="stylesheet" href="{{asset('webprofile/css/fonts.min.css')}}" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" href="{{asset('webprofile/css/blocks.css')}}" >
+<link rel="stylesheet" href="{{asset('webprofile/css/bootstrap.css')}}" >
 <link rel="stylesheet" href="{{asset('webprofile/css/bootstrap-grid.css')}}" >
 <link rel="stylesheet" href="{{asset('webprofile/css/bootstrap-reboot.css')}}" >
 <!-- Main Font -->
@@ -41,7 +42,7 @@ background-color: #edf2f6;
                                                               
 
     <a style="text-decoration: none;" class="p-2 text-muted" href="/handstep">
-            <h2 class="active text1">Թղթի հանձնում</h2>  
+            <h2 class="text1">Թղթի հանձնում</h2>  
     </a>
 
     <a style="text-decoration: none;" class="p-2 text-muted" href="/news">
@@ -78,17 +79,11 @@ background-color: #edf2f6;
 <div class="container">
 	<div class="row">
      
-<img class="fly" style="
-position: absolute !important;
-bottom: auto; !important
-width: 400px;
-z-index: 1;
-left: 380px;
-" src="{{asset('evertree/paperfly.png')}}">
+
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="ui-block">
 				<div class="top-header top-header-favorit">
-            <div class="top-header-thumb" style="min-height: 213px;">						
+            <div class="top-header-thumb content-bg-wrap bg-profile" style="height: 213px; background-image: url({{asset('webprofile/img/defcover.png')}});">						
               <div class="top-header-author">
 							<div class="author-thumb">
 								<img src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/44091855_1735051296617076_8666010493015556096_n.jpg?_nc_cat=102&_nc_ht=scontent-frx5-1.xx&oh=70179141517d7efbe5bba0098a65be7f&oe=5C856A68" alt="author">
@@ -115,11 +110,11 @@ left: 380px;
 
 						<div class="control-block-button">
 							<a href="#" class="btn btn-control bg-primary">
-								<svg class="olymp-star-icon"><use xlink:href="#olymp-star-icon"></use></svg>
+								<svg class="olymp-star-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-star-icon"></use></svg>
 							</a>
 
 							<a href="#" class="btn btn-control bg-purple">
-								<svg class="olymp-chat---messages-icon"><use xlink:href="#olymp-chat---messages-icon"></use></svg>
+								<svg class="olymp-chat---messages-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-share-icon"></use></svg>
 							</a>
 
 						</div>
@@ -302,7 +297,7 @@ left: 380px;
                 </li>
     
               </ul>
-              <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="#olymp-three-dots-icon"></use></svg></a>
+              <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg></a>
             </div>
           </div>
         </div>
@@ -317,12 +312,11 @@ left: 380px;
           <div class="container">
               <div class="container">
                   <div class="row">
-                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="
-                      padding: 0;
-                  ">                      <div class="ui-block">
+                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0;">                      
+                        <div class="ui-block">
                 
                         <div class="ui-block-title ui-block-title-small">
-                          <h6 class="title">UPCOMING EVENTS 2016</h6>
+                          <h6 class="title">Մոտակա իրադարձությունները</h6>
                         </div>
                 
                         <table class="event-item-table">
@@ -333,57 +327,54 @@ left: 380px;
                               <td class="upcoming">
                                 <div class="date-event">
                 
-                                  <svg class="olymp-small-calendar-icon"><use xlink:href="#olymp-small-calendar-icon"></use></svg>
+                                  <svg class="olymp-small-calendar-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-small-calendar-icon"></use></svg>
                 
-                                  <span class="day">28</span>
-                                  <span class="month">may</span>
+                                  <span class="day">01</span>
+                                  <span class="month">նոյ</span>
                                 </div>
                               </td>
                               <td class="author">
                                 <div class="event-author inline-items">
                                   <div class="author-thumb">
-                                    <img src="img/avatar66-sm.jpg" alt="author">
+                                    <img src="{{asset('webprofile/img/badge14.png')}}" alt="author">
                                   </div>
                                   <div class="author-date">
-                                    <a href="#" class="author-name h6">Green Goo in Gotham</a>
-                                    <time class="published" datetime="2017-03-24T18:18">Saturday at 9:00pm</time>
+                                    <a href="#" class="author-name h6">Ծառատունկ</a>
+                                    <time class="published" datetime="2017-03-24T18:18">Կիրակի ժամը 15։00</time>
                                   </div>
                                 </div>
                               </td>
-                              <td class="location">
-                                <div class="place inline-items">
-                                  <svg class="olymp-add-a-place-icon"><use xlink:href="#olymp-add-a-place-icon"></use></svg>
-                                  <span>Gotham Bar</span>
-                                </div>
-                              </td>
+                            
                               <td class="description">
-                                <p class="description">We’ll be playing in the Gotham Bar in May. Come and have a great time with us! Entry: $12</p>
+                                <p class="description">
+                                  Մասնակցեք առաջին ծառատունկին Նոր Հաճն քաղաքում։ Գնվել է 48 ծառ։
+                                </p>
                               </td>
                               <td class="users">
                                 <ul class="friends-harmonic">
                                   <li>
                                     <a href="#">
-                                      <img src="img/friend-harmonic5.jpg" alt="friend">
+                                      <img src="{{asset('webprofile/img/friend-harmonic.jpg')}}" alt="friend">
                                     </a>
                                   </li>
                                   <li>
                                     <a href="#">
-                                      <img src="img/friend-harmonic10.jpg" alt="friend">
+                                      <img src="{{asset('webprofile/img/friend-harmonic.jpg')}}" alt="friend">
                                     </a>
                                   </li>
                                   <li>
                                     <a href="#">
-                                      <img src="img/friend-harmonic7.jpg" alt="friend">
+                                      <img src="{{asset('webprofile/img/friend-harmonic.jpg')}}" alt="friend">
                                     </a>
                                   </li>
                                   <li>
                                     <a href="#">
-                                      <img src="img/friend-harmonic8.jpg" alt="friend">
+                                      <img src="{{asset('webprofile/img/friend-harmonic.jpg')}}" alt="friend">
                                     </a>
                                   </li>
                                   <li>
                                     <a href="#">
-                                      <img src="img/friend-harmonic2.jpg" alt="friend">
+                                      <img src="{{asset('webprofile/img/friend-harmonic.jpg')}}" alt="friend">
                                     </a>
                                   </li>
                                   <li>
@@ -391,12 +382,12 @@ left: 380px;
                                   </li>
                 
                                   <li class="with-text">
-                                    Will Assist
+                                   EverTree
                                   </li>
                                 </ul>
                               </td>
                               <td class="add-event">
-                                <a href="20-CalendarAndEvents-MonthlyCalendar.html" class="btn btn-breez btn-sm">Add to Calendar</a>
+                                <a href="20-CalendarAndEvents-MonthlyCalendar.html" class="btn btn-breez btn-sm">Ես կգամ</a>
                               </td>
                 
                             </tr>
@@ -404,12 +395,65 @@ left: 380px;
                         </table>
                 
                         <div class="ui-block-title ui-block-title-small">
-                          <h6 class="title">PAST EVENTS</h6>
+                          <h6 class="title">Վերջին գործողությունները</h6>
                         </div>
                 
-                        <div class="no-past-events">
-                          <svg class="olymp-month-calendar-icon"><use xlink:href="#olymp-month-calendar-icon"></use></svg>
-                          <span>There are no past events <br>to show</span>
+                        <div class="pastnot">
+                            <ul class="notification-list">
+                                <li style="border-top: 1px solid #e6ecf5;">                                  
+                                  <div class="author-thumb">
+                                      <img style="width:40px" src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/44091855_1735051296617076_8666010493015556096_n.jpg?_nc_cat=102&_nc_ht=scontent-frx5-1.xx&oh=70179141517d7efbe5bba0098a65be7f&oe=5C856A68" alt="author">
+                                  </div>
+                                  <div class="notification-event">
+                                    <a href="#" class="h6 notification-friend">Կարենը</a> commented on your new <a href="#" class="notification-link">profile status</a>.
+                                    <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
+                                  </div>
+                                  <span class="notification-icon">
+                                              <svg class="olymp-comments-post-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-comments-post-icon"></use></svg>
+                                            </span>
+                              
+                                  <div class="more">
+                                    <svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg>
+                                    <svg class="olymp-little-delete"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-little-delete"></use></svg>
+                                  </div>
+                                </li>
+                                <li>
+                                    <div class="author-thumb">
+                                      <img style="width:40px" src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/44091855_1735051296617076_8666010493015556096_n.jpg?_nc_cat=102&_nc_ht=scontent-frx5-1.xx&oh=70179141517d7efbe5bba0098a65be7f&oe=5C856A68" alt="author">
+                                    </div>
+                                    <div class="notification-event">
+                                      <a href="#" class="h6 notification-friend">Mathilda Brinker</a> commented on your new <a href="#" class="notification-link">profile status</a>.
+                                      <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
+                                    </div>
+                                    <span class="notification-icon">
+                                                <svg class="olymp-comments-post-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-comments-post-icon"></use></svg>
+                                              </span>
+                                
+                                    <div class="more">
+                                      <svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg>
+                                      <svg class="olymp-little-delete"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-little-delete"></use></svg>
+                                    </div>
+                                  </li>
+                                <li>
+                                  <div class="author-thumb">
+                                      <img style="width:40px" src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/44091855_1735051296617076_8666010493015556096_n.jpg?_nc_cat=102&_nc_ht=scontent-frx5-1.xx&oh=70179141517d7efbe5bba0098a65be7f&oe=5C856A68" alt="author">
+                                  </div>
+                                  <div class="notification-event">
+                                   <a href="#" class="h6 notification-friend">Կարեն Հովսեփյան</a>-ը գրանցվեց համակարգում հանձնելով <a href="#" class="notification-link">7 կգ թուղթ</a>.
+                                    <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">9 ժամ առաջ </time></span>
+                                  </div>
+                                  <span class="notification-icon">
+                                              <svg class="olymp-happy-face-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-happy-face-icon"></use></svg>
+                                            </span>
+                              
+                                  <div class="more">
+                                    <svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg>
+                                    <svg class="olymp-little-delete"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-little-delete"></use></svg>
+                                  </div>
+                                </li>
+                              
+                               
+                              </ul>
                         </div>
                       </div>
                     </div>
