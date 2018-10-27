@@ -141,6 +141,11 @@ a :hover{
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.description {
+    color: #999fbf;
+}
+
 ․about{
     height: 20px;
     color: #2ba886;

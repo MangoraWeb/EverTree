@@ -3,12 +3,15 @@
 
 @section('header')
 
+
+
+
+
 <link rel="stylesheet" href="{{asset('webprofile/css/main.min.css')}}">
-<link rel="stylesheet" href="{{asset('webprofile/css/fonts.min.css')}}" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="{{asset('css/fonts.min.css')}}" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" href="{{asset('webprofile/css/blocks.css')}}" >
-<link rel="stylesheet" href="{{asset('webprofile/css/bootstrap.css')}}" >
-<link rel="stylesheet" href="{{asset('webprofile/css/bootstrap-grid.css')}}" >
-<link rel="stylesheet" href="{{asset('webprofile/css/bootstrap-reboot.css')}}" >
+<link rel="stylesheet" href="{{asset('css/bootstrap-grid.css')}}" >
+<link rel="stylesheet" href="{{asset('css/bootstrap-reboot.css')}}" >
 <!-- Main Font -->
 <script src="{{asset('webprofile/js/webfontloader.min.js')}}"></script>
 <script>
@@ -18,17 +21,17 @@
     }
   });
 </script>
-
-
-
-<link rel="stylesheet" type="text/css" href="css/fonts.css">
-
 <!-- Styles for plugins -->
 <link rel="stylesheet" type="text/css" href="{{asset('webprofile/css/jquery.mCustomScrollbar.min.css')}}">
 <link rel='stylesheet' href='{{asset('webprofile/css/fullcalendar.css')}}'/>
 <link rel='stylesheet' href='{{asset('webprofile/css/simplecalendar.css')}}'/>
 <link rel="stylesheet" type="text/css" href="{{asset('webprofile/css/bootstrap-select.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('webprofile/css/daterangepicker.css')}}">
+
+
+<link rel="stylesheet" type="text/css" href="{{asset('webprofile/css/fonts.css')}}">
+
+
 
 
 @endsection
@@ -47,20 +50,18 @@
 
 
         <div class="col-md-12 roundeds">
-
             <h3 class="slogan">
-             <div class="pass"> ԱՎԵԼԱՑՐՈւ՛, <br>
-                ԿՅԱՆՔ<br>
-        <div class="active">ԲՆՈւԹՅԱՆԸ</div><br> </h3>
-        <div class="col-md-10 quote">
-            «  Մարդիկ հավանաբար չգիտեն, որ 60 կիլոգրամ
-              թուղթը  արժե  մեկ  ծառ։  Թղթի  վերամշակման
-              ուղղությամբ  այսօր քիչ մարդիկ են աշխատում։
-              Հանձնելով՝  որպես   աղբ  դիտարկվող  թուղթը,
-              դուք   կկարողանաք  կյանք  տալ  բնությանը ։ »
+             <div class="pass"> ԱՎԵԼԱՑՐՈւ՛, <br> ԿՅԱՆՔ <br>
+              <div class="active">ԲՆՈւԹՅԱՆԸ</div> <br> </h3>
+            <div class="col-md-10 quote">
+              «Մարդիկ հավանաբար չգիտեն, որ 60 կիլոգրամ
+                թուղթը  արժե  մեկ  ծառ։  Թղթի  վերամշակման
+                ուղղությամբ  այսօր քիչ մարդիկ են աշխատում։
+                Հանձնելով՝  որպես   աղբ  դիտարկվող  թուղթը,
+                դուք   կկարողանաք  կյանք  տալ  բնությանը։»
             </div>
-
         </div>
+
       </div>
     </div>
   </div>

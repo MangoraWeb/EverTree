@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="{{ asset('css/global.css') }}"/>
     <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed" rel="stylesheet">
     <title>EverTree</title>
-    <link rel="stylesheet" href="{{asset('/css/bootstrap-grid.css')}}" >
 
-    
+
+   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 @yield('header')
 </head>
@@ -30,7 +30,7 @@
 
                                             <div class="col-md-7">
                                               <nav class="nav d-flex justify-content-between">
-                                                    <a class="p-2 text-muted" href="#"><h2 class="activet">evertree <br>BETA 1</h2></a>
+                                                    <a class="p-2 text-muted" href="#"><h2 class="activet">EverTree logo</h2></a>
                                             </nav>
                                             </div>
                                             <div class="col-md-5">
@@ -132,28 +132,11 @@
 
 
                                                                   </div>
-
-
 @endif
-
-
-
-                                                   
-                
-                                      
-                
                                         </div>
                                     </div>
-
                                     @yield('content')
                                           </div>
-
-
-
-
-
-
-
                                         </div>
                       </div>
 
@@ -166,12 +149,8 @@
 
     
 
-    
-         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+                      
 
-         <script src="{{asset('webprofile/js/loader.js')}}"></script>
-
-
+          @yield('footer')
         </body>
 </html>
