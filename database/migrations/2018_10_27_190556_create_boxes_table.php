@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNewsTable extends Migration
+class CreateBoxesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateNewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('news', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->text('description');
-            $table->string('slug');
-            $table->string('pic');
+        Schema::create('boxes', function (Blueprint $table) {
+            $table->increments('boxid');
+            $table->string('lat')->default('40,3054281');
+            $table->string('long')->default('40,5849464');
+            $table->string('status')->default('bought');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateNewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news');
+        Schema::dropIfExists('boxes');
     }
 }
