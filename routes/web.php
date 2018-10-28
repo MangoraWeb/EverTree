@@ -109,6 +109,11 @@ Route::group(['prefix' => 'handstep'], function(){
 
 });
 
+Route::get('/getuser/{id}',function($id){
+   $user = App\User::find($id);
+    return $user;
+    
+});
 
 
 
