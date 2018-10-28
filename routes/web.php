@@ -124,9 +124,25 @@ Route::get('/getuser/{id}',function($id){
 
 
 
-Route::group(['prefix' => 'admin','middleware'=>'admin'], function(){
+Route::group(['prefix' => 'admin'], function(){
 
-  Voyager::routes();
+  Route::get('/',[
+    'as'=> 'admin.main',
+    'uses'=> 'AdminController@index',
+  ]);
+
+            //news routes
+                Route::get('/news',[
+                    'as'=> 'admin.main',
+                    'uses'=> 'AdminController@news',
+                ]);
+                Route::get('/news/{slug}',[
+                    'as'=> 'admin.news',
+                    'uses'=> 'AdminController@newsshow',
+                ]);
+
+           //news routes
+
 
 }); 
 
@@ -182,9 +198,3 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
-
-
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
