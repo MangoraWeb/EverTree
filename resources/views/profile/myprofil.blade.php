@@ -398,63 +398,10 @@ background-color: #edf2f6;
                           <h6 class="title">Վերջին գործողությունները</h6>
                         </div>
                 
-                        <div class="pastnot">
-                            <ul class="notification-list">
-                                <li style="border-top: 1px solid #e6ecf5;">                                  
-                                  <div class="author-thumb">
-                                      <img style="width:40px" src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/44091855_1735051296617076_8666010493015556096_n.jpg?_nc_cat=102&_nc_ht=scontent-frx5-1.xx&oh=70179141517d7efbe5bba0098a65be7f&oe=5C856A68" alt="author">
-                                  </div>
-                                  <div class="notification-event">
-                                    <a href="#" class="h6 notification-friend">Կարեն Հովսեփյան</a>-ը որպես կամավոր կմասնակցի <a href="#" class="notification-link">Նոր Հաճն քաղաքի ծառատունկին</a>.
-                                    <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 ժամ առաջ</time></span>
-                                  </div>
-                                  <span class="notification-icon">
-                                              <svg class="olymp-comments-post-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-comments-post-icon"></use></svg>
-                                            </span>
-                              
-                                  <div class="more">
-                                    <svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg>
-                                    <svg class="olymp-little-delete"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-little-delete"></use></svg>
-                                  </div>
-                                </li>
-                                <li>
-                                    <div class="author-thumb">
-                                      <img style="width:40px" src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/44091855_1735051296617076_8666010493015556096_n.jpg?_nc_cat=102&_nc_ht=scontent-frx5-1.xx&oh=70179141517d7efbe5bba0098a65be7f&oe=5C856A68" alt="author">
-                                    </div>
-                                    <div class="notification-event">
-                                      <a href="#" class="h6 notification-friend">Կարեն Հովսեփյան</a>-ը վերբեռնել է նոր<a href="#" class="notification-link">անձնական էջի նկար</a>.
-                                      <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 ժամ առաջ</time></span>
-                                    </div>
-                                    <span class="notification-icon">
-                                                <svg class="olymp-comments-post-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-comments-post-icon"></use></svg>
-                                              </span>
-                                
-                                    <div class="more">
-                                      <svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg>
-                                      <svg class="olymp-little-delete"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-little-delete"></use></svg>
-                                    </div>
-                                  </li>
-                                <li>
-                                  <div class="author-thumb">
-                                      <img style="width:40px" src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/44091855_1735051296617076_8666010493015556096_n.jpg?_nc_cat=102&_nc_ht=scontent-frx5-1.xx&oh=70179141517d7efbe5bba0098a65be7f&oe=5C856A68" alt="author">
-                                  </div>
-                                  <div class="notification-event">
-                                   <a href="#" class="h6 notification-friend">Կարեն Հովսեփյան</a>-ը գրանցվեց համակարգում հանձնելով <a href="#" class="notification-link">7 կգ թուղթ</a>.
-                                    <span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">9 ժամ առաջ </time></span>
-                                  </div>
-                                  <span class="notification-icon">
-                                              <svg class="olymp-happy-face-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-happy-face-icon"></use></svg>
-                                            </span>
-                              
-                                  <div class="more">
-                                    <svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg>
-                                    <svg class="olymp-little-delete"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-little-delete"></use></svg>
-                                  </div>
-                                </li>
-                              
-                               
-                              </ul>
-                        </div>
+                        <div class="no-past-events">
+                            <svg class="olymp-month-calendar-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-month-calendar-icon"></use></svg>
+                            <span> Գործողություններ <br>չեն գտվնել</span>
+                          </div>
                       </div>
                     </div>
                   </div>

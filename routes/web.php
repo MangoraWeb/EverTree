@@ -35,6 +35,12 @@ Route::group(['prefix' => 'profile'], function(){
 
 });
 
+ Route::get('notafications', [
+    'as' => 'notafication',
+    'uses' => 'Notecontroller@index'
+ ]);
+
+
 
  
 Route::get('/gardens', [
@@ -42,16 +48,17 @@ Route::get('/gardens', [
     'uses' => 'GardenController@allgardens'
 ]);
     
-    Route::get('/news', [
-        'as' => 'newsmain',
-        'uses' => 'NewsController@index'
-    ]);
 
-    Route::get('/news/{id}', [
-        'as' => 'article',
-        'uses' => 'NewsController@show'
-    ]);
+Route::get('/post',[
+    'uses' => 'PostController@index',
+    'as' =>  'posts'
+ ]);
+ Route::get('/post/{slug}',[
+    'uses' => 'PostController@show',
+    'as' =>  'posts.show'
+ ]);
 
+   
 Route::get('/home', function() {
     return redirect('/handstep');
 });
@@ -117,14 +124,11 @@ Route::get('/getuser/{id}',function($id){
 
 
 
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin','middleware'=>'admin'], function(){
 
-    Route::get('/', [
-        'as' => 'admin',
-        'uses' => 'AdminController@index'
-    ]);
+  Voyager::routes();
 
-});
+}); 
 
 Route::get('/testfront',function(){
 
@@ -179,3 +183,8 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

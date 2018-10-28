@@ -15,29 +15,15 @@ display: none;
 	<div class="content-bg-wrap bg-landing"></div>
 	<div class="container">
 		<div class="row">
-			<div class="col col-lg-6 m-auto col-md-12 col-sm-12 col-12">
+			<div class="col col-lg-6 m-auto col-md-12 col-sm-12 col-12" >
 				<div class="main-header-content">
 
 					<a href="#" class="logo">
 						<div class="img-wrap">
 							<img style="width:150px" src="{{asset('/evertree/43333376_579577592462250_96139591630716928_n.png')}}">
             </div>
-            
-            <section class="align-center pt80 section-move-bg-top img-scale-animation scrollme">
-              <div class="container">
-                <div class="row">
-                  <div class="col col-xl-10 m-auto col-lg-10 col-md-12 col-sm-12 col-12">
-                    <img class="main-img" src="img/scale1.png" alt="screen" style="opacity: 1; transform: scale(1);">
-                  </div>
-                </div>
-            
-                <img class="first-img1" alt="img" src="img/scale2.png" style="opacity: 1; transform: scale(1);">
-                <img class="second-img1" alt="img" src="img/scale3.png" style="opacity: 1; transform: scale(1);">
-                <img class="third-img1" alt="img" src="img/scale4.png" style="opacity: 1; transform: scale(1);">
-              </div>
-            </section>
-						
-					</a>
+          </a>
+     
 
 				</div>
 			</div>
@@ -107,12 +93,21 @@ display: none;
   </div>
 @endsection
 
+@section('rowbg')
+background-image: src('/images/armmapevertree.png');
+background-image: url(&quot;/images/armmapevertree.png&quot;);
+background-size: 230px;
+background-repeat: no-repeat;
+background-position: center;
+@endsection
+
 @section('content')
 <div class="container">
         <!-- row -->
         <div class="row">	
             <div class="col-md-12">
-              test
+                 
+        
             </div>
            
         </div>

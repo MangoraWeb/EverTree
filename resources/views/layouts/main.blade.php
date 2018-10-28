@@ -22,7 +22,7 @@
     <div class="box container-fluid ">
 
                 <div class="row">
-                <div class="none col-xl-5 col-lg-4 col-md-3 hidden-xs row1" style="@yield('secstyle')">
+                <div class="none col-xl-5 col-lg-4 col-md-3 hidden-xs row1" id="r1bg" style="@yield('secstyle') @yield('bgcolorweather')">
                           
                             <div class="ever">
                             <div class="header-wrap" style="@yield('sdnone')">
@@ -56,7 +56,7 @@
                         </div> <!-- First row end -->
 
 
-                        <div class="viwe col-sm-7 row2" style="@yield('rowbg')">
+                        <div class="viwe col-sm-7 row2" style="@yield('rowbg') ">
                             
                                 <div class="ever">
                                         <div class="header-wrap">
