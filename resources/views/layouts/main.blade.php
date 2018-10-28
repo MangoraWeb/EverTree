@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link rel="stylesheet" href="{{ asset('css/global.css') }}"/>
     <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed" rel="stylesheet">
     <title>EverTree</title>
 
+    <link rel="stylesheet" href="https://html.crumina.net/html-olympus/css/main.min.css">
 
    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -20,10 +22,10 @@
     <div class="box container-fluid ">
 
                 <div class="row">
-                        <div class="none col-xl-5 col-lg-4 col-md-3 hidden-xs row1">
+                <div class="none col-xl-5 col-lg-4 col-md-3 hidden-xs row1" style="@yield('secstyle')">
                           
                             <div class="ever">
-                            <div class="header-wrap">
+                            <div class="header-wrap" style="@yield('sdnone')">
                                     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3">
                                    
                                         <div class="row col-md-12">
@@ -148,8 +150,6 @@
                       
 
     
-
-                      
 
           @yield('footer')
         </body>

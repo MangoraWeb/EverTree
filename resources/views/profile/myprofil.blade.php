@@ -27,6 +27,8 @@
 background-color: #edf2f6;
 @endsection
 
+
+
 @section('menu')
 <div  style="margin-top:6px;" class="col-sm-5 col-md-8 nav justify-content">
 

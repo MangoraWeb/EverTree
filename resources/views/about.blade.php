@@ -1,34 +1,68 @@
 @extends('layouts.main')
 
+@section('header')
+<link rel="stylesheet" href="{{asset('webprofile/css/main.min.css')}}">
+
+@endsection
+@section('secstyle')
+padding:0;
+@endsection
+@section('sdnone')
+display: none;
+@endsection
 @section('slider')
-<div class="container">
-    <div class="row">
-      <div class="col-xl-12">
-        
-        <div class="col-md-12 roundeds">
-          <img class="big-logo rounded mx-auto d-block center-block" src="{{asset('images/big.png')}}">
-          <p class="headling">ԱՄԵՆ ԹՂԹԻ ԿՏՈՐ ԿՏՐՎԱԾ ԾԱՌԻ ՄԻ ՄԱՍ Է</p>
-        </div>
+<div class="main-header main-landing" style="height: 100%; background-color: #60f3bd;">
+	<div class="content-bg-wrap bg-landing"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col col-lg-6 m-auto col-md-12 col-sm-12 col-12">
+				<div class="main-header-content">
 
-
-        <div class="col-md-12 roundeds">
-
-            <h3 class="slogan">
-             <div class="pass"> ԱՎԵԼԱՑՐՈւ՛, <br>
-                ԿՅԱՆՔ<br>
-        <div class="active">ԲՆՈւԹՅԱՆԸ</div><br> </h3>
-        <div class="col-md-10 quote">
-            «  Մարդիկ հավանաբար չգիտեն, որ 60 կիլոգրամ
-              թուղթը  արժե  մեկ  ծառ։  Թղթի  վերամշակման
-              ուղղությամբ  այսօր քիչ մարդիկ են աշխատում։
-              Հանձնելով՝  որպես   աղբ  դիտարկվող  թուղթը,
-              դուք   կկարողանաք  կյանք  տալ  բնությանը ։ »
+					<a href="#" class="logo">
+						<div class="img-wrap">
+							<img style="width:150px" src="{{asset('/evertree/43333376_579577592462250_96139591630716928_n.png')}}">
             </div>
+            
+            <section class="align-center pt80 section-move-bg-top img-scale-animation scrollme">
+              <div class="container">
+                <div class="row">
+                  <div class="col col-xl-10 m-auto col-lg-10 col-md-12 col-sm-12 col-12">
+                    <img class="main-img" src="img/scale1.png" alt="screen" style="opacity: 1; transform: scale(1);">
+                  </div>
+                </div>
+            
+                <img class="first-img1" alt="img" src="img/scale2.png" style="opacity: 1; transform: scale(1);">
+                <img class="second-img1" alt="img" src="img/scale3.png" style="opacity: 1; transform: scale(1);">
+                <img class="third-img1" alt="img" src="img/scale4.png" style="opacity: 1; transform: scale(1);">
+              </div>
+            </section>
+						
+					</a>
 
-        </div>
-      </div>
-    </div>
-  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+  <svg viewBox="0 0 3387 1270" style="position: relative;top: 165px;">
+    <path id="planePath" class="planePath" d="M-226 626c439,4 636,-213 934,-225 755,-31 602,769 1334,658 562,-86 668,-698 266,-908 -401,-210 -893,189 -632,630 260,441 747,121 1051,91 360,-36 889,179 889,179"></path>
+    
+    <g id="plane">
+     <polygon class="fil1" points="-141,-10 199,0 -198,-72 -188,-61 -171,-57 -184,-57 "></polygon>
+     <polygon class="fil2" points="199,0 -141,-10 -163,63 -123,9 "></polygon>
+     <polygon class="fil3" points="-95,39 -113,32 -123,9 -163,63 -105,53 -108,45 -87,48 -90,45 -103,41 -94,41 "></polygon>
+     <path class="fil4" d="M-87 48l-21 -3 3 8 19 -4 -1 -1zm-26 -16l18 7 -2 -1 32 -7 -29 1 11 -4 -24 -1 -16 -18 10 23zm10 9l13 4 -4 -4 -9 0z"></path>
+     <polygon class="fil1" points="-83,28 -94,32 -65,31 -97,38 -86,49 -67,70 199,0 -123,9 -107,27 "></polygon>
+    </g>
+    <!-- Define the motion path animation -->
+      <animateMotion xlink:href="#plane" dur="5s" repeatCount="indefinite" rotate="auto">
+        <mpath xlink:href="#planePath"></mpath>
+      </animateMotion>
+  
+  
+  </svg>
+ 
+
+</div>
 
 @endsection
 
@@ -78,7 +112,7 @@
         <!-- row -->
         <div class="row">	
             <div class="col-md-12">
-                <img style="width:100%;height:100%" src="{{asset('images/garden.png')}}">
+              test
             </div>
            
         </div>

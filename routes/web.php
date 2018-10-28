@@ -121,6 +121,12 @@ Route::group(['prefix' => 'admin'], function(){
 
 });
 
+Route::get('/testfront',function(){
+
+    return view('test');
+
+});
+
 
 Route::group(['prefix' => 'profile','middleware'=>'auth'], function(){
 
