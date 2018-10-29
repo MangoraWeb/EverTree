@@ -38,7 +38,7 @@ background-color: #edf2f6;
             <h2 class="text1">Թղթի հանձնում</h2>  
     </a>
 
-    <a style="text-decoration: none;" class="p-2 text-muted" href="/news">
+    <a style="text-decoration: none;" class="p-2 text-muted" href="/post">
       <h2 class="text1">Նորություններ</h2>  
 </a>
 

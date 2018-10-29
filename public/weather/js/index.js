@@ -1,6 +1,6 @@
 // 📝 Fetch all DOM nodes in jQuery and Snap SVG
 
-var container = $('.container');
+var container = $('.row1');
 var card = $('#card');
 var innerSVG = Snap('#inner');
 var outerSVG = Snap('#outer');
@@ -114,7 +114,7 @@ function init()
 	// ☀️ set initial weather
 	
 	TweenMax.set(sunburst.node, {opacity: 0})
-	changeWeather(weather[1]);
+	changeWeather(weather[2]);
 }
 
 function onResize()

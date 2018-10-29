@@ -24,7 +24,7 @@ class PostController extends Controller
        $today =  Carbon::now();
        $myip =  \Request::ip();
       
-       $json = file_get_contents('http://api.apixu.com/v1/current.json?key=3fce7002396246dbadf162131182810&q=Nor-Hachyn');
+       $json = file_get_contents('http://api.apixu.com/v1/current.json?key=373d20a7e65b45a9981201630182910&q=Nor-Hachyn');
        $obj = json_decode($json);
 
        $currentCity = $obj->location->name;
