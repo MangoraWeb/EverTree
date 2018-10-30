@@ -8,25 +8,23 @@
     <title>EverTree Admin - Make the world greener</title>
 
     <!-- vendor css -->
-    <link href="{{asset('treeadmin/lib/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
-    <link href="{{asset('treeadmin/lib/Ionicons/css/ionicons.css')}}" rel="stylesheet">
-    <link href="{{asset('treeadmin/lib/chartist/css/chartist.css')}}" rel="stylesheet">
-    <link href="{{asset('treeadmin/lib/rickshaw/css/rickshaw.min.css')}}" rel="stylesheet">
+    <link href="{{asset('/treeadmin/lib/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
+    <link href="{{asset('/treeadmin/lib/Ionicons/css/ionicons.css')}}" rel="stylesheet">
+    <link href="{{asset('/treeadmin/lib/chartist/css/chartist.css')}}" rel="stylesheet">
+    <link href="{{asset('/treeadmin/lib/rickshaw/css/rickshaw.min.css')}}" rel="stylesheet">
 
+    @yield('header')
     <!-- Slim CSS -->
-    <link rel="stylesheet" href="treeadmin/css/slim.css">
+    <link rel="stylesheet" href="{{asset('/treeadmin/css/slim.css')}}">
 
   </head>
   <body>
     <div class="slim-header">
       <div class="container">
         <div class="slim-header-left">
-          <h2 class="slim-logo"><a href="index.html">slim<span>.</span></a></h2>
+          <h2 class="slim-logo"><a href="/admin">evertree<span>.</span></a></h2>
 
-          <div class="search-box">
-            <input type="text" class="form-control" placeholder="Search">
-            <button class="btn btn-primary"><i class="fa fa-search"></i></button>
-          </div><!-- search-box -->
+        
         </div><!-- slim-header-left -->
         <div class="slim-header-right">
           <div class="dropdown dropdown-a">
@@ -145,17 +143,16 @@
           </div><!-- dropdown -->
           <div class="dropdown dropdown-c">
             <a href="#" class="logged-user" data-toggle="dropdown">
-              <img src="http://via.placeholder.com/500x500" alt="">
-              <span>{{$user->name}}</span>
+              <img src="{{$user->avatar}}" alt="">
+              <span>{{$user->name}} {{$user->surname}}</span>
               <i class="fa fa-angle-down"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
               <nav class="nav">
-                <a href="page-profile.html" class="nav-link"><i class="icon ion-person"></i> View Profile</a>
-                <a href="page-edit-profile.html" class="nav-link"><i class="icon ion-compose"></i> Edit Profile</a>
-                <a href="page-activity.html" class="nav-link"><i class="icon ion-ios-bolt"></i> Activity Log</a>
-                <a href="page-settings.html" class="nav-link"><i class="icon ion-ios-gear"></i> Account Settings</a>
-                <a href="page-signin.html" class="nav-link"><i class="icon ion-forward"></i> Sign Out</a>
+                <a href="/profile/{{$user->id}}" class="nav-link"><i class="icon ion-person"></i>Գնալ պրոֆիլ</a>
+                <a href="/profile/settings" class="nav-link"><i class="icon ion-compose"></i> Կարգավորումներ</a>
+                <a href="/admin/administration" class="nav-link"><i class="icon ion-ios-bolt"></i> Ադմինիստրացիա</a>
+                <a href="" class="nav-link"><i class="icon ion-forward"></i>Դուրս գալ</a>
               </nav>
             </div><!-- dropdown-menu -->
           </div><!-- dropdown -->
@@ -169,141 +166,66 @@
           <li class="nav-item with-sub active">
             <a class="nav-link" href="#">
               <i class="icon ion-ios-home-outline"></i>
-              <span>Dashboard</span>
+              <span>Վահանակ</span>
             </a>
-            <div class="sub-item">
-              <ul>
-                <li><a href="index.html">Dashboard 01</a></li>
-                <li><a href="index2.html">Dashboard 02</a></li>
-                <li><a href="index3.html">Dashboard 03</a></li>
-                <li><a href="index4.html">Dashboard 04</a></li>
-                <li><a href="index5.html">Dashboard 05</a></li>
-              </ul>
-            </div><!-- sub-item -->
+           
           </li>
           <li class="nav-item with-sub mega-dropdown">
             <a class="nav-link" href="#">
               <i class="icon ion-ios-filing-outline"></i>
-              <span>UI Elements</span>
+              <span>Ընդհանուր</span>
             </a>
             <div class="sub-item">
               <div class="row">
                 <div class="col-lg-5">
-                  <label class="section-label">Basic Elements</label>
+                  <label class="section-label">Օգտատերեր</label>
                   <div class="row">
                     <div class="col">
                       <ul>
-                        <li><a href="elem-accordion.html">Accordion</a></li>
-                        <li><a href="elem-alerts.html">Alerts</a></li>
-                        <li><a href="elem-buttons.html">Buttons</a></li>
-                        <li><a href="elem-cards.html">Cards</a></li>
-                        <li><a href="elem-carousel.html">Carousel</a></li>
-                        <li><a href="elem-dropdowns.html">Dropdown</a></li>
-                        <li><a href="elem-icons.html">Icons</a></li>
-                        <li><a href="elem-images.html">Images</a></li>
-                        <li><a href="elem-lists.html">Lists</a></li>
+                        <li><a href="/admin/chatmessages">Հիմնական չաթի նամակներ</a></li>  
                       </ul>
                     </div><!-- col -->
-                    <div class="col-lg">
-                      <ul>
-                        <li><a href="elem-modal.html">Modal</a></li>
-                        <li><a href="elem-media.html">Media Object</a></li>
-                        <li><a href="elem-navigation.html">Navigation</a></li>
-                        <li><a href="elem-pagination.html">Pagination</a></li>
-                        <li><a href="elem-tooltip.html">Tooltip</a></li>
-                        <li><a href="elem-popover.html">Popover</a></li>
-                        <li><a href="elem-progress.html">Progress</a></li>
-                        <li><a href="elem-spinner.html">Spinner</a></li>
-                        <li><a href="elem-typography.html">Typography</a></li>
-                      </ul>
-                    </div><!-- col -->
+                   
                   </div><!-- row -->
                 </div><!-- col -->
+                
                 <div class="col-lg mg-t-30 mg-lg-t-0">
-                  <label class="section-label">Charts</label>
+                  <label class="section-label">Բաժանորդներ</label>
                   <ul>
-                    <li><a href="chart-morris.html">Morris Charts</a></li>
-                    <li><a href="chart-flot.html">Flot Charts</a></li>
-                    <li><a href="chart-chartjs.html">ChartJS</a></li>
-                    <li><a href="chart-echarts.html">ECharts</a></li>
-                    <li><a href="chart-chartist.html">Chartist</a></li>
-                    <li><a href="chart-rickshaw.html">Rickshaw</a></li>
-                    <li><a href="chart-sparkline.html">Sparkline</a></li>
-                    <li><a href="chart-peity.html">Peity</a></li>
-                  </ul>
-                </div><!-- col -->
-                <div class="col-lg mg-t-30 mg-lg-t-0">
-                  <label class="section-label">Maps</label>
-                  <ul>
-                    <li><a href="map-google.html">Google Maps</a></li>
-                    <li><a href="map-leaflet.html">Leaflet Maps</a></li>
-                    <li><a href="map-vector.html">Vector Maps</a></li>
+                      <li><a href="form-validation.html">Ընկերություններ</a></li>
+                      <li><a href="form-wizards.html">Կամավորներ</a></li>
+                      <li><a href="form-editor.html">Բաժանորդներ</a></li>
                   </ul>
 
-                  <label class="section-label mg-t-20">Tables</label>
+                
+              </div><!-- row --><div class="col-lg mg-t-30 mg-lg-t-0">
+                  <label class="section-label">Ինֆորմացիա</label>
                   <ul>
-                    <li><a href="table-basic.html">Basic Table</a></li>
-                    <li><a href="table-datatable.html">Data Table</a></li>
+                      <li><a href="form-validation.html">Կոնտակտային տվյալներ</a></li>
+                      <li><a href="form-wizards.html">Բեյջեր</a></li>
+                      <li><a href="form-editor.html">Սլայդեր</a></li>
                   </ul>
-                </div><!-- col -->
-                <div class="col-lg mg-t-30 mg-lg-t-0">
-                  <label class="section-label">Helper / Utilities</label>
-                  <ul>
-                    <li><a href="util-background.html">Background</a></li>
-                    <li><a href="util-border.html">Border</a></li>
-                    <li><a href="util-height.html">Height</a></li>
-                    <li><a href="util-margin.html">Margin</a></li>
-                    <li><a href="util-padding.html">Padding</a></li>
-                    <li><a href="util-position.html">Position</a></li>
-                    <li><a href="util-typography.html">Typography</a></li>
-                    <li><a href="util-width.html">Width</a></li>
-                  </ul>
-                </div><!-- col -->
+
+                
               </div><!-- row -->
             </div><!-- dropdown-menu -->
           </li>
           <li class="nav-item with-sub">
             <a class="nav-link" href="#">
               <i class="icon ion-ios-book-outline"></i>
-              <span>Pages</span>
+              <span>Նորություններ</span>
             </a>
             <div class="sub-item">
               <ul>
-                <li><a href="page-profile.html">Profile Page</a></li>
-                <li><a href="page-invoice.html">Invoice</a></li>
-                <li><a href="page-contact.html">Contact Manager</a></li>
-                <li><a href="page-file-manager.html">File Manager</a></li>
-                <li><a href="page-calendar.html">Calendar</a></li>
-                <li><a href="page-timeline.html">Timeline</a></li>
+                <li><a href="/admin/news">Բոլոր նորությունները</a></li>
+                <li><a href="page-invoice.html">Ավելացնել նորություն</a></li>
+                <li><a href="page-contact.html">Նշանակել լրագրող</a></li>
                 <li class="sub-with-sub">
-                  <a href="#">Pricing</a>
+                  <a href="#">Վիդեո</a>
                   <ul>
-                    <li><a href="page-pricing.html">Pricing 01</a></li>
-                    <li><a href="page-pricing2.html">Pricing 02</a></li>
-                    <li><a href="page-pricing3.html">Pricing 03</a></li>
-                  </ul>
-                </li>
-                <li class="sub-with-sub">
-                  <a href="page-signin.html">Sign In</a>
-                  <ul>
-                    <li><a href="page-signin.html">Signin Simple</a></li>
-                    <li><a href="page-signin2.html">Signin Split</a></li>
-                  </ul>
-                </li>
-                <li class="sub-with-sub">
-                  <a href="page-signup.html">Sign Up</a>
-                  <ul>
-                    <li><a href="page-signup.html">Signup Simple</a></li>
-                    <li><a href="page-signup2.html">Signup Split</a></li>
-                  </ul>
-                </li>
-                <li class="sub-with-sub">
-                  <a href="#">Error Pages</a>
-                  <ul>
-                    <li><a href="page-404.html">404 Not Found</a></li>
-                    <li><a href="page-505.html">505 Forbidden</a></li>
-                    <li><a href="page-500.html">500 Internal Server</a></li>
-                    <li><a href="page-503.html">503 Service Unavailable</a></li>
+                    <li><a href="page-pricing.html">Բոլոր վիդեոները</a></li>
+                    <li><a href="page-pricing2.html">Ավելացնել վիդեո</a></li>
+                    <li><a href="page-pricing3.html">Նշանակել լրագրող</a></li>
                   </ul>
                 </li>
               </ul>
@@ -312,388 +234,33 @@
           <li class="nav-item with-sub">
             <a class="nav-link" href="#" data-toggle="dropdown">
               <i class="icon ion-ios-gear-outline"></i>
-              <span>Forms</span>
+              <span>Կառավարում</span>
             </a>
             <div class="sub-item">
               <ul>
-                <li><a href="form-elements.html">Form Elements</a></li>
-                <li><a href="form-layouts.html">Form Layouts</a></li>
-                <li><a href="form-validation.html">Form Validation</a></li>
-                <li><a href="form-wizards.html">Form Wizards</a></li>
-                <li><a href="form-editor.html">WYSIWYG Editor</a></li>
-                <li><a href="form-select2.html">Select2</a></li>
-                <li><a href="form-rangeslider.html">Range Slider</a></li>
-                <li><a href="form-datepicker.html">Datepicker</a></li>
+                <li><a href="form-elements.html">ETC արժեք</a></li>
+                <li><a href="form-layouts.html">Խանութ</a></li>
+                <li><a href="form-validation.html">Իրադարձություններ</a></li>
+                <li><a href="form-wizards.html">Օգնություններ</a></li>
+                <li><a href="form-editor.html">Գործողություններ</a></li>
+
               </ul>
             </div><!-- dropdown-menu -->
           </li>
           <li class="nav-item">
             <a class="nav-link" href="page-messages.html">
               <i class="icon ion-ios-chatboxes-outline"></i>
-              <span>Messages</span>
+              <span>Թղթի հանձնում</span>
               <span class="square-8"></span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="widgets.html">
-              <i class="icon ion-ios-analytics-outline"></i>
-              <span>Widgets</span>
-            </a>
-          </li>
+        
         </ul>
       </div><!-- container -->
     </div><!-- slim-navbar -->
-
-    <div class="slim-mainpanel">
-      <div class="container">
-        <div class="slim-pageheader">
-          <ol class="breadcrumb slim-breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-          </ol>
-          <h6 class="slim-pagetitle">Dashboard 01</h6>
-        </div><!-- slim-pageheader -->
-
-        <div class="dash-headline">
-          <div class="dash-headline-left">
-            <div class="dash-headline-item-one">
-              <div id="chartArea1" class="dash-chartist"></div>
-              <div class="dash-item-overlay">
-                <h1>$3,298</h1>
-                <p class="earning-label">Today's Earnings</p>
-                <p class="earning-desc">Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus...</p>
-                <a href="#" class="statement-link">View Statements <i class="fa fa-angle-right mg-l-5"></i></a>
-              </div>
-            </div><!-- dash-headline-item-one -->
-          </div><!-- dash-headline-left -->
-
-          <div class="dash-headline-right">
-            <div class="dash-headline-right-top">
-              <div class="dash-headline-item-two">
-                <div id="chartMultiBar1" class="chart-rickshaw"></div>
-                <div class="dash-item-overlay">
-                  <h4>1,232,678</h4>
-                  <p class="item-label">Page Visits</p>
-                  <p class="item-desc">Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus...</p>
-                  <a href="#" class="report-link">View Report <i class="fa fa-angle-right mg-l-5"></i></a>
-                </div>
-              </div><!-- dash-headline-item-two -->
-            </div><!-- dash-headline-right-top -->
-            <div class="dash-headline-right-bottom">
-              <div class="dash-headline-right-bottom-left">
-                <div class="dash-headline-item-three">
-                  <span id="sparkline3" class="sparkline wd-100p">1,4,4,7,5,9,10,5,4,4,7,5,9,10</span>
-                  <div>
-                    <h1>29,931</h1>
-                    <p class="item-label">Male Visitors</p>
-                    <p class="item-desc">Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus...</p>
-                  </div>
-                </div><!-- dash-headline-item-three -->
-              </div><!-- dash-headline-right-bottom-left -->
-              <div class="dash-headline-right-bottom-right">
-                <div class="dash-headline-item-three">
-                  <span id="sparkline4" class="sparkline wd-100p">1,4,4,7,5,7,4,3,4,4,6,5,9,7</span>
-                  <div>
-                    <h1>45,231</h1>
-                    <p class="item-label">Female Visitors</p>
-                    <p class="item-desc">Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus...</p>
-                  </div>
-                </div><!-- dash-headline-item-three -->
-              </div><!-- dash-headline-right-bottom-right -->
-            </div><!-- dash-headline-right-bottom -->
-          </div><!-- wd-50p -->
-        </div><!-- d-flex ht-100v -->
-
-        <div class="card card-dash-one mg-t-20">
-          <div class="row no-gutters">
-            <div class="col-lg-3">
-              <i class="icon ion-ios-analytics-outline"></i>
-              <div class="dash-content">
-                <label class="tx-primary">Impressions</label>
-                <h2>822,490</h2>
-              </div><!-- dash-content -->
-            </div><!-- col-3 -->
-            <div class="col-lg-3">
-              <i class="icon ion-ios-pie-outline"></i>
-              <div class="dash-content">
-                <label class="tx-success">Page Visits</label>
-                <h2>465,183</h2>
-              </div><!-- dash-content -->
-            </div><!-- col-3 -->
-            <div class="col-lg-3">
-              <i class="icon ion-ios-stopwatch-outline"></i>
-              <div class="dash-content">
-                <label class="tx-purple">Commision</label>
-                <h2>781,524</h2>
-              </div><!-- dash-content -->
-            </div><!-- col-3 -->
-            <div class="col-lg-3">
-              <i class="icon ion-ios-world-outline"></i>
-              <div class="dash-content">
-                <label class="tx-danger">Earnings</label>
-                <h2>369,657</h2>
-              </div><!-- dash-content -->
-            </div><!-- col-3 -->
-          </div><!-- row -->
-        </div><!-- card -->
-
-        <div class="row row-sm mg-t-20">
-          <div class="col-lg-6">
-            <div class="card card-table">
-              <div class="card-header">
-                <h6 class="slim-card-title">Product Purchases</h6>
-              </div><!-- card-header -->
-              <div class="table-responsive">
-                <table class="table mg-b-0 tx-13">
-                  <thead>
-                    <tr class="tx-10">
-                      <th class="wd-10p pd-y-5">&nbsp;</th>
-                      <th class="pd-y-5">Item Details</th>
-                      <th class="pd-y-5 tx-right">Sold</th>
-                      <th class="pd-y-5">Gain</th>
-                      <th class="pd-y-5 tx-center">Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="pd-l-20">
-                        <img src="http://via.placeholder.com/800x533" class="wd-55" alt="Image">
-                      </td>
-                      <td>
-                        <a href="" class="tx-inverse tx-14 tx-medium d-block">The Dothraki Shoes</a>
-                        <span class="tx-11 d-block"><span class="square-8 bg-danger mg-r-5 rounded-circle"></span> 20 remaining</span>
-                      </td>
-                      <td class="valign-middle tx-right">3,345</td>
-                      <td class="valign-middle"><span class="tx-success"><i class="icon ion-android-arrow-up mg-r-5"></i>33.34%</span> from last week</td>
-                      <td class="valign-middle tx-center">
-                        <a href="" class="tx-gray-600 tx-24"><i class="icon ion-android-more-horizontal"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="pd-l-20">
-                        <img src="http://via.placeholder.com/800x533" class="wd-55" alt="Image">
-                      </td>
-                      <td>
-                        <a href="" class="tx-inverse tx-14 tx-medium d-block">Westeros Sneaker</a>
-                        <span class="tx-11 d-block"><span class="square-8 bg-success mg-r-5 rounded-circle"></span> In stock</span>
-                      </td>
-                      <td class="valign-middle tx-right">720</td>
-                      <td class="valign-middle"><span class="tx-danger"><i class="icon ion-android-arrow-down mg-r-5"></i>21.20%</span> from last week</td>
-                      <td class="valign-middle tx-center">
-                        <a href="" class="tx-gray-600 tx-24"><i class="icon ion-android-more-horizontal"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="pd-l-20">
-                        <img src="http://via.placeholder.com/800x533" class="wd-55" alt="Image">
-                      </td>
-                      <td>
-                        <a href="" class="tx-inverse tx-14 tx-medium d-block">Selonian Hand Bag</a>
-                        <span class="tx-11 d-block"><span class="square-8 bg-success mg-r-5 rounded-circle"></span> In stock</span>
-                      </td>
-                      <td class="valign-middle tx-right">1,445</td>
-                      <td class="valign-middle"><span class="tx-success"><i class="icon ion-android-arrow-up mg-r-5"></i>23.34%</span> from last week</td>
-                      <td class="valign-middle tx-center">
-                        <a href="" class="tx-gray-600 tx-24"><i class="icon ion-android-more-horizontal"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="pd-l-20">
-                        <img src="http://via.placeholder.com/800x533" class="wd-55" alt="Image">
-                      </td>
-                      <td>
-                        <a href="" class="tx-inverse tx-14 tx-medium d-block">Kel Dor Sunglass</a>
-                        <span class="tx-11 d-block"><span class="square-8 bg-warning mg-r-5 rounded-circle"></span> 45 remaining</span>
-                      </td>
-                      <td class="valign-middle tx-right">2,500</td>
-                      <td class="valign-middle"><span class="tx-success"><i class="icon ion-android-arrow-up mg-r-5"></i>28.78%</span> from last week</td>
-                      <td class="valign-middle tx-center">
-                        <a href="" class="tx-gray-600 tx-24"><i class="icon ion-android-more-horizontal"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="pd-l-20">
-                        <img src="http://via.placeholder.com/800x533" class="wd-55" alt="Image">
-                      </td>
-                      <td>
-                        <a href="" class="tx-inverse tx-14 tx-medium d-block">Kubaz Sunglass</a>
-                        <span class="tx-11 d-block"><span class="square-8 bg-success mg-r-5 rounded-circle"></span> In stock</span>
-                      </td>
-                      <td class="valign-middle tx-14 tx-right">223</td>
-                      <td class="valign-middle"><span class="tx-danger"><i class="icon ion-android-arrow-down mg-r-5"></i>18.18%</span> from last week</td>
-                      <td class="valign-middle tx-center">
-                        <a href="" class="tx-gray-600 tx-24"><i class="icon ion-android-more-horizontal"></i></a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div><!-- table-responsive -->
-              <div class="card-footer tx-12 pd-y-15 bg-transparent">
-                <a href=""><i class="fa fa-angle-down mg-r-5"></i>View All Products</a>
-              </div><!-- card-footer -->
-            </div><!-- card -->
-          </div><!-- col-6 -->
-          <div class="col-lg-6 mg-t-20 mg-lg-t-0">
-            <div class="card card-table">
-              <div class="card-header">
-                <h6 class="slim-card-title">User Transaction History</h6>
-              </div><!-- card-header -->
-              <div class="table-responsive">
-                <table class="table mg-b-0 tx-13">
-                  <thead>
-                    <tr class="tx-10">
-                      <th class="wd-10p pd-y-5">&nbsp;</th>
-                      <th class="pd-y-5">User</th>
-                      <th class="pd-y-5">Type</th>
-                      <th class="pd-y-5">Date</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="pd-l-20">
-                        <img src="http://via.placeholder.com/500x500" class="wd-36 rounded-circle" alt="Image">
-                      </td>
-                      <td>
-                        <a href="" class="tx-inverse tx-14 tx-medium d-block">Mark K. Peters</a>
-                        <span class="tx-11 d-block">TRANSID: 1234567890</span>
-                      </td>
-                      <td class="tx-12">
-                        <span class="square-8 bg-success mg-r-5 rounded-circle"></span> Email verified
-                      </td>
-                      <td>Just Now</td>
-                    </tr>
-                    <tr>
-                      <td class="pd-l-20">
-                        <img src="http://via.placeholder.com/500x500" class="wd-36 rounded-circle" alt="Image">
-                      </td>
-                      <td>
-                        <a href="" class="tx-inverse tx-14 tx-medium d-block">Karmen F. Brown</a>
-                        <span class="tx-11 d-block">TRANSID: 1234567890</span>
-                      </td>
-                      <td class="tx-12">
-                        <span class="square-8 bg-warning mg-r-5 rounded-circle"></span> Pending verification
-                      </td>
-                      <td>Apr 21, 2017 8:34am</td>
-                    </tr>
-                    <tr>
-                      <td class="pd-l-20">
-                        <img src="http://via.placeholder.com/500x500" class="wd-36 rounded-circle" alt="Image">
-                      </td>
-                      <td>
-                        <a href="" class="tx-inverse tx-14 tx-medium d-block">Gorgonio Magalpok</a>
-                        <span class="tx-11 d-block">TRANSID: 1234567890</span>
-                      </td>
-                      <td class="tx-12">
-                        <span class="square-8 bg-success mg-r-5 rounded-circle"></span> Purchased success
-                      </td>
-                      <td>Apr 10, 2017 4:40pm</td>
-                    </tr>
-                    <tr>
-                      <td class="pd-l-20">
-                        <img src="http://via.placeholder.com/500x500" class="wd-36 rounded-circle" alt="Image">
-                      </td>
-                      <td>
-                        <a href="" class="tx-inverse tx-14 tx-medium d-block">Ariel T. Hall</a>
-                        <span class="tx-11 d-block">TRANSID: 1234567890</span>
-                      </td>
-                      <td class="tx-12">
-                        <span class="square-8 bg-warning mg-r-5 rounded-circle"></span> Payment on hold
-                      </td>
-                      <td>Apr 02, 2017 6:45pm</td>
-                    </tr>
-                    <tr>
-                      <td class="pd-l-20">
-                        <img src="http://via.placeholder.com/500x500" class="wd-36 rounded-circle" alt="Image">
-                      </td>
-                      <td>
-                        <a href="" class="tx-inverse tx-14 tx-medium d-block">John L. Goulette</a>
-                        <span class="tx-11 d-block">TRANSID: 1234567890</span>
-                      </td>
-                      <td class="tx-12">
-                        <span class="square-8 bg-pink mg-r-5 rounded-circle"></span> Account deactivated
-                      </td>
-                      <td>Mar 30, 2017 10:30am</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div><!-- table-responsive -->
-              <div class="card-footer tx-12 pd-y-15 bg-transparent">
-                <a href=""><i class="fa fa-angle-down mg-r-5"></i>View All Transaction History</a>
-              </div><!-- card-footer -->
-            </div><!-- card -->
-          </div><!-- col-6 -->
-        </div><!-- row -->
-
-        <div class="row row-sm mg-t-20">
-          <div class="col-lg-4">
-            <div class="card card-info">
-              <div class="card-body pd-40">
-                <div class="d-flex justify-content-center mg-b-30">
-                  <img src="treeadmin/img/icon1.svg" class="wd-100" alt="">
-                </div>
-                <h5 class="tx-inverse mg-b-20">Document Management</h5>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia. Even the all-powerful Pointing has no control about the blind texts.</p>
-                <a href="" class="btn btn-primary btn-block">Getting Started</a>
-              </div><!-- card -->
-            </div><!-- card -->
-          </div><!-- col-4 -->
-          <div class="col-lg-4 mg-t-20 mg-lg-t-0">
-            <div class="card card-info">
-              <div class="card-body pd-40">
-                <div class="d-flex justify-content-center mg-b-30">
-                  <img src="treeadmin/img/icon2.svg" class="wd-100" alt="">
-                </div>
-                <h5 class="tx-inverse mg-b-20">Time Management</h5>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia. Even the all-powerful Pointing has no control about the blind texts.</p>
-                <a href="" class="btn btn-primary btn-block">Take a Tour</a>
-              </div><!-- card-body -->
-            </div><!-- card -->
-          </div><!-- col-4 -->
-          <div class="col-lg-4 mg-t-20 mg-lg-t-0">
-            <div class="card card-sales">
-              <h6 class="slim-card-title tx-primary">Sales Report</h6>
-              <div class="row">
-                <div class="col">
-                  <label class="tx-12">Today</label>
-                  <p>1,898</p>
-                </div><!-- col -->
-                <div class="col">
-                  <label class="tx-12">This Week</label>
-                  <p>32,112</p>
-                </div><!-- col -->
-                <div class="col">
-                  <label class="tx-12">This Month</label>
-                  <p>72,067</p>
-                </div><!-- col -->
-              </div><!-- row -->
-
-              <div class="progress mg-b-5">
-                <div class="progress-bar bg-primary wd-50p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-              </div>
-              <p class="tx-12 mg-b-0">Maecenas tempus, tellus eget conditum rhon.</p>
-            </div><!-- card -->
-
-            <div class="card card-impression mg-t-20">
-              <div class="card-body pd-b-0">
-                <h6 class="slim-card-title tx-primary">Page Impressions</h6>
-                <h2 class="tx-lato tx-inverse">323,360</h2>
-                <p class="tx-12"><span class="tx-primary">2.5%</span> change from yesterday</p>
-              </div><!-- card-body -->
-              <div id="rs3" class="ht-50 ht-sm-70 mg-r--1"></div>
-            </div><!-- card -->
-          </div><!-- col-4 -->
-        </div><!-- row -->
-
-      </div><!-- container -->
-    </div><!-- slim-mainpanel -->
-
-    <div class="slim-footer">
-      <div class="container">
-        <p>Copyright 2018 &copy; All Rights Reserved. Slim Dashboard Template</p>
-        <p>Designed by: <a href="">ThemePixels</a></p>
-      </div><!-- container -->
-    </div><!-- slim-footer -->
-
+    <div class="container">
+@yield('content')
+    </div>
     <script src="treeadmin/lib/jquery/js/jquery.js"></script>
     <script src="treeadmin/lib/popper.js/js/popper.js"></script>
     <script src="treeadmin/lib/bootstrap/js/bootstrap.js"></script>
@@ -706,5 +273,6 @@
     <script src="treeadmin/js/ResizeSensor.js"></script>
     <script src="treeadmin/js/dashboard.js"></script>
     <script src="treeadmin/js/slim.js"></script>
+    @yield('footer')
   </body>
 </html>

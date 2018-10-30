@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Auth;
+use App\Post;
 
 use Illuminate\Http\Request;
 
@@ -16,8 +17,31 @@ class AdminController extends Controller
     {
         $user = Auth::user();
 
-        return view('layouts.admin')
+        return view('admin.main')
             ->with('user',$user);
+    }
+
+    public function news()
+    {
+        $news = Post::orderBy('created_at', 'desc')->get();
+        $user = Auth::user();
+
+
+
+        return view('admin.news')
+            ->with('articles',$news)
+            ->with('user',$user);;
+    }
+
+    public function newsedit($id) {
+        $news = Post::find($id)->get();
+        $user = Auth::user();
+
+        return view('admin.newsedit')
+                        ->with('article',$news)
+                        ->with('user',$user);;
+                        ;
+
     }
 
     /**

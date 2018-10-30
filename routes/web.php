@@ -124,7 +124,7 @@ Route::get('/getuser/{id}',function($id){
 
 
 
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin','middleware'=>'admin'], function(){
 
   Route::get('/',[
     'as'=> 'admin.main',
@@ -136,9 +136,9 @@ Route::group(['prefix' => 'admin'], function(){
                     'as'=> 'admin.main',
                     'uses'=> 'AdminController@news',
                 ]);
-                Route::get('/news/{slug}',[
-                    'as'=> 'admin.news',
-                    'uses'=> 'AdminController@newsshow',
+                Route::get('/news/edit/{id}',[
+                    'as'=> 'admin.news.edit',
+                    'uses'=> 'AdminController@newsedit',
                 ]);
 
            //news routes
