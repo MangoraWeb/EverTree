@@ -148,8 +148,12 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 <<<<<<< HEAD
+<<<<<<< HEAD
         Stevebauman\Location\LocationServiceProvider::class,
         TCG\Voyager\VoyagerServiceProvider::class,
+=======
+        LaravelQRCode\Providers\QRCodeServiceProvider::class,     
+>>>>>>> parent of 9f32ab3... Merge branch 'master' of https://github.com/MangoraWeb/EverTree
 =======
         LaravelQRCode\Providers\QRCodeServiceProvider::class,     
 >>>>>>> parent of 9f32ab3... Merge branch 'master' of https://github.com/MangoraWeb/EverTree
@@ -216,7 +220,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 <<<<<<< HEAD
+<<<<<<< HEAD
         'Location' => Stevebauman\Location\Facades\Location::class,
+=======
+        'QRCode' => LaravelQRCode\Facades\QRCode::class,     
+>>>>>>> parent of 9f32ab3... Merge branch 'master' of https://github.com/MangoraWeb/EverTree
 =======
         'QRCode' => LaravelQRCode\Facades\QRCode::class,     
 >>>>>>> parent of 9f32ab3... Merge branch 'master' of https://github.com/MangoraWeb/EverTree
