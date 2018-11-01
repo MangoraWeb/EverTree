@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNotificationsTable extends Migration
+class CreateCitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateNotificationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('notifications', function (Blueprint $table) {
+        Schema::create('cities', function (Blueprint $table) {
             $table->increments('id');
-            
-            $table->integer('user_id');
-            $table->text('message');
-            $table->boolean('readed')->default(0);
-            
-
+            $table->integer('provinceid');
+            $table->integer('unit')->default(0);
+            $table->string('latitude')->nullable();
+            $table->string('longitute')->nullable();
+            $table->integer('trees');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateNotificationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notifications');
+        Schema::dropIfExists('cities');
     }
 }
