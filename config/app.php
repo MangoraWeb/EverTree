@@ -149,6 +149,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Stevebauman\Location\LocationServiceProvider::class,
         TCG\Voyager\VoyagerServiceProvider::class,
 =======
@@ -157,6 +158,8 @@ return [
 =======
         LaravelQRCode\Providers\QRCodeServiceProvider::class,     
 >>>>>>> parent of 9f32ab3... Merge branch 'master' of https://github.com/MangoraWeb/EverTree
+=======
+>>>>>>> parent of 5e4f0a0... voyager install
 
         /*
          * Package Service Providers...
@@ -221,6 +224,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         'Location' => Stevebauman\Location\Facades\Location::class,
 =======
         'QRCode' => LaravelQRCode\Facades\QRCode::class,     
@@ -228,6 +232,8 @@ return [
 =======
         'QRCode' => LaravelQRCode\Facades\QRCode::class,     
 >>>>>>> parent of 9f32ab3... Merge branch 'master' of https://github.com/MangoraWeb/EverTree
+=======
+>>>>>>> parent of 5e4f0a0... voyager install
 
     ],
 
