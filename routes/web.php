@@ -140,6 +140,22 @@ Route::group(['prefix' => 'admin','middleware'=>'admin'], function(){
                     'as'=> 'admin.news.edit',
                     'uses'=> 'AdminController@newsedit',
                 ]);
+                Route::post('/news/update/{id}',[
+                    'as'=> 'admin.news.update',
+                    'uses'=> 'AdminController@newsupdate',
+                ]);
+                Route::get('/news/destroy/{id}',[
+                    'as'=> 'admin.news.destroy',
+                    'uses'=> 'AdminController@newsdestroy',
+                ]);
+                Route::get('/news/add',[
+                    'as'=> 'admin.news.add',
+                    'uses'=> 'AdminController@newsadd',
+                ]);
+                Route::post('/news/store',[
+                    'as'=> 'admin.news.store',
+                    'uses'=> 'AdminController@newsnewstore',
+                ]);
 
            //news routes
 

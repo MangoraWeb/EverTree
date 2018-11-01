@@ -3,27 +3,16 @@
 <link rel="stylesheet" href="{{asset('weather/css/style.css')}}">
 
 <link rel="stylesheet" href="{{asset('webprofile/css/main.min.css')}}">
-<link rel="stylesheet" href="{{asset('css/fonts.min.css')}}" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" href="{{asset('webprofile/css/blocks.css')}}" >
 <link rel="stylesheet" href="{{asset('css/bootstrap-grid.css')}}" >
 <link rel="stylesheet" href="{{asset('css/bootstrap-reboot.css')}}" >
-<!-- Main Font -->
-<script src="{{asset('webprofile/js/webfontloader.min.js')}}"></script>
-<script>
-  WebFont.load({
-    google: {
-      families: ['Roboto:300,400,500,700:latin']
-    }
-  });
-</script>
+
 
 <!-- Styles for plugins -->
 <link rel="stylesheet" type="text/css" href="{{asset('webprofile/css/jquery.mCustomScrollbar.min.css')}}">
-<link rel='stylesheet' href='{{asset('webprofile/css/fullcalendar.css')}}'/>
 <link rel='stylesheet' href='{{asset('webprofile/css/simplecalendar.css')}}'/>
 <link rel="stylesheet" type="text/css" href="{{asset('webprofile/css/bootstrap-select.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('webprofile/css/daterangepicker.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('webprofile/css/fonts.css')}}">
 @endsection
 
 @section('slider')
@@ -124,7 +113,7 @@
 
       <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
          
-       
+      @if(!$news->isEmpty()) 
         @foreach($news as $article)
         <div class="ui-block">
     
@@ -134,7 +123,7 @@
             <article class="col-12 hentry blog-post blog-post-v3">
             
               <div class="post-thumb">
-              <img src="storage/{{$article->image}}" >
+              <img src="/storage/articles/{{$article->image}}" >
               <a href="#" class="post-category bg-blue-light">
                   {{ $article->category }}       
                        </a>
@@ -167,6 +156,14 @@
           </div>
     
  @endforeach
+ @else 
+ <div class="no-past-events" style="
+ padding: 273px 30px;
+">
+<svg class="olymp-month-calendar-icon"><use xlink:href="http://127.0.0.1:8000/webprofile/icons/icons.svg#olymp-month-calendar-icon"></use></svg>
+<span> Նորություններ <br>չեն գտվնել</span>
+</div>
+ @endif
 
     
     
@@ -186,9 +183,9 @@
 <script src="https://html.crumina.net/html-olympus/js/jquery-3.2.1.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js'></script>
-<script  src="{{asset('weather/js/index.js')}}"></script>
+<script  src="{{asset('/weather/js/index.js')}}"></script>
 <!-- JS Scripts -->
-<script src="{{asset('js/main.js')}}"></script>
+<script src="{{asset('/js/main.js')}}"></script>
 
 
 

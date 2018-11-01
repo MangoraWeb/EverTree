@@ -218,7 +218,7 @@
             <div class="sub-item">
               <ul>
                 <li><a href="/admin/news">Բոլոր նորությունները</a></li>
-                <li><a href="page-invoice.html">Ավելացնել նորություն</a></li>
+                <li><a href="/admin/news/add">Ավելացնել նորություն</a></li>
                 <li><a href="page-contact.html">Նշանակել լրագրող</a></li>
                 <li class="sub-with-sub">
                   <a href="#">Վիդեո</a>

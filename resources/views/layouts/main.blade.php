@@ -5,18 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link rel="stylesheet" href="{{ asset('css/global.css') }}"/>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link id="theme" rel="stylesheet" href="{{asset('assets/css/themes/theme-blue.min.css')}}" />
+
     <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed" rel="stylesheet">
     <title>EverTree</title>
 
     <link rel="stylesheet" href="https://html.crumina.net/html-olympus/css/main.min.css">
+        <!-- CSS Plugins -->
+    <link rel="stylesheet" href="{{asset('assets/plugins/animate.css/animate.min.css')}}" />
+   
+
+
+    <!-- CSS Base -->
+
 
    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 @yield('header')
 </head>
-<body>
+<body class="navigation-panel page-scrolling">
 
     <div class="album py-5">
     <div class="box container-fluid ">
@@ -76,6 +86,21 @@
                                         <div class="header-wrap">
                                       
                                       
+                                          <button class="window-toggle contact center-block" data-target="#message-window" style="
+                                          position: absolute;
+                                          left: -34px;
+                                          right: auto;
+                                          height: 70px;
+                                          width: 70px;
+                                      "><i class="fa fa-comment" style="
+    font-size: 30px;
+    line-height: 68px;
+"></i></i><i class="fa fa-times" style="
+    font-size: 30px;
+    line-height: 68px;
+    color: #00cca6;
+"></i></button>
+
                                                 <div class="d-flex flex-column flex-md-row p-3 px-md-4 mb-3">
                                                
                                                     @yield('menu')
@@ -158,13 +183,60 @@
 
                      
 
-                      <div class="rounded-circle contact img-responsive center-block">
-                          <img class="chat" src="{{asset('evertree/chat.png')}}"/>
-                      </div>
-                      
+<!-- Loader -->
+<div id="page-loader">
+  <svg class="loader" viewBox="0 0 28 28">
+      <circle cx="14" cy="14" r="12" stroke-width="2"></circle>
+  </svg>
+</div>
 
     
+<!-- Window - Message -->
+<div id="message-window" class="window window-primary">
+  <svg class="window-background" viewBox="0 0 1920 1080" preserveAspectRatio="none"></svg>
+  <div class="window-inner">
+      <section class="section dark">
+          <div class="section-content">
+              <div class="container">
+                  <!-- Section Header -->
+                  <div class="section-header">
+                    <img src="http://127.0.0.1:8000/images/big.png" alt="" class="section-header-image" style="
+                    width: auto;
+                ">                      <div class="section-header-content">
+                          <span class="typing">Ողջու՜յն, ինչո՞վ կարող ենք օգնել Ձեզ։</span>
+                      </div>
+                  </div>
+                  <!-- Section Content -->
+                  <form id="contact-form-suelo" class="form-text"
+                  data-message-error="Opps... Մի բան այն չէ,խնդրում ենք կրկին փորձել"
+                  data-message-success="Շնորհակալություն, դուք կստանաք պատասխան 24 ժամվա ընթացքում։" data-validate>
+                      <div class="form-group">Ողջույն,ես <input name="name" type="text" class="form-control-text" required>-նն եմ, կից ներկայացնում եմ նամակս՝  </div>
+                      <div class="form-group"><textarea name="message" cols="30" rows="4" class="form-control-text" required></textarea></div>
+                      <div class="form-group">Էլ հասցեն ինձ հետ նամակ գրելու համար՝ <input name="email" type="email" class="form-control-text" required></div>
+                      <button class="btn btn-white btn-lg">Ուղարկել նամակը</button>
+                  </form>
+              </div>
+          </div>
+      </section>
+  </div>
+</div>
+
 
           @yield('footer')
+          
+
+<!-- JS Plugins -->
+<script src="assets/plugins/jquery/dist/jquery.min.js"></script>
+
+<script src="assets/plugins/jquery.appear/jquery.appear.js"></script>
+<script src="assets/plugins/jquery.localscroll/jquery.localScroll.min.js"></script>
+<script src="assets/plugins/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="assets/plugins/slick-carousel/slick/slick.min.js"></script>
+<script src="assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="assets/plugins/typed.js/dist/typed.min.js"></script>
+<script src="assets/plugins/snapsvg/dist/snap.svg-min.js"></script>
+<script src="assets/js/core.js"></script>
+
         </body>
 </html>

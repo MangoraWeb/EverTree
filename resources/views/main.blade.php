@@ -135,7 +135,7 @@
                     @endif
                
             </div>
-          <button type="submit" class="but float-right btn btn-success" >ՀԱՋՈՐԴԸ ></button>
+          <button type="submit" class="batright" >ՀԱՋՈՐԴԸ ></button>
 
           </form>
 

@@ -99,7 +99,7 @@
                                           </div>
 
 
-                                          <div class="forms container col-lg-11 ">
+                                          <div class="forms container col-md-12 ">
                          
                                               <div class="row formbut">
                                                  
@@ -167,13 +167,13 @@
 
                           
                                                 </div>
+                                                <button type="submit" class="batright s2" >ՀԱՋՈՐԴԸ ></button>
 
                                               </div>
 
 
 
                                                 
-                                              <button type="submit" class="but float-right btn btn-success" >ՀԱՋՈՐԴԸ ></button>
 
                                               </form>
 

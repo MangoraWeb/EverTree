@@ -53,7 +53,7 @@
                             <i class="icon ion-edit"></i></a>
                         </td>
                         <td style="padding: 5px;"><a href="#" style=" color:#f50057; font-size: 20px;    padding-left: 20px;">
-                                <i class="fa fa-close"></i></a>
+                               <a href="{{route('admin.news.destroy', $news->id)}}"> <i class="fa fa-close"></i></a>
                             </td>
                             <td style="padding: 5px;"><a href="#" style="font-size: 20px;    padding-left: 20px;">
                                     <i class="fa fa-eye"></i></a>

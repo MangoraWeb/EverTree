@@ -37,7 +37,7 @@ class PostController extends Controller
 
 
 
-      $post =  Post::orderBy('created_at', 'ASC')->take(3)->get();
+      $post =  Post::orderBy('created_at', 'dsc')->take(3)->get();
  
 
 
