@@ -122,7 +122,7 @@
           <div class="container">
             <!-- Section Header -->
             <div class="section-header">
-                <img style="  width: 59px !important;" src="{{asset('/images/big.png')}}" alt="" class="section-header-image">
+                <img style="width: 59px !important;" src="{{asset('/images/big.png')}}" alt="" class="section-header-image">
                 <div class="section-header-content" style="min-height: 21px; min-width: 291px;">
                     <span class="typing start">EverTree նորություններ</span><span class="typed-cursor">|</span>
                 </div>
@@ -134,12 +134,12 @@
                     <!-- Post - Item -->
                     <article style="height:400px;width: inherit;" class="post item">
                         <div class="post-image">
-                            <a href="blog-post-panel.html"><img src="storage/articles/{{$article->image}}" alt=""></a>
+                            <a href="{{route('posts.show',$article->slug)}}"><img src="{{$article->image}}" alt=""></a>
                         </div>
                         <div class="post-content">
-                        <h4 class="post-title"><a href="blog-post-panel.html">{{$article->title}}</a></h4>
+                        <h4 class="post-title"><a href="{{route('posts.show',$article->slug)}}">{{str_limit($article->title, 65)}}</a></h4>
                             <ul class="post-meta">
-                                <li><a href="#">{{$article->created_at->format('d/m/Y')}}</a></li>
+                                <li><a href="#">{{$article->created_at->format('d/m')}}</a></li>
                                 <li><a href="#">{{$article->category}}</a></li>
                             </ul>
                         </div>

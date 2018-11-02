@@ -25,7 +25,7 @@
                 <label class="section-title">Նորության խմբագրում</label>
                 <p class="mg-b-20 mg-sm-b-40">Կարող եք խմբագրել նորությունները</p>
 
-        <form method="POST" action="{{route('admin.news.update', [$article->id])}}">
+        <form method="POST" enctype="multipart/form-data" action="{{route('admin.news.update', [$article->id])}}">
           @csrf
                 <div class="form-layout">
                   <div class="row mg-b-25">
@@ -62,6 +62,13 @@
                         <input class="form-control" type="text" name="slug" value="{{$article->slug}}" placeholder="Կարճ լինք">
                       </div>
                     </div><!-- col-8 -->
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label for="exampleFormControlFile1">Example file input</label>
+                        <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+                      </div>
+                  </div>
+
                     <div class="col-lg-4">
                       <div class="form-group mg-b-10-force">
                         <label class="form-control-label">Ստատուս <span class="tx-danger">*</span></label>

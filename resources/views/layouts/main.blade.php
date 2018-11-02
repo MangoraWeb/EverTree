@@ -226,17 +226,17 @@
           
 
 <!-- JS Plugins -->
-<script src="assets/plugins/jquery/dist/jquery.min.js"></script>
+<script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
 
-<script src="assets/plugins/jquery.appear/jquery.appear.js"></script>
-<script src="assets/plugins/jquery.localscroll/jquery.localScroll.min.js"></script>
-<script src="assets/plugins/imagesloaded/imagesloaded.pkgd.min.js"></script>
-<script src="assets/plugins/slick-carousel/slick/slick.min.js"></script>
-<script src="assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
-<script src="assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="assets/plugins/typed.js/dist/typed.min.js"></script>
-<script src="assets/plugins/snapsvg/dist/snap.svg-min.js"></script>
-<script src="assets/js/core.js"></script>
+<script src="{{asset('assets/plugins/jquery.appear/jquery.appear.js')}}"></script>
+<script src="{{asset('assets/plugins/jquery.localscroll/jquery.localScroll.min.js')}}"></script>
+<script src="{{asset('assets/plugins/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
+<script src="{{asset('assets/plugins/slick-carousel/slick/slick.min.js')}}"></script>
+<script src="{{asset('assets/plugins/waypoints/lib/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('assets/plugins/jquery-validation/dist/jquery.validate.min.js')}}"></script>
+<script src="{{asset('assets/plugins/typed.js/dist/typed.min.js')}}"></script>
+<script src="{{asset('assets/plugins/snapsvg/dist/snap.svg-min.js')}}"></script>
+<script src="{{asset('assets/js/core.js')}}"></script>
 
         </body>
 </html>

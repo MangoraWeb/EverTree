@@ -46,14 +46,26 @@ class AdminController extends Controller
 
     public function newsupdate(Request $request, $id)
     {
+
+     
+
         //Finding post by id
         $post= Post::findOrFail($id);
+       
+        if($request->hasfile('image')) 
+        { 
+          $file = $request->file('image');
+          $extension = $file->getClientOriginalExtension(); // getting image extension
+          $filename =time().'.'.$extension;
+          $file->move('storage/articles/', $filename);
+          $post->image = 'storage/articles/' . $filename;
+        
+        }
         //Set post datas
         $post->title = $request['title'];
         $post->excerpt = $request['excerpt'];
         $post->body = $request['body'];
         $post->category = $request['category'];
-        $post->slug = $request['slug'];
         $post->slug = $request['slug'];
         //Post save
         $post->save();

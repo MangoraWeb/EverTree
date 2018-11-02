@@ -4,10 +4,23 @@ body{
     background-image: url("evertree/sadq.png");
     background-repeat: no-repeat;
     background-position: right;
-    overflow:hidden;
+    overflow: hidden;
 
 }
 
+.single-post {
+    height: 700px;
+    overflow: auto;
+}
+.bg-green-light {
+    background-color: #28b381;
+}
+.single-post .post-title {
+    font-size: 21px !important;
+}
+.etnews {
+    color: #414B48
+}
 #big{
 
     position: absolute;

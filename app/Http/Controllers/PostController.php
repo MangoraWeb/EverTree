@@ -38,12 +38,6 @@ class PostController extends Controller
 
 
       $post =  Post::orderBy('created_at', 'dsc')->take(3)->get();
- 
-
-
-
-
-
         return view('news')
                             ->with('today',$today)
                             //weather data
@@ -57,6 +51,7 @@ class PostController extends Controller
 
     public function show($slug) {
         $article = Post::where('slug', $slug)->first();
+
 
 
 

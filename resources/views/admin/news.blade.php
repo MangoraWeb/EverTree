@@ -36,7 +36,7 @@
                         <tr>
                           <td class="pd-l-20">
                           <img style="width: 100px;height: 70px;border-radius: 0 !important;" 
-                            src="{{$news->image}}" class="wd-36 rounded-circle" alt="Image">
+                            src="{{asset($news->image)}}" class="wd-36 rounded-circle">
                           </td>
                           <td>
                             <a href="" class="tx-inverse tx-14 tx-medium d-block">{{$news->title}}</a>

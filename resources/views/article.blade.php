@@ -77,11 +77,40 @@
 
 
 <div class="container">
-        <!-- row -->
-        <div class="row">
-               <img style="width:30%;height:20%" src="{{$art->pic}}"> <br>
-            {{$art->title}} <br>
-            {{$art->description}}
+    <div class="col col-xl-12 m-auto col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="ui-block">
+  
+          
+          <!-- Single Post -->
+          
+          <article class="hentry blog-post single-post single-post-v2" style="
+          width: 100%;
+      ">          
+            <a href="#" class="post-category bg-green-light">{{$art->category}}</a>
+            <h2 class="h1 post-title">{{$art->title}}</h2>
+
+          
+            <div class="post-thumb">
+              <img src="{{asset($art->image)}}" alt="author">
+            </div>
+          
+          
+            <div class="post-content-wrap">
+          
+              <div class="post-content">
+                
+                <p class="etnews">{{$art->body}}</p>
+          
+            
+   
+          
+          </article>
+          
+          <!-- ... end Single Post -->
+  
+         
+       
         </div>
+      </div>
 </div>
 @endsection
