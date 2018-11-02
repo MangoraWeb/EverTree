@@ -35,12 +35,6 @@ Route::group(['prefix' => 'profile'], function(){
 
 });
 
- Route::get('notafications', [
-    'as' => 'notafication',
-    'uses' => 'Notecontroller@index'
- ]);
-
-
 
  
 Route::get('/gardens', [
@@ -48,17 +42,16 @@ Route::get('/gardens', [
     'uses' => 'GardenController@allgardens'
 ]);
     
+    Route::get('/news', [
+        'as' => 'newsmain',
+        'uses' => 'NewsController@index'
+    ]);
 
-Route::get('/post',[
-    'uses' => 'PostController@index',
-    'as' =>  'posts'
- ]);
- Route::get('/post/{slug}',[
-    'uses' => 'PostController@show',
-    'as' =>  'posts.show'
- ]);
+    Route::get('/news/{id}', [
+        'as' => 'article',
+        'uses' => 'NewsController@show'
+    ]);
 
-   
 Route::get('/home', function() {
     return redirect('/handstep');
 });
@@ -116,16 +109,12 @@ Route::group(['prefix' => 'handstep'], function(){
 
 });
 
-Route::get('/getuser/{id}',function($id){
-   $user = App\User::find($id);
-    return $user;
-    
-});
 
 
 
-Route::group(['prefix' => 'admin','middleware'=>'admin'], function(){
+Route::group(['prefix' => 'admin'], function(){
 
+<<<<<<< HEAD
   Route::get('/',[
     'as'=> 'admin.main',
     'uses'=> 'AdminController@index',
@@ -159,8 +148,14 @@ Route::group(['prefix' => 'admin','middleware'=>'admin'], function(){
 
            //news routes
 
+=======
+    Route::get('/', [
+        'as' => 'admin',
+        'uses' => 'AdminController@index'
+    ]);
+>>>>>>> parent of 5e4f0a0... voyager install
 
-}); 
+});
 
 Route::get('/testfront',function(){
 
@@ -214,3 +209,7 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 5e4f0a0... voyager install
