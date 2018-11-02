@@ -32,11 +32,7 @@
     <div class="box container-fluid ">
 
                 <div class="row">
-<<<<<<< HEAD
                 <div class="none col-xl-5 col-lg-4 col-md-3 hidden-xs row1 @yield('bgcolorweather')" id="r1bg" style="@yield('secstyle');">
-=======
-                <div class="none col-xl-5 col-lg-4 col-md-3 hidden-xs row1" style="@yield('secstyle')">
->>>>>>> parent of 5e4f0a0... voyager install
                           
                             <div class="ever">
                             <div class="header-wrap" style="@yield('sdnone')">

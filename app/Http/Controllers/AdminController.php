@@ -85,12 +85,15 @@ class AdminController extends Controller
 
         $post = new Post;
 
-        if($request->hasFile('image')){
-            $image = $request->file('image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(370, 500)->save(public_path('storage/articles/' . $filename));
-            $post->image = $filename;
-          };
+        if($request->hasfile('image')) 
+{ 
+  $file = $request->file('image');
+  $extension = $file->getClientOriginalExtension(); // getting image extension
+  $filename =time().'.'.$extension;
+  $file->move('storage/articles/', $filename);
+  $post->image = 'storage/articles/' . $filename;
+
+}
 
 
         $post->title = $request['title'];
