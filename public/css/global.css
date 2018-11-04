@@ -4,11 +4,23 @@ body{
     background-image: url("evertree/sadq.png");
     background-repeat: no-repeat;
     background-position: right;
-    overflow:hidden;
+    overflow: hidden;
 
 }
 
-
+.single-post {
+    height: 700px;
+    overflow: auto;
+}
+.bg-green-light {
+    background-color: #28b381;
+}
+.single-post .post-title {
+    font-size: 21px !important;
+}
+.etnews {
+    color: #414B48
+}
 #big{
 
     position: absolute;
@@ -21,6 +33,7 @@ body{
     background-size: 130px;
     background-position-x: 100px;
     background-position-y: 150px;
+    height: 850px !important;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -97,14 +110,12 @@ a :hover{
     width: 60px;
     height: 60px;
     background-color: #2ba886;
-    float: left;
-    top: 180px;
     z-index: 1;
-    right: 480px;
     border-radius: 50px;
     border-radius: 50%!important;
     position: relative;
-    right: 46px;
+    left: 640px;
+    bottom: 5px;
 }
 .cc :hover{
     background-color: #149430;
@@ -140,6 +151,11 @@ a :hover{
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.description {
+    color: #999fbf;
+}
+
 ․about{
     height: 20px;
     color: #2ba886;
@@ -149,7 +165,6 @@ a :hover{
 }
 article{
     width: 650px;
-    height: 470px;
     position: relative;
     background-color: #f9f9f9;
 }
@@ -199,6 +214,7 @@ h1{
     left: 177px;
     bottom: 85px;
 }
+
 .erkar{
     position: relative;
     top: -170px;
@@ -397,6 +413,44 @@ input{
     border: none;
     right: 0px;
 }
+
+.batright{
+    background-color: #00c88e; 
+    color: #fff;
+    height: 35px;
+    background-color: #5cb85c;
+    height: 36px !important;
+    margin-right: 15px;
+    background-color: #00c88e !important;
+    position: relative;
+    top: 110px;
+    right: 124px;
+    border-color: #4cae4c;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.s2 {
+    top: 165px !important;
+    right: 140px !important;
+}
+
 .sss{
         width: 100%;
         height: 100%;
@@ -429,6 +483,16 @@ option{
     position: relative;
     top: 110px;
     right: 100px;
+}
+.but1 {
+    
+        height: 36px !important;
+        margin-right: 15px;
+        background-color: #00c88e !important;
+        position: relative;
+        top: 110px;
+        right: 100px;
+    
 }
 .flo {
     display: inline-block;
@@ -492,114 +556,73 @@ form{
     justify-content: space-between;
     margin-left: 15px;
 }
-@media (min-width: 992px) {
-    .box{
+/* @media only screen and (max-width: 480px) {
+    .none{
+        display: none;
+    } 
+    .viwe{
         width: 100%;
+        display: inline-block;
     }
-    .row{
-        width: 100%;
-        height: 565px;
-    }
-    .gs{
-        width: 80%;
-        height: 300px;
-        position: relative;
-        margin-left: 10px;
-    }
-    .bal{
-        width: 200px;
-        margin-left: -120px;
-        z-index: 2;
-    }
-    .out{
-        position: relative;
-        top: -50px;
-    }
-    .my{
-        position: relative;
-        top: 450px;
-    }
-    .form-group{
-        width: 100%;
-        height: 50px;
-    }
-    .row1{
-        width: 40%;
-        height: 565px;
-        position: relative;
-        float: left;
-    }
-    .row2{
-        width: 60%;
-        height: 565px;
-        position: relative;
-        float: right;
-    }
-    .kal{
-        width: 100%;
-        height: 200px;
-    }
-    .dis{
-        width: 100%;
-        height: 365px !important;
-        position: relative;
-        top: -480px;
-    }
-    .more{
-        width: 100%;
-        height: 100px !important;
-    }
-    .ever{
-        width: 100%;
-        height: 565px;
-    }
-    .box1{
-        width: 100%;
-        height: 70px;
-        display: inline;
-        margin-left: 15px !important;
-    }
-    .qur1 .qur2 .qur3{
-        width: 20% !important;
-        height: 40%;
-    }
-    .choose{
-        width: 100%;
-        height: 225px;
-    }
-    .kom{
-        position: relative;
-        float: left;
-        left: -200px;
-    }
-    .eng{
+    .fls{
         display: none;
     }
-    .arm .armflag {
-        display: none;
+    .avatar{
+        margin-top: -46px;
+        left: 45px;
     }
-    .paper{
-        width: 70%;
-        height: 70%;
+    .qur1{
+        width: 34% !important;
+    height: 150px !important;
+    left: -48px;
+    }
+    .qur2{
+        width: 33% !important;
+    height: 150px;
+    margin-left: -37px;
+    }
+    .qur3{
+        width: 34% !important;
+    height: 150px;
+    float: right;
+    margin-top: -151px;
+    right: -18px;
+    }
+    .tp{
+        left: 43px;
+        width: 27px;
+        height: 26px;
     }
     .papertext{
-        font-size: 13px;
-        position: relative;
-        top: -10px;
+        font-size: 12px;
     }
-    .pass{
-        width: 100%;
-        height: 200px;
-        position: relative;
-        top: -100px;
-        left: 60px;
-        font-size: 40px;
+    .stt{
+    width: 100%;
     }
-    .quote{
-        width: 300px !important;
-        height: 100px !important;
-        position: relative;
-        top: -130px;
-        font-size: 16px;
+    .row2{
+        border-bottom-left-radius: 10px !important;
+        border-top-left-radius: 10px !important;
     }
-}
+    .inn{
+        width: 240%;
+    z-index: 1;
+    left: -35px;
+    }
+    .out{
+        bottom: 55px;
+    left: -5px;
+    font-size: 12px;
+    }
+    .inn2{
+        width: 150px !important;
+    }
+    #inn3{
+        width: 207px;
+    }
+    #count{
+        width: 150px !important;
+    }
+    .but{
+        margin-left: 56px;
+    }
+} */
