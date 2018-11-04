@@ -200,9 +200,8 @@
               <div class="container">
                   <!-- Section Header -->
                   <div class="section-header">
-                    <img src="http://127.0.0.1:8000/images/big.png" alt="" class="section-header-image" style="
-                    width: auto;
-                ">                      <div class="section-header-content">
+                    <img src="http://127.0.0.1:8000/images/big.png" alt="" class="section-header-image" style=" width: auto;">
+                        <div class="section-header-content">
                           <span class="typing">Ողջու՜յն, ինչո՞վ կարող ենք օգնել Ձեզ։</span>
                       </div>
                   </div>

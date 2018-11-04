@@ -157,7 +157,13 @@ Route::group(['prefix' => 'admin','middleware'=>'admin'], function(){
                     'uses'=> 'AdminController@newsnewstore',
                 ]);
 
-           //news routes
+           //END news routes
+
+           //Start handing routes
+           Route::get('/admin/handings',[
+            'as'=> 'admin.handings',
+            'uses'=> 'AdminController@handshow',
+           ]);
 
 
 }); 

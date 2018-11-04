@@ -131,7 +131,7 @@ public function step2(Request $request) {
 
         if(Auth::user()) {
 
-            $title = Auth::user()->name . $unit . 'կիլոգրամ';
+            $title = Auth::user()->name . ' - ' . $unit . ' - ' . 'կիլոգրամ';
 
 
             $hand = new Handings;
@@ -171,6 +171,8 @@ public function step2(Request $request) {
                 ->with('menu', $pages)
                 ->with('step1',$step1)
                 ->with('step2',$step2)
+
+                
 ;     }
 
 

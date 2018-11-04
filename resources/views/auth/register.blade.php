@@ -212,15 +212,6 @@
         </div>
     </div>
 <script type="text/javascript" src="{{asset('auth/js/jquery.min.js')}}"></script>
-<script type="text/javascript" src="https://rvera.github.io/image-picker/image-picker/image-picker.js"></script>
-<script type="text/javascript" src="https://rvera.github.io/image-picker/js/prettify.js
-"></script>
-<script>
-        $("select").imagepicker({
-            show_label  : false
-          })
-        </script>
-
 <script type="text/javascript" src="{{asset('auth/js/popper.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('auth/js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('auth/js/main.js')}}"></script>
