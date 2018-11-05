@@ -6,6 +6,7 @@ use App\Post;
 use DB;
 use Image;
 use Illuminate\Http\Request;
+use App\Handings;
 
 class AdminController extends Controller
 {
@@ -17,7 +18,6 @@ class AdminController extends Controller
     public function index()
     {
         $user = Auth::user();
-
         return view('admin.main')
             ->with('user',$user);
     }
@@ -26,9 +26,6 @@ class AdminController extends Controller
     {
         $news = Post::orderBy('created_at', 'desc')->get();
         $user = Auth::user();
-
-
-
         return view('admin.news')
             ->with('articles',$news)
             ->with('user',$user);;
@@ -37,18 +34,12 @@ class AdminController extends Controller
     public function newsedit($id) {
         $news = Post::find($id)->first();
         $user = Auth::user();
-
         return view('admin.newsedit')
                         ->with('article',$news)
                         ->with('user',$user);
-                        
     }
-
     public function newsupdate(Request $request, $id)
     {
-
-     
-
         //Finding post by id
         $post= Post::findOrFail($id);
        
@@ -58,9 +49,9 @@ class AdminController extends Controller
           $extension = $file->getClientOriginalExtension(); // getting image extension
           $filename =time().'.'.$extension;
           $file->move('storage/articles/', $filename);
-          $post->image = 'storage/articles/' . $filename;
-        
+          $post->image = 'storage/articles/' . $filename;   
         }
+
         //Set post datas
         $post->title = $request['title'];
         $post->excerpt = $request['excerpt'];
@@ -92,11 +83,8 @@ class AdminController extends Controller
 
         ]);
 
-  
-
-
+//update db
         $post = new Post;
-
         if($request->hasfile('image')) 
 { 
   $file = $request->file('image');
@@ -104,17 +92,13 @@ class AdminController extends Controller
   $filename =time().'.'.$extension;
   $file->move('storage/articles/', $filename);
   $post->image = 'storage/articles/' . $filename;
-
 }
-
-
         $post->title = $request['title'];
         $post->body = $request['body'];
         $post->excerpt = $request['excerpt'];
         $post->category = $request['category'];
         $post->slug = $request['slug'];
         $post->status = $request['status'];
-
         $post->save();
     }
 
@@ -132,70 +116,14 @@ class AdminController extends Controller
     }
 
 
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function handshow()
     {
-        //
+        $user = Auth::user();
+        $handings = Handings::all();
+        return view('admin.handings.index')
+          ->with('user',$user)
+          ->with('handings',$handings);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

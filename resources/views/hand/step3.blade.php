@@ -135,3 +135,14 @@
 
 
 @endsection
+
+@section('footer')
+<script>
+  $(document).ready(function () {
+    // Handler for .ready() called.
+    window.setTimeout(function () {
+        location.href = "/profile/#success";
+    }, 5);
+});
+</script>
+@endsection

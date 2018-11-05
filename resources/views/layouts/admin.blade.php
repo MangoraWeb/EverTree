@@ -248,7 +248,7 @@
             </div><!-- dropdown-menu -->
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="page-messages.html">
+          <a class="nav-link" href="{{route('admin.handings')}}">
               <i class="icon ion-ios-chatboxes-outline"></i>
               <span>Թղթի հանձնում</span>
               <span class="square-8"></span>
