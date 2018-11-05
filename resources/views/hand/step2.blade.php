@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+
+
 @section('slider')
 <div class="container">
     <div class="row">
@@ -98,71 +100,82 @@
                                            
                                           </div>
 
-
-                                          <div class="forms container col-md-12 ">
-                         
-                                              <div class="row formbut">
-                                                 
-
+                                          <form action="{{route('step3post')}}" method="post" class="col-md-12">
                                                 
-                                                <form action="{{route('step2post')}}" method="post" class="col-md-12">
-                                                
-                                                  {{ csrf_field() }}
+                                              {{ csrf_field() }} 
+                                          <div class="row row-eq-height top" style="margin-left: 7px;padding: 0px 20px 0px;margin-left: 6px;">                                              
+                                            
+                                        <div class="col-md-4 mb-3">
+                                            <label for="province">Մարզ</label>
+                                            <select class="custom-select d-block w-100" required="" id="province" required="">
+                                                <option style="display: none;"selected disabled  value="">Ընտրեք մարզը</option>
+                                                @foreach($provinces as $province)
+                                                <option value='{{$province->id}}'>{{$province->name}}</option>                                                
+                                                @endforeach
+                                            <select>
+                                        </div>
 
+                                        <div class="col-md-4 mb-3">
 
-                                                  @if ($errors->has('address'))
-                                                 
-                                                  <div class="invalid-feedback">
-                                                      {{ $errors->first('address') }}</div>
-                                                      @endif
+                                          
+                                              <label for="state">Քաղաք</label>
+                                               <select class="custom-select d-block w-100" required="" id="city">
+                                                  <option  style="display: none;" selected disabled  value="">Ընտրեք քաղաքը</option>
+                                                @foreach($cities as $city)
+                                                  <option data-group='{{$city->province_id}}' value='{{$city->name}}'>{{$city->name}}</option>
+                                                @endforeach
+                                               </select>
+                                        </div>
+                                          
 
+                                            
+                                            <div class="col-md-4 mb-3">
+                                                <label for="tel">Հեռ.</label>
+                                                @if(isset($tel))
+                                                <input type="text" name="tel" class="form-control" value="{{$tel}}" id="tel">
+                                                @else 
+                                                <input type="text" name="tel" class="form-control" placeholder="+374" id="tel">
+                                                @endif
+                                          </div>
 
-                                                    <div class="container">  
-                                                  <div class="form-group col-md-12">
-                                                    <label  for="address">Հասցե</label>
+                                          <div class="col-md-12 mb-12">
+                                            @if(isset($add))
+                                              <input type="text" class="form-control" name="address" id="address" value="{{$add}}" required="">
+                                            @else
+                                            <input type="text" class="form-control" name="address" id="address" placeholder="Հասցե" required="">
+                                            @endif
+                                          </div>
 
-                                                    @if(isset($add))
+                                          <div class="col-md-12 mb-12">
+                                            <button type="submit" class="batright" >ՀԱՋՈՐԴԸ ></button>
+                                          </div>
 
-                                                    <input type="text" class="form-control" name="address" id="address" value="{{$add}}">
+                                        </form>
+                                    </div>
 
-                                                    @else 
-                                                    <input type="text" class="form-control" name="address" id="address" placeholder="Հասցե">
+@endsection
 
-                                                    @endif
+@section('footer')
 
-                                                  </div>
+<script>
+    $(function(){
+      $('#province').on('change', function(){
+          var val = $(this).val();
+          var sub = $('#city');
+          $('option', sub).filter(function(){
+              if (
+                   $(this).attr('data-group') === val 
+                || $(this).attr('data-group') === 'SHOW'
+              ) {
+                  $(this).show();
+              } else {
+                  $(this).hide();
+              }
+          });
+      });
+      $('#province').trigger('change');
+  });
+    </script>
 
-
-                                                  <div class="form-row col-md-12">
-                                                      <div class="form-group col-md-6">
-                                                        <label for="city">Քաղաքը</label>
-                                                        @if(isset($city))
-
-                                                        <input type="text" name="city" class="form-control" value="{{$city}}" id="city">
-    
-                                                        @else 
-                                                        <input type="text" name="city" class="form-control" placeholder="Քաղաքը" id="city">
-    
-                                                        @endif
-
-                                                      </div>
-                                                    
-                                                      <div class="sdr form-group col-md-6">
-                                                        <label for="tel">Հեռախոսահամար</label>
-                                                        @if(isset($tel))
-                                                        <input type="text" name="tel" class="form-control" value="{{$tel}}" id="tel">
-                                                        @else 
-                                                        <input type="text" name="tel" class="form-control" placeholder="+374" id="tel">
-                                                        @endif
-                                                      </div>
-                                                    </div>
-                                                </div>
-                                                <button type="submit" class="batright s2" >ՀԱՋՈՐԴԸ ></button>
-                                              </div>
-                        </form>
-
-                                                
-                                                </div>
-                          </div>
 
 @endsection

@@ -414,7 +414,7 @@ input{
 }
 
 .batright{
-    background-color: #00c88e; 
+    background-color: #00c88e;
     color: #fff;
     height: 35px;
     background-color: #5cb85c;
@@ -422,8 +422,8 @@ input{
     margin-right: 15px;
     background-color: #00c88e !important;
     position: relative;
-    top: 110px;
-    right: 124px;
+    top: 16px;
+    left: 434px;
     border-color: #4cae4c;
     display: inline-block;
     padding: 6px 12px;
@@ -445,10 +445,7 @@ input{
     border: 1px solid transparent;
     border-radius: 4px;
 }
-.s2 {
-    top: 165px !important;
-    right: 140px !important;
-}
+
 
 .sss{
         width: 100%;
@@ -547,6 +544,10 @@ form{
 .activslide{
     background-color: #2ba886 !important;
 }
+.city{
+    top: -78px;
+    left: 332px;
+}
 .slide1{
     width: 35px;
     height: 7px;
@@ -609,8 +610,15 @@ form{
         top: -180px;
     left: -20px;
     }
+    .city{
+        top: -105px;
+        left: 264px;
+    }
+    .adress{
+        top: -100px;
+    }
     .sdr{
-        top: -106px !important;
+        top: -181px !important;
     left: 268px;
     }
     .kal{

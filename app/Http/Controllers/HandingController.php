@@ -9,6 +9,8 @@ use App\Pages;
 use Auth;
 use Session;
 use DB;
+use City;
+Use Province;
 class HandingController extends Controller
 {
  
@@ -42,8 +44,7 @@ class HandingController extends Controller
                                     $request->session()->put('hand1', $handing);
                                 }
 
-       
-                                        //return all data into page 2
+                                 //return all data into page 2
                                         $pages = Pages::all();
                                         return redirect('/handstep/2')->with('menu', $pages);
     }
@@ -54,6 +55,10 @@ public function step2(Request $request) {
                                 //step2 main page
 
                                         $handing = $request->session()->get('hand1');
+
+                                        $provinces = DB::table('provinces')->get();
+                                        $cityes = DB::table('cities')->get();
+
                                         if($user = Auth::user())
                                     {
                                         $address = Auth::user()->address;
@@ -66,13 +71,18 @@ public function step2(Request $request) {
                                         ->with('han1',$handing)
                                         ->with('add',$address)  
                                         ->with('city',$city)
-                                        ->with('tel',$tel);
+                                        ->with('tel',$tel)
+                                        ->with('provinces',$provinces)
+                                        ->with('cities',$cityes);
 
                                     } else {
                                             $pages = Pages::all();
                                             return view('hand.step2',compact('hand1', $handing))
                                                 ->with('menu', $pages)
-                                                ->with('han1',$handing);
+                                                ->with('han1',$handing)
+                                                ->with('provinces',$provinces)
+                                                ->with('cities',$cityes);
+
                       
                                     }
             }

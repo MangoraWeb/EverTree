@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link rel="stylesheet" href="{{ asset('css/global.css') }}"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <link id="theme" rel="stylesheet" href="{{asset('assets/css/themes/theme-blue.min.css')}}" />
@@ -221,21 +220,21 @@
 </div>
 
 
-          @yield('footer')
           
 
 <!-- JS Plugins -->
-<script src="assets/plugins/jquery/dist/jquery.min.js"></script>
+<script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
+@yield('footer')
 
-<script src="assets/plugins/jquery.appear/jquery.appear.js"></script>
-<script src="assets/plugins/jquery.localscroll/jquery.localScroll.min.js"></script>
-<script src="assets/plugins/imagesloaded/imagesloaded.pkgd.min.js"></script>
-<script src="assets/plugins/slick-carousel/slick/slick.min.js"></script>
-<script src="assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
-<script src="assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="assets/plugins/typed.js/dist/typed.min.js"></script>
-<script src="assets/plugins/snapsvg/dist/snap.svg-min.js"></script>
-<script src="assets/js/core.js"></script>
+<script src="{{asset('assets/plugins/jquery.appear/jquery.appear.js')}}"></script>
+<script src="{{asset('assets/plugins/jquery.localscroll/jquery.localScroll.min.js')}}"></script>
+<script src="{{asset('assets/plugins/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
+<script src="{{asset('assets/plugins/slick-carousel/slick/slick.min.js')}}"></script>
+<script src="{{asset('assets/plugins/waypoints/lib/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('assets/plugins/jquery-validation/dist/jquery.validate.min.js')}}"></script>
+<script src="{{asset('assets/plugins/typed.js/dist/typed.min.js')}}"></script>
+<script src="{{asset('assets/plugins/snapsvg/dist/snap.svg-min.js')}}"></script>
+<script src="{{asset('assets/js/core.js')}}"></script>
 
         </body>
 </html> 

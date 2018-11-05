@@ -1,18 +1,12 @@
 @extends('layouts.main')
 
 @section('header')
-
 <link rel="stylesheet" href="{{asset('webprofile/css/main.min.css')}}">
 <link rel="stylesheet" href="{{asset('webprofile/css/fonts.min.css')}}" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" href="{{asset('webprofile/css/blocks.css')}}" >
 <link rel="stylesheet" href="{{asset('css/bootstrap-grid.css')}}" >
 <link rel="stylesheet" href="{{asset('css/bootstrap-reboot.css')}}" >
-
-
-
 <link rel="stylesheet" type="text/css" href="{{asset('webprofile/css/bootstrap-reboot.css')}}">
-
-
 <!-- Styles for plugins -->
 <link rel="stylesheet" type="text/css" href="{{asset('webprofile/css/jquery.mCustomScrollbar.min.css')}}">
 <link rel='stylesheet' href='{{asset('webprofile/css/fullcalendar.css')}}'/>
@@ -82,7 +76,7 @@ background-color: #edf2f6;
 								<img src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/44091855_1735051296617076_8666010493015556096_n.jpg?_nc_cat=102&_nc_ht=scontent-frx5-1.xx&oh=70179141517d7efbe5bba0098a65be7f&oe=5C856A68" alt="author">
 							</div>
 							<div class="author-content">
-								<a href="#" class="h3 author-name">Կարեն Հովսեփյան</a>
+								<a href="#" class="h3 author-name">{{$user->name}} {{$user->surname}}</a>
 								<div class="description">Նոր Հաճն  |  MangoraWeb</div>
 							</div>
 						</div>

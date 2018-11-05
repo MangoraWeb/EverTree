@@ -110,7 +110,7 @@ Route::group(['prefix' => 'handstep'], function(){
 
     Route::post('/3', [
         'as' => 'step3post',
-        'uses' => 'HandingController@step3g'
+        'uses' => 'HandingController@step3'
     ]);
 
 
