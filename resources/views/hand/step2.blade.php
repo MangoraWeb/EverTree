@@ -3,7 +3,7 @@
 @section('slider')
 <div class="container">
     <div class="row">
-      <div class="col-xl-12">
+      <div class="sd col-xl-12">
         
         <div class="col-md-12 roundeds">
           <img class="big-logo rounded mx-auto d-block center-block" src="{{asset('images/big.png')}}">
@@ -17,7 +17,7 @@
              <div class="pass"> ԱՎԵԼԱՑՐՈւ՛, <br>
                 ԿՅԱՆՔ<br>
         <div class="active">ԲՆՈւԹՅԱՆԸ</div><br> </h3>
-        <div class="col-md-10 quote">
+        <div class="txl col-md-10 quote">
             «  Մարդիկ հավանաբար չգիտեն, որ 60 կիլոգրամ
               թուղթը  արժե  մեկ  ծառ։  Թղթի  վերամշակման
               ուղղությամբ  այսօր քիչ մարդիկ են աշխատում։
@@ -77,7 +77,7 @@
 
 
                                         <div class="choose">
-                                           <div class="container col-md-8 row-eq-height top">
+                                           <div class="loop container col-md-8 row-eq-height top">
 
                                           <div class="col-md-3 bg1 paper  activediv text-center">
                                               <img class="type" src="{{asset('evertree/activetype.png')}}"/>
@@ -147,7 +147,7 @@
 
                                                       </div>
                                                     
-                                                      <div class="form-group col-md-6">
+                                                      <div class="sdr form-group col-md-6">
                                                         <label for="tel">Հեռախոսահամար</label>
 
 

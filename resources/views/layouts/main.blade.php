@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/global.css') }}"/>
 
+    <link rel="stylesheet" href="{{ asset('css/global.css') }}"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <link id="theme" rel="stylesheet" href="{{asset('assets/css/themes/theme-blue.min.css')}}" />
 
@@ -59,7 +59,7 @@
                                                 </a>
                                             </nav>
                                             </div>
-                                            <div class="col-md-5">
+                                            <div class="she col-md-5">
                                             <div style="display:inline-block; margin-top: 5px; float:right;" class="nav justify-content-end">
                                                <a href="#"><div style="float:left;" class="serch">
                                                   <img class="serch" src="{{asset('evertree/search.png')}}"/>
@@ -86,7 +86,7 @@
                                         <div class="header-wrap">
                                       
                                       
-                                          <button class="window-toggle contact center-block" data-target="#message-window" style="
+                                          <button class="my window-toggle contact center-block" data-target="#message-window" style="
                                           position: absolute;
                                           left: -34px;
                                           right: auto;
@@ -153,7 +153,7 @@
                                                                    @else
 
 
-                                                                   <div class="col-sm-5 col-md-4 nav justify-content-end">
+                                                                   <div class="kom col-sm-5 col-md-4 nav justify-content-end">
                                                                         <a class="p-2 text-muted" href="{{ route('login') }}"><h2 class="text1">Մուտք</h2></a>
                                                                         <a class="p-2 text-muted" href="{{ route('register') }}"><h2 class="text1">Գրանցվել</h2></a>
                                                                         
@@ -197,7 +197,7 @@
   <div class="window-inner">
       <section class="section dark">
           <div class="section-content">
-              <div class="container">
+              <div class=" gscontainer">
                   <!-- Section Header -->
                   <div class="section-header">
                     <img src="http://127.0.0.1:8000/images/big.png" alt="" class="section-header-image" style="
@@ -226,17 +226,17 @@
           
 
 <!-- JS Plugins -->
-<script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
+<script src="assets/plugins/jquery/dist/jquery.min.js"></script>
 
-<script src="{{asset('assets/plugins/jquery.appear/jquery.appear.js')}}"></script>
-<script src="{{asset('assets/plugins/jquery.localscroll/jquery.localScroll.min.js')}}"></script>
-<script src="{{asset('assets/plugins/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
-<script src="{{asset('assets/plugins/slick-carousel/slick/slick.min.js')}}"></script>
-<script src="{{asset('assets/plugins/waypoints/lib/jquery.waypoints.min.js')}}"></script>
-<script src="{{asset('assets/plugins/jquery-validation/dist/jquery.validate.min.js')}}"></script>
-<script src="{{asset('assets/plugins/typed.js/dist/typed.min.js')}}"></script>
-<script src="{{asset('assets/plugins/snapsvg/dist/snap.svg-min.js')}}"></script>
-<script src="{{asset('assets/js/core.js')}}"></script>
+<script src="assets/plugins/jquery.appear/jquery.appear.js"></script>
+<script src="assets/plugins/jquery.localscroll/jquery.localScroll.min.js"></script>
+<script src="assets/plugins/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="assets/plugins/slick-carousel/slick/slick.min.js"></script>
+<script src="assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="assets/plugins/typed.js/dist/typed.min.js"></script>
+<script src="assets/plugins/snapsvg/dist/snap.svg-min.js"></script>
+<script src="assets/js/core.js"></script>
 
         </body>
-</html>
+</html> 

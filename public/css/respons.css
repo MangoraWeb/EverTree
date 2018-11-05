@@ -1,0 +1,20 @@
+@media only screen and (max-width: 1366px) {
+    .fly{
+    top: -473px;
+    width: 60%;
+    left: 80%;
+    }
+    .pass{
+        position: relative;
+        top: -100px;
+        font-size: 50px;
+        left: 25px;
+    }
+    .choose{
+        margin-left: 26px;
+    }
+    .loop{
+        display: contents;
+    }
+    
+}

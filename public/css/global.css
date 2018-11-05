@@ -5,7 +5,6 @@ body{
     background-repeat: no-repeat;
     background-position: right;
     overflow: hidden;
-
 }
 
 .single-post {
@@ -556,73 +555,86 @@ form{
     justify-content: space-between;
     margin-left: 15px;
 }
-/* @media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1366px) {
+    .fly{
+    top: -473px;
+    width: 60%;
+    left: 80%;
+    }
+    .album{
+        margin-top: -24px;
+    }
     .none{
+        height: 618px !important;
+    }
+    .pass{
+        position: relative;
+        top: -100px;
+        font-size: 50px;
+        left: 25px;
+    }
+    .choose{
+        margin-left: 30px;
+        display: contents;
+    }
+    .coose{
+        margin-top: -25px;
+        margin-left: 32px !important;
+    }
+    .loop{
+        display: contents;
+    }
+    .armflag{
         display: none;
-    } 
+    }
+    .engflag{
+        display: none;
+    }
+    .eng{
+        display: none;
+    }
+    .arm{
+        display: none;
+    }
+    .text1{
+        text-decoration: none;
+    }
+    .kom{
+        margin-top: 6px;
+    }
+    .nav{
+        margin-top: 4px;
+    }
+    .txl{
+        top: -180px;
+    left: -20px;
+    }
+    .sdr{
+        top: -106px !important;
+    left: 268px;
+    }
+    .kal{
+        top: 23px;
+        margin-top: -30px;
+        margin-left: -15px;
+    }
     .viwe{
-        width: 100%;
-        display: inline-block;
+        height: 618px;
     }
-    .fls{
-        display: none;
+    #card{
+        top: -20px;
     }
-    .avatar{
-        margin-top: -46px;
-        left: 45px;
+    .no-past-events{
+        top: -125px;
     }
-    .qur1{
-        width: 34% !important;
-    height: 150px !important;
-    left: -48px;
+    .she{
+        left: 50px;
     }
-    .qur2{
-        width: 33% !important;
-    height: 150px;
-    margin-left: -37px;
+    .form-group{
+        margin-left: 50px;
+        top: -25px;
     }
-    .qur3{
-        width: 34% !important;
-    height: 150px;
-    float: right;
-    margin-top: -151px;
-    right: -18px;
+    .sd{
+        top: -20px;
     }
-    .tp{
-        left: 43px;
-        width: 27px;
-        height: 26px;
-    }
-    .papertext{
-        font-size: 12px;
-    }
-    .stt{
-    width: 100%;
-    }
-    .row2{
-        border-bottom-left-radius: 10px !important;
-        border-top-left-radius: 10px !important;
-    }
-    .inn{
-        width: 240%;
-    z-index: 1;
-    left: -35px;
-    }
-    .out{
-        bottom: 55px;
-    left: -5px;
-    font-size: 12px;
-    }
-    .inn2{
-        width: 150px !important;
-    }
-    #inn3{
-        width: 207px;
-    }
-    #count{
-        width: 150px !important;
-    }
-    .but{
-        margin-left: 56px;
-    }
-} */
+}
