@@ -19,6 +19,11 @@ class User extends Authenticatable
         'name','surname', 'email', 'password','email','city','address','telephone','bdate','actype',
     ];
 
+    public function handings()
+    {
+        return $this->hasMany('App\Handings');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

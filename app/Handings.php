@@ -8,4 +8,10 @@ class Handings extends Model
 {
     protected $fillable = ['unit','count','address','tel','city'];
 
+    public function userhand()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+
 }

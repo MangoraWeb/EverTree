@@ -5,16 +5,15 @@
 
 <div class="slim-pageheader">
         <ol class="breadcrumb slim-breadcrumb">
-          <li class="breadcrumb-item"><a href="#">Ադմին</a></li>
-          <li class="breadcrumb-item"><a href="#">Նորություններ</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Բոլոր նորությունները</li>
+          <li class="breadcrumb-item"><a href="/admin">Ադմին</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Բոլոր հայտերը</li>
         </ol>
-        <h6 class="slim-pagetitle">Նորություններ</h6>
+        <h6 class="slim-pagetitle"> Հայտեր </h6>
       </div>
 
       <div class="section-wrapper">
-            <label class="section-title">Բոլոր նորությունները</label>
-            <p class="mg-b-20 mg-sm-b-40">Կարող եք կառավարել և ավելացնել նորություններ</p>
+            <label class="section-title">Բոլոր հայտերը</label>
+            <p class="mg-b-20 mg-sm-b-40">Կարող եք հաստատել և հեռացնել հայտերը</p>
   
                 
             <div class="table-responsive">
@@ -34,23 +33,27 @@
                       <tbody>
                           @foreach($handings as $hand)
                         <tr>
+                            @php
+                              $user = App\User::find($hand->userid);
+                            @endphp
                           <td class="pd-l-20">
-                          <img style="width: 100px;height: 70px;border-radius: 0 !important;" 
-                            src="" class="wd-36 rounded-circle">
+                          <img src="{{asset($user->avatar)}}" class="wd-36 rounded-circle">
                           </td>
                           <td>
-                            <a href="" class="tx-inverse tx-14 tx-medium d-block">{{$hand->title}}</a>
-                          <span class="tx-11 d-block"></span>
+                            <a href="" class="tx-inverse tx-14 tx-medium d-block">{{$user->name}}   {{$user->surname}} {{$hand->count}} կիլոգրամ</a>
+                          <span class="tx-11 d-block">{{$hand->address}}</span>
                           </td>
                           <td class="tx-12">
-                            <span class="square-8 bg-success mg-r-5 rounded-circle"></span>
+                            <span class="square-8 bg-success mg-r-5 rounded-circle">
+                            
+                            </span>
+                            {{$hand->created_at->format('d/m/y H:m')}}
+
                           </td>
-                          <td></td>
+                          <td>{{$hand->count}} կիլոգրամ</td>
 
-
-                        <!-- Icons -->
-                          <td style="padding: 5px;"><a href="" style="font-size: 20px;padding-left: 20px;">
-                            <i class="icon ion-edit"></i></a>
+                          <td>
+                              {{$user->telephone}}
                         </td>
                         <td style="padding: 5px;"><a href="#" style=" color:#f50057; font-size: 20px;    padding-left: 20px;">
                                <a href=""> <i class="fa fa-close"></i></a>

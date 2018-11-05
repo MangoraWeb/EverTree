@@ -136,9 +136,9 @@ public function step2(Request $request) {
 
             $hand = new Handings;
             $hand->userid = Auth::user()->id;
-            $hand->count = $unit;
             $hand->title = $title;
             $hand->cityid = 1;
+            $hand->unit = $unit;
 
             $hand->address = $address;
             $hand->telephone = $telephone;
@@ -156,7 +156,7 @@ public function step2(Request $request) {
            $hand->count = $unit;
            $hand->title = $title;
            $hand->cityid = 1;
-
+           $hand->unit = $unit;
            $hand->address = $address;
            $hand->telephone = $telephone;
            $hand->cityid = 1;

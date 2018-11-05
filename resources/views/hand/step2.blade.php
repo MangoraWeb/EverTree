@@ -149,38 +149,20 @@
                                                     
                                                       <div class="sdr form-group col-md-6">
                                                         <label for="tel">Հեռախոսահամար</label>
-
-
                                                         @if(isset($tel))
-
                                                         <input type="text" name="tel" class="form-control" value="{{$tel}}" id="tel">
-    
                                                         @else 
                                                         <input type="text" name="tel" class="form-control" placeholder="+374" id="tel">
-    
                                                         @endif
-
-                                                       
-
                                                       </div>
                                                     </div>
-
-                          
                                                 </div>
                                                 <button type="submit" class="batright s2" >ՀԱՋՈՐԴԸ ></button>
-
                                               </div>
-
-
-
-                                                
-
-                                              </form>
+                        </form>
 
                                                 
                                                 </div>
-  
-
-                                    </div>
+                          </div>
 
 @endsection
