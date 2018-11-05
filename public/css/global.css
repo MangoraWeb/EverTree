@@ -609,8 +609,15 @@ form{
         top: -180px;
     left: -20px;
     }
+    .city{
+        top: -105px;
+        left: 264px;
+    }
+    .adress{
+        top: -100px;
+    }
     .sdr{
-        top: -106px !important;
+        top: -181px !important;
     left: 268px;
     }
     .kal{

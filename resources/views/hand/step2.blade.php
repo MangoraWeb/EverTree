@@ -117,29 +117,39 @@
                                                       @endif
 
 
-                                                    <div class="container">  
-                                                  <div class="form-group col-md-12">
-                                                    <label  for="address">Հասցե</label>
+                                                    <div class="container"> 
+                                                  <div class="form-group col-md-6">
+                                                    <label  for="address">Marz</label>
 
-                                                    @if(isset($add))
 
-                                                    <input type="text" class="form-control" name="address" id="address" value="{{$add}}">
-
-                                                    @else 
-                                                    <input type="text" class="form-control" name="address" id="address" placeholder="Հասցե">
-
-                                                    @endif
+                                                    <select value="{{ old('unit') }}"  required="" class="custom-select mr-sm-2" name="unit" id="unit">
+                        <option value="kotayk">Kotayk</option>
+                        <option value="aragacotni">Aragacotni</option>
+                      <option value="armavir">Armaviri</option>
+                    </select>
 
                                                   </div>
+                                                  <div class="city form-group col-md-6" style="
+    top: -105px;
+    left: 268px;">
+                                                        <label for="city">Քաղաքը</label>
+                                                       
+                                                        <select value="{{ old('unit') }}"  required="" class="custom-select mr-sm-2" name="unit" id="unit">
+                        <option value="Nor Hachn">Nor Hachn</option>
+                        <option value="Abovyan">Abovyan</option>
+                      <option value="Lusakert">Lusakert</option>
+                    </select>
+
+                                                      </div>
 
 
                                                   <div class="form-row col-md-12">
-                                                      <div class="form-group col-md-6">
-                                                        <label for="city">Քաղաքը</label>
+                                                      <div class="adress form-group col-md-6" style="
+    top: -101px;">
+                                                        <label for="adress">Adress</label>
                                                         @if(isset($city))
 
-                                                        <input type="text" name="city" class="form-control" value="{{$city}}" id="city">
-    
+                                                         <input type="text" name="city" class="form-control" value="{{$city}}" id="city">
                                                         @else 
                                                         <input type="text" name="city" class="form-control" placeholder="Քաղաքը" id="city">
     
