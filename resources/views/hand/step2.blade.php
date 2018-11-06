@@ -107,7 +107,7 @@
                                             
                                         <div class="col-md-4 mb-3">
                                             <label for="province">Մարզ</label>
-                                            <select class="custom-select d-block w-100" required="" id="province" required="">
+                                            <select name="province" class="custom-select d-block w-100" required="" id="province" required="">
                                                 <option style="display: none;"selected disabled  value="">Ընտրեք մարզը</option>
                                                 @foreach($provinces as $province)
                                                 <option value='{{$province->id}}'>{{$province->name}}</option>                                                
@@ -119,7 +119,7 @@
 
                                           
                                               <label for="state">Քաղաք</label>
-                                               <select class="custom-select d-block w-100" required="" id="city">
+                                               <select name="city" class="custom-select d-block w-100" required="" id="city">
                                                   <option  style="display: none;" selected disabled  value="">Ընտրեք քաղաքը</option>
                                                 @foreach($cities as $city)
                                                   <option data-group='{{$city->province_id}}' value='{{$city->name}}'>{{$city->name}}</option>
@@ -147,7 +147,7 @@
                                           </div>
 
                                           <div class="col-md-12 mb-12">
-                                            <button type="submit" class="batright" >ՀԱՋՈՐԴԸ ></button>
+                                            <button type="submit" class="batrights2" >ՀԱՋՈՐԴԸ ></button>
                                           </div>
 
                                         </form>

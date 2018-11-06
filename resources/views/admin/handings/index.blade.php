@@ -33,14 +33,18 @@
                       <tbody>
                           @foreach($handings as $hand)
                         <tr>
-                            @php
-                              $user = App\User::find($hand->userid);
-                            @endphp
+                          <td>
+                            @if($hand->userid == 'NULL')
+                             @php $avatar = '/user/default.png' @endphp
+                            @else 
+                              ok
+                            @endif
+                            </td>
                           <td class="pd-l-20">
-                          <img src="{{asset($user->avatar)}}" class="wd-36 rounded-circle">
+                          <img src="{{asset($avatar)}}" class="wd-36 rounded-circle">
                           </td>
                           <td>
-                            <a href="" class="tx-inverse tx-14 tx-medium d-block">{{$user->name}}   {{$user->surname}} {{$hand->count}} կիլոգրամ</a>
+                            <a href="" class="tx-inverse tx-14 tx-medium d-block">{{$hand->name}}   {{$hand->surname}} {{$hand->count}} կիլոգրամ</a>
                           <span class="tx-11 d-block">{{$hand->address}}</span>
                           </td>
                           <td class="tx-12">
@@ -53,7 +57,7 @@
                           <td>{{$hand->count}} կիլոգրամ</td>
 
                           <td>
-                              {{$user->telephone}}
+                              {{$hand->tel}}
                         </td>
                         <td style="padding: 5px;"><a href="#" style=" color:#f50057; font-size: 20px;    padding-left: 20px;">
                                <a href=""> <i class="fa fa-close"></i></a>

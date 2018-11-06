@@ -128,7 +128,6 @@
                     @else 
                     <select value="{{ old('unit') }}"  required="" class="custom-select mr-sm-2" name="unit" id="unit">
                         <option value="kilogram">Կիլոգրամ</option>
-                        <option value="box">Արկղ</option>
                       <option value="ton">Տոննա</option>
                     </select>
 

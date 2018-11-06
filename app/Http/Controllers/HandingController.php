@@ -93,6 +93,7 @@ public function step2(Request $request) {
                                             $validatedData = $request->validate([
                                                 'address' => 'required',
                                                 'tel' => 'required',
+                                                'province' => 'required',
                                                 'city' => 'required',
                                             ]);
 
@@ -120,39 +121,30 @@ public function step2(Request $request) {
      public function step3(Request $request) {
          
 
-                        
         $pages = Pages::all();
         $step1 = $request->session()->get('hand1');
-        $step2 = $request->session()->get('hand2');
 
         $count = $step1['count'];
+        $unit = $step1['unit'];
 
-        if ($step1['unit'] == 'box') {
-           //Box = 30kg
-           $unit = $step1['count'] * 50;
-        }elseif($step1['count'] == 'ton') {
-            $unit = $step1['count'] * 1000;
-        }else {
-            $unit = $step1['count'];
-        }
       
-        $address = $step2['address'];
-        $telephone = $step2['tel'];
+        $address = $request['address'];
+        $telephone = $request['tel'];
 
         if(Auth::user()) {
 
             $title = Auth::user()->name . ' - ' . $unit . ' - ' . 'կիլոգրամ';
-
-
             $hand = new Handings;
             $hand->userid = Auth::user()->id;
             $hand->title = $title;
-            $hand->cityid = 1;
             $hand->unit = $unit;
+            $hand->count = $count;
+
+            $hand->province_id = $request['province'];
 
             $hand->address = $address;
             $hand->telephone = $telephone;
-            $hand->cityid = 1;
+            $hand->city = $request['city'];
             $hand->info = $request->header('User-Agent');
 
             $hand->save();
@@ -163,13 +155,14 @@ public function step2(Request $request) {
            $title = 'Չգրանցված բաժանորդ -' . $unit . ' կիլոգրամ'  ;
           
            $hand = new Handings;
-           $hand->count = $unit;
+           $hand->count = $count;
            $hand->title = $title;
-           $hand->cityid = 1;
            $hand->unit = $unit;
            $hand->address = $address;
            $hand->telephone = $telephone;
-           $hand->cityid = 1;
+           $hand->city = $request['city'];
+           $hand->province_id = $request['province'];
+
            $hand->info = $request->header('User-Agent');
 
            $hand->save();
@@ -180,7 +173,7 @@ public function step2(Request $request) {
         return view('hand.step3')
                 ->with('menu', $pages)
                 ->with('step1',$step1)
-                ->with('step2',$step2)
+                ->with('step2',$request)
 
                 
 ;     }

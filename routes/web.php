@@ -167,7 +167,7 @@ Route::group(['prefix' => 'admin','middleware'=>'admin'], function(){
            //END news routes
 
            //Start handing routes
-           Route::get('/admin/handings',[
+           Route::get('/handings',[
             'as'=> 'admin.handings',
             'uses'=> 'AdminController@handshow',
            ]);
