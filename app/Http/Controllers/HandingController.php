@@ -135,7 +135,7 @@ public function step2(Request $request) {
 
             $title = Auth::user()->name . ' - ' . $unit . ' - ' . 'կիլոգրամ';
             $hand = new Handings;
-            $hand->userid = Auth::user()->id;
+            $hand->user_id = Auth::user()->id;
             $hand->title = $title;
             $hand->unit = $unit;
             $hand->count = $count;
@@ -153,7 +153,6 @@ public function step2(Request $request) {
         } else {
 
            $title = 'Չգրանցված բաժանորդ -' . $unit . ' կիլոգրամ'  ;
-          
            $hand = new Handings;
            $hand->count = $count;
            $hand->title = $title;
@@ -162,12 +161,8 @@ public function step2(Request $request) {
            $hand->telephone = $telephone;
            $hand->city = $request['city'];
            $hand->province_id = $request['province'];
-
            $hand->info = $request->header('User-Agent');
-
            $hand->save();
-
-
         }
 
         return view('hand.step3')

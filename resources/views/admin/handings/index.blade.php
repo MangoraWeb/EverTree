@@ -20,51 +20,77 @@
                     <table class="table mg-b-0 tx-12">
                       <thead>
                         <tr class="tx-10">
-                          <th class="wd-10p pd-y-5">&nbsp;</th>
-                          <th class="pd-y-5">Վերնագիրը</th>
+                          
+                          <th class="pd-y-3"> </th>
                           <th class="pd-y-5">Կատեգորիա</th>
-                          <th class="pd-y-5">Տեղադրվել է</th>
-
-                          <th class="pd-y-5">փոփոխել</th>
-                          <th class="pd-y-5">ջնջել</th>
+                          <th class="pd-y-5">հայտը</th>
+                          <th class="pd-y-5">հեռ</th>
+                          <th class="pd-y-5">Էլ հասցե</th>
+                          <th class="pd-y-5">հաստատել</th>
+                          <th class="pd-y-5">մերժել</th>
                           <th class="pd-y-5">դիտել</th>
+
+
                         </tr>
                       </thead>
                       <tbody>
                           @foreach($handings as $hand)
                         <tr>
-                          <td>
-                            @if($hand->userid == 'NULL')
-                             @php $avatar = '/user/default.png' @endphp
+                            @if($hand->user_id)
+                             <td class="pd-l-20">
+                                <img src="{{asset('/users/default.png')}}" class="wd-36 rounded-circle">
+                              </td>
+
                             @else 
-                              ok
+                            <td class="pd-l-20">
+                                <img src="{{asset('images/noavatarhand.png')}}" class="wd-36 rounded-circle">
+                              </td>
+
                             @endif
-                            </td>
-                          <td class="pd-l-20">
-                          <img src="{{asset($avatar)}}" class="wd-36 rounded-circle">
-                          </td>
+                            @php 
+                              $us = $hand->user('name')->get()
+                            @endphp
+  
+    
                           <td>
-                            <a href="" class="tx-inverse tx-14 tx-medium d-block">{{$hand->name}}   {{$hand->surname}} {{$hand->count}} կիլոգրամ</a>
-                          <span class="tx-11 d-block">{{$hand->address}}</span>
+                            <a href="" class="tx-inverse tx-14 tx-medium d-block">
+                              @foreach ($us as $use) 
+                              {{$use->name}} {{$use->surname}}  
+                              @endforeach   
+                              {{$hand->count}} 
+
+                            @if($hand->unit == 'ton')
+                                տոննա
+                            @else 
+                                կիլոգրամ
+                            @endif 
+                              
+                          </a>
+                          
+                          <span class="tx-11 d-block">{{$hand->province_id}}, {{$hand->city}}, {{$hand->address}}</span>
                           </td>
                           <td class="tx-12">
                             <span class="square-8 bg-success mg-r-5 rounded-circle">
-                            
+  
                             </span>
                             {{$hand->created_at->format('d/m/y H:m')}}
-
                           </td>
-                          <td>{{$hand->count}} կիլոգրամ</td>
-
+                          <td>{{$hand->telephone}}</td>
                           <td>
-                              {{$hand->tel}}
-                        </td>
-                        <td style="padding: 5px;"><a href="#" style=" color:#f50057; font-size: 20px;    padding-left: 20px;">
-                               <a href=""> <i class="fa fa-close"></i></a>
+                              {{$use->email}} 
+                          </td>
+                        <td style="padding: 5px;">
+                        <a href="{{route('admin.hand.accept',$hand->id)}}" style="color: #42ab5f;font-size: 20px;padding-left: 30px;">
+                              <i class="fa fa-vote-yea"></i></a>
                             </td>
-                            <td style="padding: 5px;"><a href="#" style="font-size: 20px;    padding-left: 20px;">
+
+                            <td style="padding: 5px;"><a href="#" style="color:#e91e63;font-size:20px;padding-left: 20px;">
+                                <i class="fa fa-user-times"></i></a>
+                            </td>
+
+                        <td style="padding: 5px;"><a href="#" style="font-size:20px;padding-left: 20px;">
                                     <i class="fa fa-eye"></i></a>
-                                </td>
+                        </td>
 
                         </tr>
                     @endforeach

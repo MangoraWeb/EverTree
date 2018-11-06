@@ -7,6 +7,8 @@ use DB;
 use Image;
 use Illuminate\Http\Request;
 use App\Handings;
+use App\User;
+use Province;
 
 class AdminController extends Controller
 {
@@ -125,5 +127,28 @@ class AdminController extends Controller
           ->with('handings',$handings);
     }
 
+    public function handaccept($id)
+    {
+            $handing = Handings::find($id)->first();
+            $user = Auth::user();
+
+            if($handing->user_id == 0){
+               $userReg = 0;
+               $userDetail = 0;
+            }else{
+                $userReg = User::find($handing->user_id);
+                $userDetail = $userReg->name .' ' . $userReg->surname;
+
+            };
+
+            $province = $handing->province_id;
+
+            return view('admin.handings.accept')
+                 ->with('handing',$handing)
+                 ->with('userReg',$userReg)
+                 ->with('user',$user)
+                 ->with('province',$province)
+                 ->with('userDetail',$userDetail);
+    }
 
 }

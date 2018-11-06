@@ -171,6 +171,12 @@ Route::group(['prefix' => 'admin','middleware'=>'admin'], function(){
             'as'=> 'admin.handings',
             'uses'=> 'AdminController@handshow',
            ]);
+           Route::get('/handings/accept/{id}',[
+            'as'=> 'admin.hand.accept',
+            'uses'=> 'AdminController@handaccept',
+           ]);
+            
+
 
 
 }); 

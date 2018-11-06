@@ -8,7 +8,8 @@
     <title>EverTree Admin - Make the world greener</title>
 
     <!-- vendor css -->
-    <link href="{{asset('/treeadmin/lib/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
     <link href="{{asset('/treeadmin/lib/Ionicons/css/ionicons.css')}}" rel="stylesheet">
     <link href="{{asset('/treeadmin/lib/chartist/css/chartist.css')}}" rel="stylesheet">
     <link href="{{asset('/treeadmin/lib/rickshaw/css/rickshaw.min.css')}}" rel="stylesheet">
@@ -261,18 +262,19 @@
     <div class="container">
 @yield('content')
     </div>
-    <script src="treeadmin/lib/jquery/js/jquery.js"></script>
-    <script src="treeadmin/lib/popper.js/js/popper.js"></script>
-    <script src="treeadmin/lib/bootstrap/js/bootstrap.js"></script>
-    <script src="treeadmin/lib/jquery.cookie/js/jquery.cookie.js"></script>
-    <script src="treeadmin/lib/chartist/js/chartist.js"></script>
-    <script src="treeadmin/lib/d3/js/d3.js"></script>
-    <script src="treeadmin/lib/rickshaw/js/rickshaw.min.js"></script>
-    <script src="treeadmin/lib/jquery.sparkline.bower/js/jquery.sparkline.min.js"></script>
+    <script src="{{asset('treeadmin/lib/jquery/js/jquery.js')}}"></script>
+    <script src="{{asset('treeadmin/lib/popper.js/js/popper.js')}}"></script>
+    <script src="{{asset('treeadmin/lib/bootstrap/js/bootstrap.js')}}"></script>
+    <script src="{{asset('treeadmin/lib/jquery.cookie/js/jquery.cookie.js')}}"></script>
+    <script src="{{asset('treeadmin/lib/chartist/js/chartist.js')}}"></script>
+    <script src="{{asset('treeadmin/lib/d3/js/d3.js')}}"></script>
+    <script src="{{asset('treeadmin/lib/rickshaw/js/rickshaw.min.js')}}"></script>
+    <script src="{{asset('treeadmin/lib/jquery.sparkline.bower/js/jquery.sparkline.min.js')}}"></script>
 
-    <script src="treeadmin/js/ResizeSensor.js"></script>
-    <script src="treeadmin/js/dashboard.js"></script>
-    <script src="treeadmin/js/slim.js"></script>
+    <script src="{{asset('treeadmin/js/ResizeSensor.js')}}"></script>
+    <script src="{{asset('treeadmin/js/dashboard.js')}}"></script>
+    <script src="{{asset('treeadmin/js/slim.js')}}"></script>
     @yield('footer')
+
   </body>
 </html>
