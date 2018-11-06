@@ -47,6 +47,13 @@ Route::get('/gardens', [
     'as' => 'gardens',
     'uses' => 'GardenController@allgardens'
 ]);
+
+Route::get('/faq', function(){
+    return view('pages.faq');
+});
+Route::get('/rules', function(){
+    return view('pages.rules');
+}); 
     
 
 Route::get('/post',[
@@ -168,11 +175,6 @@ Route::group(['prefix' => 'admin','middleware'=>'admin'], function(){
 
 }); 
 
-Route::get('/testfront',function(){
-
-    return view('test');
-
-});
 
 
 Route::group(['prefix' => 'profile','middleware'=>'auth'], function(){
@@ -189,12 +191,7 @@ Route::group(['prefix' => 'profile','middleware'=>'auth'], function(){
 
 Route::get('/qr/{id}', function ($id) 
 {
-
-
-    
-   $mainlink =  "http://127.0.0.1:8000/profile" . $id;
-    
-    
+        $mainlink =  "http://127.0.0.1:8000/profile" . $id;
     return QRCode::text($mainlink)->svg();
 });    
 //EverTree beta routes
