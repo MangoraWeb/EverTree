@@ -132,6 +132,13 @@ class AdminController extends Controller
             $handing = Handings::find($id)->first();
             $user = Auth::user();
 
+
+            $json = file_get_contents('http://www.apilayer.net/api/live?access_key=562cbad07d7458422154bdf7e85a23ae&format=1');
+            $obj = json_decode($json);
+            $usd = (int) $obj->quotes->USDAMD;
+
+
+
             if($handing->user_id == 0){
                $userReg = 0;
                $userDetail = 0;
@@ -148,7 +155,7 @@ class AdminController extends Controller
                  ->with('userReg',$userReg)
                  ->with('user',$user)
                  ->with('province',$province)
-                 ->with('userDetail',$userDetail);
+                 ->with('userDetail',$userDetail)->with('usd',$usd);
     }
 
 }
