@@ -87,6 +87,12 @@ Route::get('/mygarden',[
 ]);
 
 
+Route::get('/projects',[
+    'as' => 'projects',
+    'uses' => 'ProjectController@index'
+]);
+
+
 Route::group(['prefix' => 'handstep'], function(){
    
     Route::get('/', [
@@ -174,6 +180,10 @@ Route::group(['prefix' => 'admin','middleware'=>'admin'], function(){
            Route::get('/handings/accept/{id}',[
             'as'=> 'admin.hand.accept',
             'uses'=> 'AdminController@handaccept',
+           ]);
+           Route::post('/handings/accept/etc',[
+            'as'=> 'admin.hand.accept.etc',
+            'uses'=> 'AdminController@handacceptetc',
            ]);
             
 

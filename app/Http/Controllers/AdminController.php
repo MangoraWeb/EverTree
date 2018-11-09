@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Handings;
 use App\User;
 use Province;
+use App\Accepted;
 
 class AdminController extends Controller
 {
@@ -121,7 +122,7 @@ class AdminController extends Controller
     public function handshow()
     {
         $user = Auth::user();
-        $handings = Handings::all();
+        $handings = Handings::orderBy('created_at','desc')->get();
         return view('admin.handings.index')
           ->with('user',$user)
           ->with('handings',$handings);
@@ -129,33 +130,59 @@ class AdminController extends Controller
 
     public function handaccept($id)
     {
-            $handing = Handings::find($id)->first();
+            $handings = Handings::where('id',$id)->first();
             $user = Auth::user();
-
-
             $json = file_get_contents('http://www.apilayer.net/api/live?access_key=562cbad07d7458422154bdf7e85a23ae&format=1');
             $obj = json_decode($json);
-            $usd = (int) $obj->quotes->USDAMD;
-
-
-
-            if($handing->user_id == 0){
+            $usd = $obj->quotes->USDAMD;
+            
+            if($handings->user_id == 0){
                $userReg = 0;
                $userDetail = 0;
             }else{
-                $userReg = User::find($handing->user_id);
+                $userReg = User::find($handings->user_id);
                 $userDetail = $userReg->name .' ' . $userReg->surname;
-
             };
-
-            $province = $handing->province_id;
-
+            $province = $handings->province_id;
             return view('admin.handings.accept')
-                 ->with('handing',$handing)
+                 ->with('handing',$handings)
                  ->with('userReg',$userReg)
                  ->with('user',$user)
                  ->with('province',$province)
                  ->with('userDetail',$userDetail)->with('usd',$usd);
+    }
+
+    public function handacceptetc(Request $request) {
+
+
+        
+        
+
+
+        $etc = ($request['count'] * $request['paperPrice']) / ($request['usd'] * 4);
+        $intEtc = (float)substr($etc, 0, 5);
+
+        $accept = new Accepted;
+
+        $accept->count = $request['count'];
+        $accept->paperPrice = $request['paperPrice'];
+        $accept->expense = $request['expense'];
+        $accept->nameSurname = $request['nameSurname'];
+        $accept->phoneNumber = $request['phoneNumber'];
+        $accept->address = $request['address'];
+        $accept->province = $request['province'];
+        $accept->city = $request['city'];
+        $accept->usd = $request['usd'];
+        $accept->etc = $intEtc;
+        $accept->user_id = $request['user_id'];
+
+
+        $accept->save();
+
+        return redirect('/admin/handings');
+
+
+
     }
 
 }

@@ -118,7 +118,7 @@
                                                                       {{ Auth::user()->name }} {{ Auth::user()->surname }}
                                                                     </h5>
                                                                     
-                                                                    <h6 class="fls" style="font-size: 11px;">{{ Auth::user()->coins }} միավոր</h6></a>
+                                                                    <h6 class="fls" style="font-size: 11px;">{{ Auth::user()->etc }} ETC</h6></a>
 
                                                                       <a class="p-2 text-muted" href="{{ route('register') }}">
                                                                          <h2 class="text1">  
