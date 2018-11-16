@@ -88,8 +88,8 @@ class RegisterController extends Controller
             'city' =>$data['city'],
             'address' => $data['address'],
             'telephone' => $data['tel'],
-
-
         ]);
+
+        
     }
 }

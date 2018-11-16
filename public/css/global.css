@@ -57,6 +57,7 @@ body{
     float: left;
     position: relative;
     top: 6px;
+    border-radius: 100%;
 }
 
 .flags {

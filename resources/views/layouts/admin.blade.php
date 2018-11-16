@@ -241,7 +241,15 @@
               <ul>
                 <li><a href="form-elements.html">ETC արժեք</a></li>
                 <li><a href="form-layouts.html">Խանութ</a></li>
-                <li><a href="form-validation.html">Իրադարձություններ</a></li>
+
+                <li class="sub-with-sub">
+                  <a href="{{route('admin.events')}}">Իրադարձություններ</a>
+                  <ul>
+                    <li><a href="{{route('admin.events')}}">Բոլոր Իրադարձությունները</a></li>
+                    <li><a href="{{route('admin.event.add')}}">Ավելացնել իրադարձություն</a></li>
+                  </ul>
+                </li>
+
                 <li><a href="form-wizards.html">Օգնություններ</a></li>
                 <li><a href="form-editor.html">Գործողություններ</a></li>
 

@@ -68,17 +68,12 @@
                                     <option data-img-src="http://127.0.0.1:8000/auth/images/little.gif" data-img-class="first" data-img-alt="Page 1" value="1">  Page 1  </option>
                                     <option data-img-src="http://127.0.0.1:8000/auth/images/little.gif" data-img-alt="Page 2" value="2">  Page 2  </option>
                                     <option data-img-src="http://127.0.0.1:8000/auth/images/little.gif" data-img-alt="Page 3" value="3">  Page 3  </option>
-
                                   </select>
                                   <div class="bd-example">
-                                        <form>
-
-
-
+                                        
+                                    <form>
                                           <div class="form-row">
                                             <div class="form-group col-md-6">
-
-
                                                 <!-- Name --> 
                                                     <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" placeholder="Անուն" value="{{ old('name') }}" required autofocus>
 
@@ -148,6 +143,8 @@
                                 @endif
                                                 </div>
                                               </div>
+
+                                              
 
 
                                         

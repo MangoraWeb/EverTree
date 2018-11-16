@@ -6,10 +6,12 @@ use App\Post;
 use DB;
 use Image;
 use Illuminate\Http\Request;
+
 use App\Handings;
 use App\User;
 use Province;
 use App\Accepted;
+use App\Event;
 
 class AdminController extends Controller
 {
@@ -153,17 +155,9 @@ class AdminController extends Controller
     }
 
     public function handacceptetc(Request $request) {
-
-
-        
-        
-
-
         $etc = ($request['count'] * $request['paperPrice']) / ($request['usd'] * 4);
         $intEtc = (float)substr($etc, 0, 5);
-
         $accept = new Accepted;
-
         $accept->count = $request['count'];
         $accept->paperPrice = $request['paperPrice'];
         $accept->expense = $request['expense'];
@@ -175,12 +169,44 @@ class AdminController extends Controller
         $accept->usd = $request['usd'];
         $accept->etc = $intEtc;
         $accept->user_id = $request['user_id'];
-
-
         $accept->save();
 
-        return redirect('/admin/handings');
+        DB::table('users')->where('id',$request['user_id'])->update(array(
+            'etc'=> Auth::user()->etc + $intEtc,
+            'paper'=> Auth::user()->paper + $request['count'],
 
+        ));
+        
+
+
+
+        return redirect('/admin/handings');
+    }
+
+    public function events() {
+        $user = Auth::user();
+        //get user events- $events = User::find($user->id)->events()->get();
+
+        return view('admin.events.index')
+                    ->with('user',$user);
+    }
+
+    public function addevent() {
+        $user = Auth::user();
+        return view('admin.events.add')
+                   ->with('user',$user);
+    }
+
+    public function storeevent(Request $request) {
+        
+        $event = new Event;
+        $event->date = $request['date'];
+        $event->icon = $request['icon'];
+        $event->name = $request['type'];
+        $event->timetext = $request['timetext'];
+        $event->desc = $request['desc'];
+        $event->company = $request['company'];
+        $event->save();
 
 
     }

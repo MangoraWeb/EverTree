@@ -26,11 +26,21 @@ Route::get('/','MainController@index')->name('main');
 Route::get('/handstep3','HandingController@step3g')->name('handstep3g');
 Route::post('/handstep3','HandingController@step3')->name('handstep3');
 
+Route::get('/event/{id}',[
+    'as' => 'eventt',
+    'uses' => 'ProfileController@eventstoshow'
+]);
+
 Route::group(['prefix' => 'profile'], function(){
    
     Route::get('/{id}', [
         'as' => 'profile',
         'uses' => 'ProfileController@index'
+    ]);
+
+    Route::post('/event/go', [
+        'as' => 'etogo',
+        'uses' => 'ProfileController@eventtogo'
     ]);
 
 });
@@ -126,13 +136,13 @@ Route::group(['prefix' => 'handstep'], function(){
         'uses' => 'HandingController@step3'
     ]);
 
-
 });
+
+
 
 Route::get('/getuser/{id}',function($id){
    $user = App\User::find($id);
     return $user;
-    
 });
 
 
@@ -170,39 +180,66 @@ Route::group(['prefix' => 'admin','middleware'=>'admin'], function(){
                     'uses'=> 'AdminController@newsnewstore',
                 ]);
 
-           //END news routes
+                //END news routes
 
-           //Start handing routes
-           Route::get('/handings',[
-            'as'=> 'admin.handings',
-            'uses'=> 'AdminController@handshow',
-           ]);
-           Route::get('/handings/accept/{id}',[
-            'as'=> 'admin.hand.accept',
-            'uses'=> 'AdminController@handaccept',
-           ]);
-           Route::post('/handings/accept/etc',[
-            'as'=> 'admin.hand.accept.etc',
-            'uses'=> 'AdminController@handacceptetc',
-           ]);
+                //Start handing routes
+                Route::get('/handings',[
+                    'as'=> 'admin.handings',
+                    'uses'=> 'AdminController@handshow',
+                ]);
+                Route::get('/handings/accept/{id}',[
+                    'as'=> 'admin.hand.accept',
+                    'uses'=> 'AdminController@handaccept',
+                ]);
+                Route::post('/handings/accept/etc',[
+                    'as'=> 'admin.hand.accept.etc',
+                    'uses'=> 'AdminController@handacceptetc',
+                ]);
+                //END handing routes
+
+                //Start events routes
+                Route::get('/events',[
+                    'as'=> 'admin.events',
+                    'uses'=> 'AdminController@events',
+                ]);
+                Route::get('/events/add',[
+                    'as'=> 'admin.event.add',
+                    'uses'=> 'AdminController@addevent',
+                ]);
+                Route::post('/events/store',[
+                    'as'=> 'admin.event.store',
+                    'uses'=> 'AdminController@storeevent',
+                ]);
+                Route::post('/events/destroy/{id}',[
+                    'as'=> 'admin.events.destroy',
+                    'uses'=> 'AdminController@destroyevent',
+                ]);
+                //END events routes
             
-
-
-
 }); 
 
 
-
+Route::get('/settings', [
+    'as' => 'profileSettings',
+    'uses' => 'ProfileController@settings'
+]);
 Route::group(['prefix' => 'profile','middleware'=>'auth'], function(){
 
     Route::get('/', [
         'as' => 'profile',
         'uses' => 'ProfileController@index'
     ]);
+
+    Route::post('/',[
+        'as' => 'changeava',
+        'uses' => 'ProfileController@changeava'
+    ]);
+
     Route::get('/{id}', [
         'as' => 'profileUser',
         'uses' => 'ProfileController@profileod'
     ]);
+
 });
 
 Route::get('/qr/{id}', function ($id) 

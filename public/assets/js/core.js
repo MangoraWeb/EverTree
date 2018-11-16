@@ -1,13 +1,4 @@
-/* -----------------------------------------------------------------------------
 
-Ja - Advanced Personal Resume / CV vCard Template
-
-File:           JS Core
-Version:        1.11
-Last change:    20/10/2017 
-Author:         Suelo 
-
--------------------------------------------------------------------------------- */
 (function($) {
 'use strict';
 
@@ -965,6 +956,7 @@ Author:         Suelo
         }
     };
 
+   
     // Global Events
     // -------------------------------
 

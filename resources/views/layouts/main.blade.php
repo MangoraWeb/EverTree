@@ -13,6 +13,12 @@
     <title>EverTree</title>
 
     <link rel="stylesheet" href="https://html.crumina.net/html-olympus/css/main.min.css">
+    <link rel="stylesheet" href="{{asset('css/other/style.css')}}">
+    <script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
+
+    <script src="{{asset('assets/js/evert.js')}}"></script>
+    <link rel="stylesheet" href="https://html.crumina.net/html-olympus/css/main.min.css">
+
         <!-- CSS Plugins -->
     <link rel="stylesheet" href="{{asset('assets/plugins/animate.css/animate.min.css')}}" />
    
@@ -110,8 +116,8 @@
                                                               <div class="col-sm-6 col-md-4 nav justify-content-end">
                                                                    
                                                                 <a href="{{route('profile')}}"> 
-                                                                        <img class="avatar" src="{{asset('evertree/avatar.png')}}"/>
-                                                                    </a>
+                                                                    <img class="avatar" src="{{asset(Auth::user()->avatar)}}" alt="{{Auth::user()->name}}">
+                                                                </a>
 
                                                                     <a style="text-decoration: none;" class="p-2 text-muted" href="{{route('profile')}}">
                                                                     <h5 class="fls" style=" font-size: 12px;">
@@ -176,9 +182,13 @@
                                         </div>
                                     </div>
                                     @yield('content')
+                                   
                                           </div>
+                                          
+
                                         </div>
                       </div>
+                      @yield('partners')
 
                      
 
@@ -223,8 +233,8 @@
           
 
 <!-- JS Plugins -->
-<script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
 @yield('footer')
+
 
 <script src="{{asset('assets/plugins/jquery.appear/jquery.appear.js')}}"></script>
 <script src="{{asset('assets/plugins/jquery.localscroll/jquery.localScroll.min.js')}}"></script>
@@ -235,6 +245,22 @@
 <script src="{{asset('assets/plugins/typed.js/dist/typed.min.js')}}"></script>
 <script src="{{asset('assets/plugins/snapsvg/dist/snap.svg-min.js')}}"></script>
 <script src="{{asset('assets/js/core.js')}}"></script>
+<script src="https://js.pusher.com/4.3/pusher.min.js"></script>
 
+<script>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('39cb42e34f30815debf5', {
+      cluster: 'ap2',
+      forceTLS: true
+    });
+
+    var channel = pusher.subscribe('my-channel');
+    channel.bind('my-event', function(data) {
+      alert(JSON.stringify(data));
+    });
+  </script>
         </body>
 </html> 

@@ -25,10 +25,10 @@
                           <th class="pd-y-5">Կատեգորիա</th>
                           <th class="pd-y-5">հայտը</th>
                           <th class="pd-y-5">հեռ</th>
-                          <th class="pd-y-5">Էլ հասցե</th>
-                          <th class="pd-y-5">հաստատել</th>
-                          <th class="pd-y-5">մերժել</th>
-                          <th class="pd-y-5">դիտել</th>
+                          <th class="pd-y-5">Հաստատել</th>
+                          <th class="pd-y-5">Մերժել</th>
+                          <th class="pd-y-5">Ընդունել</th>
+                          <th class="pd-y-5">Դիտել</th>
 
 
                         </tr>
@@ -48,7 +48,7 @@
 
                             @endif
                             @php 
-                              $us = $hand->user('name')->get()
+                              $us = $hand->user('name')->get();
                             @endphp
   
     
@@ -76,21 +76,24 @@
                             {{$hand->created_at->format('d/m/y H:m')}}
                           </td>
                           <td>{{$hand->telephone}}</td>
-                          <td>
-                              {{$use->email}} 
-                          </td>
+
                         <td style="padding: 5px;">
                         <a href="{{route('admin.hand.accept',$hand->id)}}" style="color: #42ab5f;font-size: 20px;padding-left: 30px;">
-                              <i class="fa fa-vote-yea"></i></a>
+                              <i title="Հաստատել և փոխանցել միավորները" class="fa fa-vote-yea"></i></a>
                             </td>
 
                             <td style="padding: 5px;"><a href="#" style="color:#e91e63;font-size:20px;padding-left: 20px;">
-                                <i class="fa fa-user-times"></i></a>
+                                <i title="Հեռացնել" class="fa fa-user-times"></i></a>
                             </td>
 
-                        <td style="padding: 5px;"><a href="#" style="font-size:20px;padding-left: 20px;">
-                                    <i class="fa fa-eye"></i></a>
+                        <td style="padding: 5px;"><a href="#" style="color: #42ab5f;font-size: 20px;padding-left: 30px;">
+                                    <i title="Հաստատել ընդունումը" class="fa fa-clipboard-check"></i></a>
                         </td>
+
+
+                        <td style="padding: 5px;"><a href="#" style="color:#039be5;font-size: 20px;padding-left: 10px;">
+                            <i class="fa fa-external-link-alt"></i></a>
+                </td>
 
                         </tr>
                     @endforeach

@@ -24,6 +24,21 @@ class User extends Authenticatable
         return $this->hasMany('App\Handings');
     }
 
+    public function events()
+    {
+        return $this->belongsToMany('App\Event');
+    }
+
+    public function actions()
+    {
+        return $this->hasMany('App\Action');
+    }
+
+    public function profile()
+    {
+        return $this->hasOne('App\Profile');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -33,4 +48,3 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 }
-          
