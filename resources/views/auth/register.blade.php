@@ -9,9 +9,29 @@
     <link rel="stylesheet" type="text/css" href="{{asset('auth/css/fontawesome-all.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('auth/css/mainreg.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('auth/css/logreg.css')}}">
+
+     <!-- BASE CSS -->
+     <link href="{{asset('auth/reg/css/bootstrap.min.css')}}" rel="stylesheet">
+     <link href="{{asset('auth/reg/css/style.css')}}" rel="stylesheet">
+     <link href="{{asset('auth/reg/css/menu.css')}}" rel="stylesheet">
+     <link href="{{asset('auth/reg/css/vendors.min.css')}}" rel="stylesheet">
+     <link href="{{asset('auth/reg/css/icon_fonts/css/all_icons.min.css')}}" rel="stylesheet">
+     <link href="{{asset('auth/reg/css/skins/square/grey.css')}}" rel="stylesheet">
+ 
+     <!-- YOUR CUSTOM CSS -->
+     <link href="css/custom.css" rel="stylesheet">
+     
+     <script src="js/modernizr.js"></script>
+     <!-- Modernizr -->
 </head>
 <body>
-
+    <div id="preloader">
+		<div data-loader="circle-side"></div>
+	</div><!-- /Preload -->
+	
+	<div id="loader_form">
+		<div data-loader="circle-side-2"></div>
+	</div><!-- /loader_form -->
     
     <div class="form-body" class="container-fluid">
         <div class="website-logo">
@@ -47,168 +67,376 @@
                 </div>
 
             </div>
-            <div class="form-holder">
-                <div class="form-content">
-                    <div class="form-items">
-                        <div class="website-logo-inside">
-                            <a href="index.html">
-                                <div class="logo">
-                                    <img class="logo-size" src="images/logo-light.svg" alt="">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="page-links">
-                            <a href="/login">Մուտք</a><a class="active" href="/register">Գրանցվել</a>
-                        </div>
-                       
-                        <form method="POST" action="{{ route('register') }}">
-                            @csrf
-    
-                            <select id="actype" class="image-picker show-html" >
-                                    <option data-img-src="http://127.0.0.1:8000/auth/images/little.gif" data-img-class="first" data-img-alt="Page 1" value="1">  Page 1  </option>
-                                    <option data-img-src="http://127.0.0.1:8000/auth/images/little.gif" data-img-alt="Page 2" value="2">  Page 2  </option>
-                                    <option data-img-src="http://127.0.0.1:8000/auth/images/little.gif" data-img-alt="Page 3" value="3">  Page 3  </option>
-                                  </select>
-                                  <div class="bd-example">
-                                        
-                                    <form>
-                                          <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <!-- Name --> 
-                                                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" placeholder="Անուն" value="{{ old('name') }}" required autofocus>
-
-                                                    @if ($errors->has('name'))
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $errors->first('name') }}</strong>
-                                                        </span>
-                                                    @endif
-                                                <!-- Name --> 
-
-
-                                            </div>
-
-                                                <!-- SurName --> 
-
-                                                <div class="form-group col-md-6">
-                                                        <input id="surname" placeholder="Ազգանուն" type="text" class="form-control{{ $errors->has('surname') ? ' is-invalid' : '' }}" name="surname" value="{{ old('surname') }}" required autofocus>
-
-                                                        @if ($errors->has('surname'))
-                                                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $errors->first('surname') }}</strong>
-                                                            </span>
-                                                        @endif                                                </div>
-                                                <!-- SurName --> 
-
-                                          </div>
-
-
-                                           
-                                          <div class="form-row">
-                                                <div class="form-group col-md-4">
-
-                                                    
-                                                        <select aria-valuemax="" id="inp" name="province" class="form-control">
-                                                                <option value="" disabled selected hidden>Մարզ</option>
-    
+            <div class="form-holder" style="
+            background-color: #29db9d;
+        ">
         
-                                                            @foreach($province as $provinces)
-                                                              <option value="{{$provinces->name}}">{{$provinces->name}}</option>
-                                                             @endforeach
-                                                             <option value="Երևան">Երևան</option>
+	<main>
+		<div class="container">
+			<div id="wizard_container">
+				<form name="example-1" id="wrapped" method="POST">
+					<input id="website" name="website" type="text" value="">
+					<!-- Leave input above for security protection, read docs for details -->
+					<div id="middle-wizard">
+						
+						<!-- First branch What Type of Project ============================== -->
+						<div class="step" data-state="branchtype">
+							<div class="question_title">
+								<h3>Մի փոքր պատմեք ձեր մասին</h3>
+								<p>Նշեք տեղեկություններ Ձեր մասին համակարգի<strong> ճիշտ աշխատանքի համար</strong>.</p>
+							</div>
+							<div class="row">
+								<div class="col-lg-4">
+									<div class="item">
+										<input id="answer_1" type="radio" name="branch_1_group_1" value="Seo-Optimization" class="required">
+										<label for="answer_1"><img src="auth/reg/img/individual.svg" style="width:130px;height:130px" alt=""><strong>Անհատ</strong> Ես անհատ եմ և ցանկանում եմ հանձել թուղթ իմ անունից։</label>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="item">
+										<input id="answer_2" name="branch_1_group_1" type="radio" value="Web-Development" class="required">
+										<label for="answer_2"><img src="auth/reg/img/university.svg" style="width:130px;height:130px"  alt=""><strong>Կրթական հաստատություն</strong>Ես համալսարանի կամ դպրոցի ներկայացուցիչ եմ։</label>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="item">
+										<input id="answer_3" name="branch_1_group_1" type="radio"  value="Design" class="required">
+										<label for="answer_3"><img  style="width:130px;height:130px" src="auth/reg/img/company.svg" alt=""><strong>Կազմակերպություն</strong>Ներկայացնում եմ կազմակերպություն։</label>
+									</div>
+                                </div>
+							</div>
+							<!-- /row-->
+						</div>
+						<!-- /First branch What Type of Project ============================== -->
+						
+						<!-- /What Type of Project > Seo-Optimization ============================== -->
+						<div class="branch" id="Seo-Optimization">
+							<div class="step" data-state="budget">
+								<div class="question_title">
+									<h3>Խնդրում ենք ընտրել նշվածներից որևէ մեկը</h3>
+                                    <p>Նշեք տեղեկություններ Ձեր մասին համակարգի<strong> ճիշտ աշխատանքի համար</strong>.</p>
+								</div>
+								<div class="row">
+									<div class="col-lg-4">
+										<div class="item">
+											<input id="branch_1_answer_1" type="checkbox" name="branch_1_answers[]" value="Page SEO Checker" class="required">
+											<label for="branch_1_answer_1"><img style="width:130px;height:130px" src="auth/reg/img/individual1.svg" alt=""><strong>Անհատ</strong>Ես անհատ եմ և կփոխանցեմ թուղթը իմ տանից</label>
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="item">
+											<input id="branch_1_answer_2" name="branch_1_answers[]" type="checkbox" value="Pay Per Click" class="required">
+											<label for="branch_1_answer_2"><img style="width:130px;height:130px"  src="auth/reg/img/volunteer.svg" alt=""><strong>Կամավոր</strong>Ես պատրաստ եմ մասնակցել կամավոր աշխատանքներին</label>
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="item">
+											<input id="branch_1_answer_3" name="branch_1_answers[]" type="checkbox" value="Backlinks Checker" class="required">
+											<label for="branch_1_answer_3"><img style="width:130px;height:130px"   src="auth/reg/img/store.svg" alt=""><strong>Անհատ ձեռներեց</strong>Ես որպես անհատ կտրամադրեմ թուղթ իմ ձեռնարկությունից</label>
+										</div>
+									</div>
+								</div>
+								<!-- /row-->
+							</div>
+							<!-- /step -->
+						</div>
+						<!-- /What Type of Project > Seo-Optimization ============================== -->
+						
+						<!-- Second branch Web-Development ============================== -->
+						<div class="branch" id="Web-Development">
+							<div class="step" data-state="branchtype">
+								<div class="question_title">
+									<h3>What Type of Web Development do you need?</h3>
+									<p>Selection with Branch (Second Branch)</p>
+								</div>
+								<div class="row">
+									<div class="col-lg-4">
+										<div class="item">
+											<input id="branch_2_answer_1" type="radio" name="branch_2_group_1" value="HTML-Development" class="required">
+											<label for="branch_2_answer_1"><img src="auth/reg/img/web_development_icon_2.svg" alt=""><strong>HTML Development</strong>Postea democritum mnesarchum ne nam, ad vim aperiri tractatos.</label>
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="item">
+											<input id="branch_2_answer_2" name="branch_2_group_1" type="radio" value="CMS-Development" class="required">
+											<label for="branch_2_answer_2"><img src="auth/reg/img/web_development_icon_3.svg" alt=""><strong>CMS Development</strong>Postea democritum mnesarchum ne nam, ad vim aperiri tractatos.</label>
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="item">
+											<input id="branch_2_answer_3" name="branch_2_group_1" type="radio" value="FrontEnd-Development" class="required">
+											<label for="branch_2_answer_3"><img src="auth/reg/img/web_development_icon_4.svg" alt=""><strong>FrontEnd Development</strong>Postea democritum mnesarchum ne nam, ad vim aperiri tractatos.</label>
+										</div>
+									</div>
+								</div>
+								<!-- /row-->
+							</div>
+						</div>
+						<!-- /Second branch Web-Development ============================== -->
+						
+						<!-- Web-Development > HTML-Development ============================== -->
+						<div class="branch" id="HTML-Development">
+							<div class="step" data-state="budget">
+								<div class="question_title">
+									<h3>Web Development: HTML Development</h3>
+									<p>Multiple Selection (Checkbox based)</p>
+								</div>
+								<div class="row justify-content-center">
+									<div class="col-lg-5">
+										<div class="box_general">
+											<div class="form-group short">
+												<label><input type="checkbox" name="branch_2_1_answers[]" class="icheck required" value="Responsive">Responsive</label>
+											</div>
+											<div class="form-group short">
+												<label><input type="checkbox" name="branch_2_1_answers[]" class="icheck required" value="Boostrap">Boostrap 4.0 based</label>
+											</div>
+											<div class="form-group short">
+												<label><input type="checkbox" name="branch_2_1_answers[]" class="icheck required" value="Jquery">Jquery 3</label>
+											</div>
+											<div class="form-group short">
+												<label><input type="checkbox" name="branch_2_1_answers[]" class="icheck required" value="Google Web Font">Google Web Font</label>
+											</div>
+											<hr>
+											<h6 class="add_bottom_15">How many pages?</h6>
+											<div class="form-group">
+												<div class="qty-buttons">
+													<input type="button" value="+" class="qtyplus" name="home_page">
+													<input type="text" name="home_page" value="" class="qty form-control required" placeholder="Home page">
+													<input type="button" value="-" class="qtyminus" name="home_page">
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="qty-buttons">
+													<input type="button" value="+" class="qtyplus" name="inner_pages">
+													<input type="text" name="inner_pages" value="" class="qty form-control required" placeholder="Inner pages">
+													<input type="button" value="-" class="qtyminus" name="inner_pages">
+												</div>
+											</div>
+											<h6 class="add_bottom_15">Any particular notes?</h6>
+											<textarea class="form-control" style="height:100px; margin-bottom:0;" placeholder="Typer here" name="html_development_notes"></textarea>
+										</div>
+										<!-- /box_general -->
+									</div>
+								</div>
+								<!-- /row -->
+							</div>
+						</div>
+						<!-- /Web-Development > HTML-Development ============================== -->
+						
+						<!-- Web-Development > CMS-Development ============================== -->
+						<div class="branch" id="CMS-Development">
+							<div class="step" data-state="budget">
+								<div class="question_title">
+									<h3>Web Development: CMS Development</h3>
+									<p>Multiple Selection (Checkbox based)</p>
+								</div>
+								<div class="row justify-content-center">
+									<div class="col-lg-5">
+										<div class="box_general">
+											<div class="form-group short">
+												<label><input type="checkbox" name="branch_2_2_answers[]" class="icheck required" value="WordPress">WordPress</label>
+											</div>
+											<div class="form-group short">
+												<label><input type="checkbox" name="branch_2_2_answers[]" class="icheck required" value="Magento">Magento</label>
+											</div>
+											<div class="form-group short">
+												<label><input type="checkbox" name="branch_2_2_answers[]" class="icheck required" value="Drupal">Drupal</label>
+											</div>
+											<div class="form-group short">
+												<label><input type="checkbox" name="branch_2_2_answers[]" class="icheck required" value="Joomla">Joomla</label>
+											</div>
+											<div class="form-group short">
+												<label><input type="checkbox" name="branch_2_2_answers[]" class="icheck required" value="PrestaShop">PrestaShop</label>
+											</div>
+											<hr>
+											<h6 class="add_bottom_15">Any particular notes?</h6>
+											<textarea class="form-control" style="height:100px; margin-bottom:0;" placeholder="Typer here" name="cms_development_notes"></textarea>
+										</div>
+										<!-- /box_general -->
+									</div>
+								</div>
+								<!-- /row -->
+							</div>
+						</div>
+						<!-- /Web-Development > CMS-Development ============================== -->
+						
+						<!-- Web-Development > FrontEnd-Development ============================== -->
+						<div class="branch" id="FrontEnd-Development">
+							<div class="step" data-state="budget">
+								<div class="question_title">
+									<h3>Web Development: FrontEnd Development</h3>
+									<p>Multiple Selection (Checkbox based)</p>
+								</div>
+								<div class="row justify-content-center">
+									<div class="col-lg-5">
+										<div class="box_general">
+											<div class="form-group short">
+												<label><input type="checkbox" name="branch_2_3_answers[]" class="icheck required" value="Jquery">Jquery</label>
+											</div>
+											<div class="form-group short">
+												<label><input type="checkbox" name="branch_2_3_answers[]" class="icheck required" value="Angularjs 2">Angularjs 2</label>
+											</div>
+											<div class="form-group short">
+												<label><input type="checkbox" name="branch_2_3_answers[]" class="icheck required" value="Angularjs 4">Angularjs 4</label>
+											</div>
+											<div class="form-group short">
+												<label><input type="checkbox" name="branch_2_3_answers[]" class="icheck required" value="Reactjs">Reactjs</label>
+											</div>
+											<div class="form-group short">
+												<label><input type="checkbox" name="branch_2_3_answers[]" class="icheck required" value="Sass">Sass</label>
+											</div>
+											<hr>
+											<h6 class="add_bottom_15">Any particular notes?</h6>
+											<textarea class="form-control" style="height:100px; margin-bottom:0;" placeholder="Typer here" name="frontend_development_notes"></textarea>
+										</div>
+										<!-- /box_general -->
+									</div>
+								</div>
+								<!-- /row -->
+							</div>
+						</div>
+						<!-- /Web-Development > FrontEnd-Development ============================== -->
+						
+						<!-- Design > What Type of Design do you need ============================== -->
+						<div class="branch" id="Design">
+							<div class="step" data-state="budget">
+								<div class="question_title">
+									<h3>What Type of Design do you need?</h3>
+									<p>Multiple Selection (Checkbox based)</p>
+								</div>
+								<div class="row">
+									<div class="col-lg-4">
+										<div class="item">
+											<input id="branch_3_answer_1" type="checkbox" name="branch_3_answers[]" value="Web Design">
+											<label for="branch_3_answer_1"><img src="auth/reg/img/design_icon_2.svg" alt=""><strong>Web Design</strong>Postea democritum mnesarchum ne nam, ad vim aperiri tractatos.</label>
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="item">
+											<input id="branch_3_answer_2" name="branch_3_answers[]" type="checkbox" value="Print Design">
+											<label for="branch_3_answer_2"><img src="auth/reg/img/design_icon_3.svg" alt=""><strong>Print Design</strong>Postea democritum mnesarchum ne nam, ad vim aperiri tractatos.</label>
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="item">
+											<input id="branch_3_answer_3" name="branch_3_answers[]" type="checkbox" value="Logo Design">
+											<label for="branch_3_answer_3"><img src="auth/reg/img/design_icon_4.svg" alt=""><strong>Logo Design</strong>Postea democritum mnesarchum ne nam, ad vim aperiri tractatos.</label>
+										</div>
+									</div>
+								</div>
+								<!-- /row-->
+							</div>
+							<!-- /Design > What Type of Design do you need ============================== -->
+							
+							<!-- Budget ============================== -->
+							<div class="step" id="budget" data-state="end">
+								<div class="question_title">
+									<h3>Նշեք մոտավոր քանակությունը</h3>
+									<p>Խնդրում ենք շրջանակի օգնությամբ մոտավոր նշել թե ամեն ամիս ինչ քանակությամբ թուղթ պատրաստ կլինեք հանձնել </p>
+								</div>
+								<div class="row justify-content-center">
+									<div class="col-lg-5">
+										<div class="box_general">
+										<div class="rounded_slider">
+											<div id="budget_slider1" style="margin: 0 auto 20px;"></div>
+											<p>Խնդրում ենք նշել մոտավոր քանակությունը կիլոգրամներով</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /row -->
+							</div>
+							<!-- /Budget ============================== -->
+							
+							<!-- Last step ============================== -->
+							<div class="submit step" id="end">
+								<div class="question_title">
+									<h3>Խնդրում ենք նշել Ձեր տվյալները</h3>
+									<p>Հետագա համագործակցության որակը ապահովելու նպատակով խնդրում ենք նշել ճիշտ տվյալներ ։</p>
+								</div>
+								<div class="row justify-content-center">
+									<div class="col-lg-7">
+										<div class="box_general">
+											
+											
+									<div class="form-group">
+										<input type="text" name="first_last_name" class="required form-control" placeholder="First and Last name">
+											</div>
 
-                                                        </select>
-                                                      </div>
 
-                                                <div class="form-group col-md-4">
-                                                  <select name='city' id="inpProv" style="display: flex !important;" class="form-control">
-
-                                                    <option value=""  disabled selected hidden>Քաղաք</option>
-
-
-                                                        @foreach($city as $cityes)
-                                                          <option value="{{$cityes->name}}">{{$cityes->name}}</option>
-                                                         @endforeach
-                                                  </select>
-                                                </div>
-
-                                                <div class="form-group col-md-4">
-
-
-            <input id="tel" type="text" placeholder="Հեռ." class="form-control{{ $errors->has('tel') ? ' is-invalid' : '' }}" name="tel" value="{{ old('tel') }}" required autofocus>
-    
-                                @if ($errors->has('tel'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('tel') }}</strong>
-                                    </span>
-                                @endif
-                                                </div>
-                                              </div>
-
-                                              
-
-
-                                        
-                                          <div class="form-group">
-                                                <input id="address" placeholder="Հասցե" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" required autofocus>
-    
-                                                @if ($errors->has('address'))
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $errors->first('address') }}</strong>
-                                                    </span>
-                                                @endif
-                                          </div>
-
-
-
-                                          <div class="form-group">
-
-                                          <input id="email" placeholder="Էլ. փոստ" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                          @if ($errors->has('email'))
-                                              <span class="invalid-feedback" role="alert">
-                                                  <strong>{{ $errors->first('email') }}</strong>
-                                              </span>
-                                          @endif
-
-                                        </div>
+											<div class="form-group">
+												<input type="email" name="email" class="required form-control" placeholder="Your Email">
+											</div>
+											<div class="form-group">
+												<input type="text" name="telephone" class="form-control" placeholder="Your Telephone">
+											</div>
+											<div class="form-group add_bottom_30">
+												<div class="styled-select">
+													<select class="required" name="country">
+														<option value="" selected>Select your country</option>
+														<option value="Europe">Europe</option>
+														<option value="Asia">Asia</option>
+														<option value="North America">North America</option>
+														<option value="South America">South America</option>
+													</select>
+												</div>
+											</div>
+											<div class="checkbox_questions">
+												<input name="terms" type="checkbox" class="icheck required" value="yes">
+												<label>Please accept <a href="#" data-toggle="modal" data-target="#terms-txt">terms and conditions</a>.</label>
+											</div>
+										</div>
+										<!-- /box_general -->
+									</div>
+								</div>
+								<!-- /row -->
+							</div>
+							<!-- /Last step ============================== -->
+						</div>
+					</div>
+					<!-- /middle-wizard -->
+					<div id="bottom-wizard">
+						<button type="button" name="backward" class="backward">Նախորդը</button>
+						<button type="button" name="forward" class="forward">Հաջորդը</button>
+						<button type="submit" name="process" class="submit">Հաստատել</button>
+					</div>
+					<!-- /bottom-wizard -->
+				</form>
+			</div>
+			<!-- /Wizard container -->
+		</div>
+		<!-- /Container -->
+	</main>
 
 
-
-                                           
-                                        <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                    
-                                                        <input placeholder="Ծածկագիր" id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                                        @if ($errors->has('password'))
-                                                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $errors->first('password') }}</strong>
-                                                            </span>
-                                                        @endif
-                                                </div>
-
-                                                <div class="form-group col-md-6">
-                                                    
-     <input id="password-confirm" placeholder="Ծածկագրի հաստատում" type="password" class="form-control" name="password_confirmation" required>
-
-                                                </div>
-                                        </div>
-
-                                        <div class="form-button">
-                                                <button id="submit" type="submit" class="ibtn">Գրանցվել</button>
-                                            </div>                                        </form>
-                                        </div>
-                        </form>
-
-                        <div class="other-links">
-                            <span>Մուտք սոց. ցանցերով</span><a href="#">Facebook</a><a href="#">Google</a><a href="#">Linkedin</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                    
+                 
 <script type="text/javascript" src="{{asset('auth/js/jquery.min.js')}}"></script>
+<script  type="text/javascript" src="{{asset('auth/reg/js/common_scripts.min.js')}}"></script>
+<script  type="text/javascript" src="{{asset('auth/reg/js/menu.js')}}"></script>
+<script  type="text/javascript" src="{{asset('auth/reg/js/main.js')}}"></script>
+<script  type="text/javascript" src="{{asset('auth/reg/js/wizard_func_multiple_branch.js')}}"></script>	
+<script> 
+jQuery.extend(jQuery.validator.messages, {
+    required: "Պարտադիր դաշտ",
+    remote: "Խնդրում ենք ուղղել դաշտը",
+    email: "Խնդրում ենք գրել իրական Էլ-փոստի հասցե",
+    url: "Please enter a valid URL.",
+    date: "Խնդրում ենք նշել իրական ամսաթիվ",
+    dateISO: "Խնդրում ենք նշել իրական ամսաթիվ (ISO).",
+    number: "Խնդրոպւմ եքն նշել իրական հեռախոսահամար",
+    digits: "Խնդրում ենք նշել թվերը",
+    creditcard: "Please enter a valid credit card number.",
+    equalTo: "Please enter the same value again.",
+    accept: "Please enter a value with a valid extension.",
+    maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
+    minlength: jQuery.validator.format("Please enter at least {0} characters."),
+    rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
+    range: jQuery.validator.format("Please enter a value between {0} and {1}."),
+    max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
+    min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
+});
+</script>
 <script type="text/javascript" src="{{asset('auth/js/popper.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('auth/js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('auth/js/main.js')}}"></script>

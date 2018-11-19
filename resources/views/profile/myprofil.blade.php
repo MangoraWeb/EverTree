@@ -13,6 +13,10 @@
 <link rel="stylesheet" type="text/css" href="{{asset('webprofile/css/bootstrap-select.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('webprofile/css/daterangepicker.css')}}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+   
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 
 @endsection
@@ -179,7 +183,7 @@ background-color: #edf2f6;
               <div class="top-header-author">
 							<div class="author-thumb">
 								
-								@if(Auth::user()->avatar = 'users/default.png')
+								@if($avatar = 'users/default.png')
 									<div class="containeravatar">
 											<div class="avatarpic">
 											<form enctype="multipart/form-data" id="form" action="{{route('changeava')}}" method="POST">
@@ -201,9 +205,9 @@ background-color: #edf2f6;
 													<span>Ընտրեք նկարը</span>
 												</div>
 											 </div>
-											</div>  
+											</div>
 @endif
-							<img src="{{asset($user->avatar)}}" alt="{{$user->name}}">
+							<img src="{{asset(Auth::user()->avatar)}}" alt="{{$user->name}}">
 							</div>
 							<div class="author-content">
 								<a href="#" class="h3 author-name">{{$user->name}} {{$user->surname}}</a>
@@ -220,7 +224,7 @@ background-color: #edf2f6;
 
 										<li>
                         <span class="title">Իմ մասին:</span>
-												<span class="text">Բարև ։) Ես Կարենն եմ։ Ես և իմ թիմը ստեղծեցինք այս կայքը մի նպատակով. որպեսզի բացատրենք.որ ԹՈՒՂԹԸ ԱՂԲ ՉԷ։
+												<span class="text">Բարև
 												</span>
                     </li>
 

@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/global.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/toastr.css') }}"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <link id="theme" rel="stylesheet" href="{{asset('assets/css/themes/theme-blue.min.css')}}" />
-
     <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed" rel="stylesheet">
     <title>EverTree</title>
 
@@ -206,8 +206,8 @@
   <div class="window-inner">
       <section class="section dark">
           <div class="section-content">
-              <div class=" gscontainer">
-                  <!-- Section Header -->
+            <div class=" gscontainer" style="width: 40%;margin-left: 50%;">                  
+                <!-- Section Header -->
                   <div class="section-header">
                     <img src="http://127.0.0.1:8000/images/big.png" alt="" class="section-header-image" style=" width: auto;">
                         <div class="section-header-content">
@@ -237,6 +237,7 @@
 
 
 <script src="{{asset('assets/plugins/jquery.appear/jquery.appear.js')}}"></script>
+<script src="{{asset('js/toastr.min.js')}}"></script>
 <script src="{{asset('assets/plugins/jquery.localscroll/jquery.localScroll.min.js')}}"></script>
 <script src="{{asset('assets/plugins/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
 <script src="{{asset('assets/plugins/slick-carousel/slick/slick.min.js')}}"></script>
@@ -246,21 +247,7 @@
 <script src="{{asset('assets/plugins/snapsvg/dist/snap.svg-min.js')}}"></script>
 <script src="{{asset('assets/js/core.js')}}"></script>
 <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
+@toastr_render
 
-<script>
-
-    // Enable pusher logging - don't include this in production
-    Pusher.logToConsole = true;
-
-    var pusher = new Pusher('39cb42e34f30815debf5', {
-      cluster: 'ap2',
-      forceTLS: true
-    });
-
-    var channel = pusher.subscribe('my-channel');
-    channel.bind('my-event', function(data) {
-      alert(JSON.stringify(data));
-    });
-  </script>
         </body>
 </html> 

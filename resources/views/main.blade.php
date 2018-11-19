@@ -51,6 +51,11 @@
   <h2 class="text1">Իմ այգին</h2>  
 </a>
 
+<a style="text-decoration: none;" class="p-2 text-muted" href="/shop">
+  <h2 class="text1">Խանութ</h2>  
+</a>
+
+
 
 <a style="text-decoration: none;" class="text-muted" href="/">
 	<div class="control-icon more has-items" style="margin-top: 3px;">			

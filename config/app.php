@@ -147,6 +147,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Yoeunes\Toastr\ToastrServiceProvider::class,
 
         LaravelQRCode\Providers\QRCodeServiceProvider::class,     
         LaravelQRCode\Providers\QRCodeServiceProvider::class,     

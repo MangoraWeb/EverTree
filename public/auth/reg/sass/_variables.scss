@@ -1,0 +1,27 @@
+//-------------------- Base Colors --------------------//
+$body-color: 					#fff;
+$body-text-color:               #555;
+$body-text-color-2:             #777;
+$heading-color:                 #333;
+
+$color-1: 						#1c5dab; 
+$color-2: 						#392779;
+$color-3: 						#409fff;
+$color-4: 						#0073e5;
+
+$border-color: 			        #ededed;
+$border-color-2: 			    #d9e1e6;
+
+//-------------------- Line Height Variables --------------------//
+$line-height-base:              1.4;
+$line-height-large:           	1.8;
+$line-height-none:           	1;
+
+//-------------------- Font Families --------------------//
+$font-main: 					'Roboto Condensed', Arial, sans-serif;
+
+//-------------------- Responsive sizes -------------------- //
+$large-device-width: 1199px; // Large devices (desktops, less than 1200px)
+$medium-device-width: 991px; // Medium devices (tablets, less than 992px)
+$small-device-width: 767px;	// Small devices (landscape phones, less than 768px)
+$extra-small-device-width: 575px;	// Extra small devices (portrait phones, less than 576px)

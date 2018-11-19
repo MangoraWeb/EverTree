@@ -74,7 +74,7 @@
 
 
     <a style="text-decoration: none;" class="p-2 text-muted active" href="/post">
-      <h2 class="text1">Նորություններ</h2>  
+      <h2 class="active text1">Նորություններ</h2>  
 </a>
 
 @if (Auth::check())

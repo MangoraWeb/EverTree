@@ -85,6 +85,11 @@ Route::get('/about',[
     'uses'=>'MainController@about'
 ]);
 
+Route::get('/shop',[
+    'as'=>'shop',
+    'uses'=>'ShopController@index'
+]);
+
 
 Route::get('/test',function() {
     return view('test');

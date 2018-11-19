@@ -34,7 +34,7 @@ class ProfileController extends Controller
         $incrementationCount = $totalCount - $latestCount->count;
     //Change this
 
-
+    $avatar = Auth::user()->avatar ;
 
             $eventToGo = Auth::user()->events()->get();
                 foreach($eventToGo as $etogo) {
@@ -56,7 +56,8 @@ class ProfileController extends Controller
                     ->with('ttCount',$totalCount)
                     ->with('incCount',(float)substr($incrementationCount, 0, 5))
                     ->with('event',$events)
-                    ->with('actions',$actions);
+                    ->with('actions',$actions)
+                    ->with('avatar',$avatar);
     }
 
     public function profileod($id) {
@@ -120,13 +121,11 @@ class ProfileController extends Controller
               $user = User::where('id',Auth::user()->id)->update(array(
                 'avatar'=> '/users/' . $name,
                 )); 
-
-                $data['message'] = 'hello world';
-                $pusher->trigger('my-channel', 'my-event', $data);
             }
       
-          
-            return back()->with('success', 'Ձեր նկարը փոխվեց.');
+            toastr()->success('Ձեր լուսանկարը հաջողությամբ փոխվեց') ;
+
+            return back();
       }
 
   
