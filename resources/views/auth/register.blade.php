@@ -74,7 +74,8 @@
 	<main>
 		<div class="container">
 			<div id="wizard_container">
-				<form name="example-1" id="wrapped" method="POST">
+				<form name="user_data" id="wrapped" method="POST">
+					@csrf
 					<input id="website" name="website" type="text" value="">
 					<!-- Leave input above for security protection, read docs for details -->
 					<div id="middle-wizard">
@@ -88,19 +89,19 @@
 							<div class="row">
 								<div class="col-lg-4">
 									<div class="item">
-										<input id="answer_1" type="radio" name="branch_1_group_1" value="Seo-Optimization" class="required">
+										<input id="answer_1" type="radio" name="branch_1_group_1" value="individual" class="required">
 										<label for="answer_1"><img src="auth/reg/img/individual.svg" style="width:130px;height:130px" alt=""><strong>Անհատ</strong> Ես անհատ եմ և ցանկանում եմ հանձել թուղթ իմ անունից։</label>
 									</div>
 								</div>
 								<div class="col-lg-4">
 									<div class="item">
-										<input id="answer_2" name="branch_1_group_1" type="radio" value="Web-Development" class="required">
+										<input id="answer_2" name="branch_1_group_1" type="radio" value="school" class="required">
 										<label for="answer_2"><img src="auth/reg/img/university.svg" style="width:130px;height:130px"  alt=""><strong>Կրթական հաստատություն</strong>Ես համալսարանի կամ դպրոցի ներկայացուցիչ եմ։</label>
 									</div>
 								</div>
 								<div class="col-lg-4">
 									<div class="item">
-										<input id="answer_3" name="branch_1_group_1" type="radio"  value="Design" class="required">
+										<input id="answer_3" name="branch_1_group_1" type="radio"  value="company" class="required">
 										<label for="answer_3"><img  style="width:130px;height:130px" src="auth/reg/img/company.svg" alt=""><strong>Կազմակերպություն</strong>Ներկայացնում եմ կազմակերպություն։</label>
 									</div>
                                 </div>
@@ -110,28 +111,28 @@
 						<!-- /First branch What Type of Project ============================== -->
 						
 						<!-- /What Type of Project > Seo-Optimization ============================== -->
-						<div class="branch" id="Seo-Optimization">
-							<div class="step" data-state="budget">
+						<div class="branch" id="individual">
+							<div class="step" data-state="end">
 								<div class="question_title">
 									<h3>Խնդրում ենք ընտրել նշվածներից որևէ մեկը</h3>
                                     <p>Նշեք տեղեկություններ Ձեր մասին համակարգի<strong> ճիշտ աշխատանքի համար</strong>.</p>
 								</div>
 								<div class="row">
 									<div class="col-lg-4">
-										<div class="item">
-											<input id="branch_1_answer_1" type="checkbox" name="branch_1_answers[]" value="Page SEO Checker" class="required">
+										<div class="item" >
+											<input id="branch_1_answer_1" type="checkbox" name="branch_1_answers[]" value="individual" class="required">
 											<label for="branch_1_answer_1"><img style="width:130px;height:130px" src="auth/reg/img/individual1.svg" alt=""><strong>Անհատ</strong>Ես անհատ եմ և կփոխանցեմ թուղթը իմ տանից</label>
 										</div>
 									</div>
 									<div class="col-lg-4">
-										<div class="item">
-											<input id="branch_1_answer_2" name="branch_1_answers[]" type="checkbox" value="Pay Per Click" class="required">
+										<div class="item" >
+											<input id="branch_1_answer_2"  name="branch_1_answers[]" type="checkbox" value="valanter" class="required">
 											<label for="branch_1_answer_2"><img style="width:130px;height:130px"  src="auth/reg/img/volunteer.svg" alt=""><strong>Կամավոր</strong>Ես պատրաստ եմ մասնակցել կամավոր աշխատանքներին</label>
 										</div>
 									</div>
 									<div class="col-lg-4">
 										<div class="item">
-											<input id="branch_1_answer_3" name="branch_1_answers[]" type="checkbox" value="Backlinks Checker" class="required">
+											<input id="branch_1_answer_3" name="branch_1_answers[]" type="checkbox" value="entrepreneur" class="required">
 											<label for="branch_1_answer_3"><img style="width:130px;height:130px"   src="auth/reg/img/store.svg" alt=""><strong>Անհատ ձեռներեց</strong>Ես որպես անհատ կտրամադրեմ թուղթ իմ ձեռնարկությունից</label>
 										</div>
 									</div>
@@ -143,7 +144,7 @@
 						<!-- /What Type of Project > Seo-Optimization ============================== -->
 						
 						<!-- Second branch Web-Development ============================== -->
-						<div class="branch" id="Web-Development">
+						<div class="branch" id="school">
 							<div class="step" data-state="branchtype">
 								<div class="question_title">
 									<h3>What Type of Web Development do you need?</h3>
@@ -358,32 +359,63 @@
 									<div class="col-lg-7">
 										<div class="box_general">
 											
-											
-									<div class="form-group">
-										<input type="text" name="first_last_name" class="required form-control" placeholder="First and Last name">
+											<div class="form-row">	
+									<div class="form-group col-md-6" style="margin:0">
+										<input type="text" name="first_last_name" class="required form-control" placeholder="Անուն">
 											</div>
 
+											<div class="form-group col-md-6 "style="margin:0">
+												<input type="text" name="first_last_name" class="required form-control" placeholder="Ազգանուն">
+													</div>
+
+										</div>
+											<div class="form-group">
+												<input type="email" name="email" class="required form-control" placeholder="Էլ-փոստ">
+											</div>
 
 											<div class="form-group">
-												<input type="email" name="email" class="required form-control" placeholder="Your Email">
+												<input type="password" name="password" id="password" class="required form-control" placeholder="Գաղտնաբառ">
 											</div>
 											<div class="form-group">
-												<input type="text" name="telephone" class="form-control" placeholder="Your Telephone">
+												<input type="password" name="password_confirmation"  id="password_confirmation" class="required form-control" placeholder="Գաղտնաբառի հաստատում">
 											</div>
-											<div class="form-group add_bottom_30">
+
+											<div class="form-group">
+												<input type="number" name="telephone" id="telephone" class="required form-control" placeholder="Հեռախոսահամար">
+											</div>
+
+											<div class="form-row">	
+
+		
+									
+
+											<div class="form-group add_bottom_30  col-md-6">
+												
 												<div class="styled-select">
-													<select class="required" name="country">
-														<option value="" selected>Select your country</option>
-														<option value="Europe">Europe</option>
-														<option value="Asia">Asia</option>
-														<option value="North America">North America</option>
-														<option value="South America">South America</option>
+													<select name="province" class="custom-select d-block w-100" required="" id="province" required="">
+														<option style="display: none;"selected disabled  value="">Ընտրեք մարզը</option>
+														@foreach($provinces as $province)
+														<option value='{{$province->id}}'>{{$province->name}}</option>
+														@endforeach
 													</select>
 												</div>
-											</div>
+											</div>		
+
+											<div class="form-group add_bottom_30  col-md-6">
+												<div class="styled-select ">
+													   <select name="city" class="custom-select d-block w-100" required="" id="city">
+														<option  style="display: none;" selected disabled  value="">Ընտրեք քաղաքը</option>
+														@foreach($cities as $city)
+														<option data-group='{{$city->province_id}}' value='{{$city->name}}'>{{$city->name}}</option>
+													  @endforeach
+													</select>
+												</div></div>
+											
+										</div>
+
 											<div class="checkbox_questions">
 												<input name="terms" type="checkbox" class="icheck required" value="yes">
-												<label>Please accept <a href="#" data-toggle="modal" data-target="#terms-txt">terms and conditions</a>.</label>
+												<label>Ծանոթ եմ <a href="#" data-toggle="modal" data-target="#terms-txt">կայքի կանոններին</a>։</label>
 											</div>
 										</div>
 										<!-- /box_general -->
@@ -437,6 +469,30 @@ jQuery.extend(jQuery.validator.messages, {
     min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
 });
 </script>
+
+
+
+<script>
+    $(function(){
+      $('#province').on('change', function(){
+          var val = $(this).val();
+          var sub = $('#city');
+          $('option', sub).filter(function(){
+              if (
+                   $(this).attr('data-group') === val 
+                || $(this).attr('data-group') === 'SHOW'
+              ) {
+                  $(this).show();
+              } else {
+                  $(this).hide();
+              }
+          });
+      });
+      $('#province').trigger('change');
+  });
+    </script>
+
+
 <script type="text/javascript" src="{{asset('auth/js/popper.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('auth/js/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('auth/js/main.js')}}"></script>

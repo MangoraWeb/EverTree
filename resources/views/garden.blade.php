@@ -193,6 +193,9 @@
             <div class="col-md-5 text-align:center;" style=" margin-top: 20%;">
                 Մենք դեռ կկառուցենք այգիները միասին։
             </div>
-        </div>
+		</div>
+		
+	
+		
 </div>
 @endsection

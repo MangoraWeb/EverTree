@@ -53,7 +53,8 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'string|min:8|required_with:password_confirmation|same:password_confirmation',
+            'password_confirmation' => 'min:8'
         ]);
     }
 
@@ -62,13 +63,11 @@ class RegisterController extends Controller
         $city = City::all();
         $province = Province::all();
 
-
-       
-
+        
 
         return view ('auth.register')
-            ->with('city',$city)
-            ->with('province',$province);
+            ->with('cities',$city)
+            ->with('provinces',$province);
 
     }
 
@@ -80,6 +79,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

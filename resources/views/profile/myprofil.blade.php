@@ -224,7 +224,7 @@ background-color: #edf2f6;
 
 										<li>
                         <span class="title">Իմ մասին:</span>
-												<span class="text">Բարև
+												<span class="text">
 												</span>
                     </li>
 

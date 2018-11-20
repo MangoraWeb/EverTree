@@ -223,8 +223,6 @@
                                         </div>
 
                                         <div class="col-md-4 mb-3">
-
-                                          
                                               <label for="state">Քաղաք</label>
                                                <select name="city" class="custom-select d-block w-100" required="" id="city">
                                                   <option  style="display: none;" selected disabled  value="">Ընտրեք քաղաքը</option>

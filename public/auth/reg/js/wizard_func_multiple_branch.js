@@ -1,7 +1,7 @@
 	/*  Wizard */
 	jQuery(function ($) {
 		"use strict";
-		$('form#wrapped').attr('action', 'form_send_multiple_branch.php');
+		$('form#wrapped').attr('action', '/register');
 		$("#wizard_container").wizard({
 			stepsWrapper: "#wrapped",
 			submit: ".submit",
