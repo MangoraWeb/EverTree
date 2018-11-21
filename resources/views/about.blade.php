@@ -1,29 +1,46 @@
 @extends('layouts.main')
 
-@section('header')
-<link href="{{asset('/css/elements.css')}}" rel="stylesheet">
-
-@endsection
-@section('secstyle')
-padding:0;
-@endsection
-@section('sdnone')
-display: none;
-@endsection
 @section('slider')
+<div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        
+        <div class="col-md-12 roundeds">
+          <img class="big-logo rounded mx-auto d-block center-block" src="evertree/43333376_579577592462250_96139591630716928_n.png">
+          <p class="headling">ԱՄԵՆ ԹՂԹԻ ԿՏՈՐ ԿՏՐՎԱԾ ԾԱՌԻ ՄԻ ՄԱՍ Է</p>
+        </div>
 
+
+        <div class="col-md-12 roundeds">
+
+            <h3 class="slogan">
+             <div class="pass"> ԱՎԵԼԱՑՐՈւ՛, <br>
+                ԿՅԱՆՔ<br>
+        <div class="active">ԲՆՈւԹՅԱՆԸ</div><br> </h3>
+        <div class="txl col-md-10 quote">
+            «  Մարդիկ հավանաբար չգիտեն, որ 60 կիլոգրամ
+              թուղթը  արժե  մեկ  ծառ։  Թղթի  վերամշակման
+              ուղղությամբ  այսօր քիչ մարդիկ են աշխատում։
+              Հանձնելով՝  որպես   աղբ  դիտարկվող  թուղթը,
+              դուք   կկարողանաք  կյանք  տալ  բնությանը ։ »
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 
 @endsection
-
-
 @section('menu')
 <div  style="margin-top:6px;" class="col-sm-5 col-md-8 nav justify-content">
 
                                                               
 
     <a style="text-decoration: none;" class="p-2 text-muted" href="/handstep">
-            <h2 class="text1">Թղթի հանձնում</h2>  
+            <h2 class="active text1">Թղթի հանձնում</h2>  
     </a>
+
+
     <a style="text-decoration: none;" class="p-2 text-muted" href="/post">
       <h2 class="text1">Նորություններ</h2>  
 </a>
@@ -32,6 +49,12 @@ display: none;
 <a style="text-decoration: none;" class="p-2 text-muted" href="/mygarden">
   <h2 class="text1">Իմ այգին</h2>  
 </a>
+
+<a style="text-decoration: none;" class="p-2 text-muted" href="/shop">
+  <h2 class="text1">Խանութ</h2>  
+</a>
+
+
 
 <a style="text-decoration: none;" class="text-muted" href="/">
 	<div class="control-icon more has-items" style="margin-top: 3px;">			
@@ -161,6 +184,17 @@ display: none;
   </div>
 @endsection
 
+
 @section('content')
-No
+<div>
+    <p class="tabbed"><b>"MangoraWeb"</b> թիմը իր <b>"EverTree"</b> հասարակական ծրագրով փորձում է լրացնել  թղթի պահանջարկը, որը հանդիսանում է անտառահատումների հիմնական պատճառ։ <br> </p>
+       Ի՞նչ եղանակով ։ <br>
+    <p class="tabbed">Մեր թիմը, հավաքագրելով աղբ դիտարկվող թուղթը ՀՀ-ի տարբեր մարզերից, հանձնելու է հավաքագրված թղթի "թափոնը" վերամշակման ։ Որից ստացված հասույթը տրամադրվելու է այգիների, կանաչապատ տարածքների ստեղծմանը և պահպանմանը։ <br>  </p>
+       Ի՞նչ եղանակով է կատարվելու հասույթի փոխանցումը և օգտագործումը ։ <br>
+    <p class="tabbed">Հասույթը՝ միավորների տեսքով (ETC), կփոխանցվի յուրրաքանչյուր այն բաժանորդի հաշվին ով գրանցված է մեր համակարգում (վեբ-կայքում) ։  Միավորների քանակը կախված կլինի տվյալ բաժանորդի նվիրաբերած թղթի քանակությունից ։ Այսինքն եթե բաժանորդը ունի իր համար անպիտան թղթի մի որոշակի քանակ  և ցանկանում է օգնել իրեն շրջապատող բնությանը , նա ընդամենը պետք է մեզ տեղեկացնի իր մոտ գտնվող թղթի մասին , և մեր կամավորները կմոտենան նրան , կվերցնեն թուղթը, որից հետո տվյալ բաժանորդը կստանա միավորներ իր նվիրաբերած թղթի քանակին համապատասխան ։ </p>
+    <p class="tabbed"> Բաժանորդը իր միավորները կարող է միայն օգտագործել տարածքների կանաչապատման և բարեգործության համար։ <br> </p>
+    <p class="tabbed">Այսպիսով  յուրաքանչյուր բաժանորդ ինքն է ընտրում իր միավորների կառավարման ձևը, սակայն այդ ձևը  պետք է համապատասխանի մեր ծրագրի կանոններին ։ <br> </p>
+    <p class="tabbed">Յուրաքանչյուր բաժանորդ ունենում է իր անվանական QR կոդը որը փակցված է լինելու յուրաքնաչյուր ծառի կամ կանաչ տարածքի վրա , որը ստեղծվել է իր միավորների շնորհիվ ։ <br></p>
+    <p class="tabbed">Յուրաքանչյուր բաժանորդ հնարավորություն ունի յուրաքանչյուր պահի դառնալ  <b>"EverTree"</b> կամավոր , մասնակցել մեր կողմից կազմակերպած միջոցառումներին և անցկացնել նաև լավ ժամանակ մեր և ձեր կողմից ստեղծած առողջ հասարակության հետ ։ <br></p>
+</div>
 @endsection
