@@ -196,7 +196,7 @@
 
                                             </div>
 
-                                            <div class="col-md-3 bg2 paper activediv text-center">
+                                            <div class="col-md-3 bg2active paper activediv text-center">
                                               <img class="type" src="{{asset('evertree/activetype.png')}}"/>
                                               <h4 class="papertext active mx-auto">Հասցե</h4>
 
@@ -206,16 +206,28 @@
                                               <img class="type" src="{{asset('evertree/type.png')}}"/>
                                            
                                           </div>
-
-                                          <form action="{{route('step3post')}}" method="post" class="col-md-12">
+                                          <div class="section-header" style="
+                                          font-weight: 100;
+                                          color: #01c88e;
+                                          padding: 0;
+                                          margin: 35px 22px;
+                                      ">               
+                                      
+                                      <div class="author-thumb">
+                                
+                                      <img style="width: 59px !important;" src="http://127.0.0.1:8000/images/big.png" alt="" class="section-header-image">
+                                        </div>
+                                      <div class="section-header-content" style="min-height: 17px;min-width: 475px;margin-top: 10px;">
+                                        <span class="typing start">Խնդրում ենք նշել Ձեր մարզը,քաղաքը,հեռ. և հասցեն</span><span class="typed-cursor">|</span><span class="typed-cursor">|</span><span class="typed-cursor">|</span>
+                                                </div>
+                                            </div>
+                                          <form action="{{route('step3post')}}" id="s2" method="post" class="col-md-12">
                                                 
                                               {{ csrf_field() }} 
-                                          <div class="row row-eq-height top" style="margin-left: 7px;padding: 0px 20px 0px;margin-left: 6px;">                                              
-                                            
-                                        <div class="col-md-4 mb-3">
-                                            <label for="province">Մարզ</label>
-                                            <select name="province" class="custom-select d-block w-100" required="" id="province" required="">
-                                                <option style="display: none;"selected disabled  value="">Ընտրեք մարզը</option>
+                                              <div class="row row-eq-height top" style="margin-left: 7px;margin-right: -22px;margin-top: 0;">                                        <div class="col-md-4 mb-3">
+                                            <select name="province" class="form-control custom-select d-block w-100" required="" id="province" required="">
+                                                <option style="display: none;"selected disabled  value="">Մարզը</option>
+
                                                 @foreach($provinces as $province)
                                                 <option value='{{$province->id}}'>{{$province->name}}</option>                                                
                                                 @endforeach
@@ -223,9 +235,8 @@
                                         </div>
 
                                         <div class="col-md-4 mb-3">
-                                              <label for="state">Քաղաք</label>
-                                               <select name="city" class="custom-select d-block w-100" required="" id="city">
-                                                  <option  style="display: none;" selected disabled  value="">Ընտրեք քաղաքը</option>
+                                               <select name="city" class="form-control custom-select d-block w-100" required="" id="city">
+                                                  <option  style="display: none;" selected disabled  value="">Քաղաքը</option>
                                                 @foreach($cities as $city)
                                                   <option data-group='{{$city->province_id}}' value='{{$city->name}}'>{{$city->name}}</option>
                                                 @endforeach
@@ -235,11 +246,10 @@
 
                                             
                                             <div class="col-md-4 mb-3">
-                                                <label for="tel">Հեռ.</label>
                                                 @if(isset($tel))
-                                                <input type="text" name="tel" class="form-control" value="{{$tel}}" id="tel">
+                                                <input type="number" name="tel" class="form-control" value="{{$tel}}"  required="" id="tel">
                                                 @else 
-                                                <input type="text" name="tel" class="form-control" placeholder="+374" id="tel">
+                                                <input type="number" name="tel" class="form-control" placeholder="Հեռ."  required="" id="tel">
                                                 @endif
                                           </div>
 
@@ -252,8 +262,7 @@
                                           </div>
 
                                           <div class="col-md-12 mb-12">
-                                            <button type="submit" class="batrights2" >ՀԱՋՈՐԴԸ ></button>
-                                          </div>
+                                            <button type="submit" class="batrights2" style="left: 481px;">ՀԱՋՈՐԴԸ &gt;</button>                                          </div>
 
                                         </form>
                                     </div>

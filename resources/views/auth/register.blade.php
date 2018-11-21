@@ -377,7 +377,7 @@
 												<input type="password" name="password" id="password" class="required form-control" placeholder="Գաղտնաբառ">
 											</div>
 											<div class="form-group">
-												<input type="password" name="password_confirmation"  id="password_confirmation" class="required form-control" placeholder="Գաղտնաբառի հաստատում">
+												<input type="password" name="password_confirm"  id="password_confirm" class="required form-control" placeholder="Գաղտնաբառի հաստատում">
 											</div>
 
 											<div class="form-group">
@@ -445,7 +445,6 @@
                  
 <script type="text/javascript" src="{{asset('auth/js/jquery.min.js')}}"></script>
 <script  type="text/javascript" src="{{asset('auth/reg/js/common_scripts.min.js')}}"></script>
-<script  type="text/javascript" src="{{asset('auth/reg/js/menu.js')}}"></script>
 <script  type="text/javascript" src="{{asset('auth/reg/js/main.js')}}"></script>
 <script  type="text/javascript" src="{{asset('auth/reg/js/wizard_func_multiple_branch.js')}}"></script>	
 <script> 
@@ -459,7 +458,7 @@ jQuery.extend(jQuery.validator.messages, {
     number: "Խնդրոպւմ եքն նշել իրական հեռախոսահամար",
     digits: "Խնդրում ենք նշել թվերը",
     creditcard: "Please enter a valid credit card number.",
-    equalTo: "Please enter the same value again.",
+    equalTo: "Ծածկագիրը և դրա հաստատումը տարբեր են",
     accept: "Please enter a value with a valid extension.",
     maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
     minlength: jQuery.validator.format("Please enter at least {0} characters."),
@@ -468,8 +467,17 @@ jQuery.extend(jQuery.validator.messages, {
     max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
     min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
 });
-</script>
 
+$( "#wrapped" ).validate({
+  rules: {
+    password: "required",
+    password_confirm: {
+      equalTo: "#password"
+    }
+  }
+});
+
+</script>
 
 
 <script>

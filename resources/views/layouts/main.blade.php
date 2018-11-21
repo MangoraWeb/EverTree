@@ -5,29 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{asset('auth/reg/css/style.css')}}" rel="stylesheet" >
     <link rel="stylesheet" href="{{ asset('css/global.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/toastr.css') }}"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <link id="theme" rel="stylesheet" href="{{asset('assets/css/themes/theme-blue.min.css')}}" />
     <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed" rel="stylesheet">
     <title>EverTree</title>
 
-    <link rel="stylesheet" href="https://html.crumina.net/html-olympus/css/main.min.css">
     <link rel="stylesheet" href="{{asset('css/other/style.css')}}">
     <script src="{{asset('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
 
     <script src="{{asset('assets/js/evert.js')}}"></script>
-    <link rel="stylesheet" href="https://html.crumina.net/html-olympus/css/main.min.css">
+    <link rel="stylesheet" href="{{asset('/webprofile/css/main.min.css')}}">
 
-        <!-- CSS Plugins -->
     <link rel="stylesheet" href="{{asset('assets/plugins/animate.css/animate.min.css')}}" />
    
 
 
-    <!-- CSS Base -->
-
-
-   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 @yield('header')
 </head>
@@ -211,8 +205,9 @@
                   <div class="section-header">
                     <img src="http://127.0.0.1:8000/images/big.png" alt="" class="section-header-image" style=" width: auto;">
                         <div class="section-header-content">
-                          <span class="typing">Ողջու՜յն, ինչո՞վ կարող ենք օգնել Ձեզ։</span>
-                      </div>
+                                <span class="typing start" style="
+                                color: #fff;
+                            ">Ողջու՜յն, ինչո՞վ կարող ենք օգնել Ձեզ։</span>                      </div>
                   </div>
                   <!-- Section Content -->
                   <form id="contact-form-suelo" class="form-text"
@@ -221,8 +216,10 @@
                       <div class="form-group">Ողջույն,ես <input name="name" type="text" class="form-control-text" required>-նն եմ, կից ներկայացնում եմ նամակս՝  </div>
                       <div class="form-group"><textarea name="message" cols="30" rows="4" class="form-control-text" required></textarea></div>
                       <div class="form-group">Էլ հասցեն ինձ հետ նամակ գրելու համար՝ <input name="email" type="email" class="form-control-text" required></div>
-                      <button class="btn btn-white btn-lg">Ուղարկել նամակը</button>
-                  </form>
+                      <button class="btn btn-white btn-lg" style="
+                      height: 60px;
+                      background-color: #03b795d9;
+                  ">Ուղարկել նամակը</button>                  </form>
               </div>
           </div>
       </section>
@@ -242,12 +239,60 @@
 <script src="{{asset('assets/plugins/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
 <script src="{{asset('assets/plugins/slick-carousel/slick/slick.min.js')}}"></script>
 <script src="{{asset('assets/plugins/waypoints/lib/jquery.waypoints.min.js')}}"></script>
-<script src="{{asset('assets/plugins/jquery-validation/dist/jquery.validate.min.js')}}"></script>
+<script src="{{asset('auth/reg/js/common_scripts.min.js')}}"></script>
 <script src="{{asset('assets/plugins/typed.js/dist/typed.min.js')}}"></script>
 <script src="{{asset('assets/plugins/snapsvg/dist/snap.svg-min.js')}}"></script>
 <script src="{{asset('assets/js/core.js')}}"></script>
-<script src="https://js.pusher.com/4.3/pusher.min.js"></script>
-@toastr_render
+<script> 
+jQuery.extend(jQuery.validator.messages, {
+    required: "Պարտադիր դաշտ",
+    remote: "Խնդրում ենք ուղղել դաշտը",
+    email: "Խնդրում ենք գրել իրական Էլ-փոստի հասցե",
+    url: "Please enter a valid URL.",
+    date: "Խնդրում ենք նշել իրական ամսաթիվ",
+    dateISO: "Խնդրում ենք նշել իրական ամսաթիվ (ISO).",
+    number: "Միայն թիվ",
+    digits: "Խնդրում ենք նշել թվերը",
+    creditcard: "Please enter a valid credit card number.",
+    equalTo: "Ծածկագիրը և դրա հաստատումը տարբեր են",
+    accept: "Please enter a value with a valid extension.",
+    maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
+    minlength: jQuery.validator.format("Please enter at least {0} characters."),
+    rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
+    range: jQuery.validator.format("Սխալ հեռախոսահամար"),
+    max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
+    min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
+});
+
+    jQuery.validator.addMethod("tel", function(value, element) {
+        return this.optional(element) || value == value.match(/^[\d+ ]*$/);
+    }, "numbers only");
+</script>
+
+<script>
+
+    $( "#s1" ).validate({
+      rules: {
+         count: {
+            required: true,
+            number: true
+        }
+      }
+    });
+
+        $( "#s2" ).validate({
+      rules: {
+        province: {
+            required: true,
+        },
+        tel: {
+            required: true,
+            number: true,
+            required: true,
+        }
+      }
+    });
+    </script>
 
         </body>
 </html> 

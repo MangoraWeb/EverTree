@@ -51,11 +51,6 @@
   <h2 class="text1">Իմ այգին</h2>  
 </a>
 
-<a style="text-decoration: none;" class="p-2 text-muted" href="/shop">
-  <h2 class="text1">Խանութ</h2>  
-</a>
-
-
 
 <a style="text-decoration: none;" class="text-muted" href="/">
 	<div class="control-icon more has-items" style="margin-top: 3px;">			
@@ -173,7 +168,6 @@
 			</div>
 		</div>
 </a>
-
 @else
 <a style="text-decoration: none;" class="p-2 text-muted" href="/gardens">
   <h2 class="text1">Այգիներ</h2>  
@@ -213,28 +207,45 @@
       <div class="forms container col-lg-11 ">
           
         
-        
-        
-        <div class="row formbut">
-            <form action="/handstep" method="post" class="col-md-12">
+					<div class="section-header" style="
+					font-weight: 100;
+					color: #01c88e;
+					padding: 0;
+					margin: 35px -22px;
+			">               
+			
+			<div class="author-thumb">
+
+			<img style="width: 59px !important;" src="http://127.0.0.1:8000/images/big.png" alt="" class="section-header-image">
+			<div class="label-avatar bg-green" style="
+			right: 18px;
+			background-color: #01c88e !important;
+	">1</div>			</div>
+			<div class="section-header-content" style="min-height: 17px;min-width: 475px;margin-top: 10px;">
+				                    <span class="typing start">Խնդրում ենք նշել թղթի քանակությունը և չափման միավորը</span><span class="typed-cursor">|</span><span class="typed-cursor">|</span>
+                </div>
+            </div>
+				
+        <div class="row">
+					<form action="/handstep" id="s1" method="post" class="col-md-12" style="padding-left: 3px;padding-right: 16px;" novalidate="novalidate">
               {{ csrf_field() }}
-            <div class="col-md-6 flo mb-3">
-                <label for="count">Քանակը</label>
+							<div class="col-md-7 flo" style="padding: inherit;">                
                 @if ($errors->has('count'))
-                <input type="text" name="count" class="form-control is-invalid" id="count" placeholder="" value="{{ old('count') }}" required="">
+                <input type="text" name="count" class=" required form-control " id="count" placeholder="Քանակը" value="{{ old('count') }}">
                 <div class="invalid-feedback">
                     {{ $errors->first('count') }}</div>
                 @else 
-                <input type="text" name="count" class="form-control" id="count" placeholder="" value="{{ old('count') }}" required="">
+                <input type="text" name="count" class="required form-control " id="count" placeholder="Քանակը" value="{{ old('count') }}">
                @endif
             </div>
             <div class="col-md-6 flo mb-3">
-                <label for="unit">Չափման միավորը</label>
 
                 @if ($errors->has('unit'))
 
-                    <select value="{{ old('unit') }}"  required="" class=" is-invalid custom-select mr-sm-2" name="unit" id="unit">
-                        <option value="Կիլոգրամ">Կիլոգրամ</option>
+                    <select value="{{ old('unit') }}"  required="" class="form-control custom-select mr-sm-2" name="unit" id="unit">
+											<option style="display: none;"selected disabled  value="">Չափման միավորը</option>
+	
+											<option value="Կիլոգրամ">Կիլոգրամ</option>
                       <option value="ton">Տոննա</option>
                     </select>
 
@@ -243,8 +254,10 @@
 
             </div>
                     @else 
-                    <select value="{{ old('unit') }}"  required="" class="custom-select mr-sm-2" name="unit" id="unit">
-                        <option value="kilogram">Կիլոգրամ</option>
+                    <select value="{{ old('unit') }}"  required="" class="form-control custom-select mr-sm-2" name="unit" id="unit">
+											<option style="display: none;"selected disabled  value="">Չափման միավորը</option>
+	
+											<option value="kilogram">Կիլոգրամ</option>
                       <option value="ton">Տոննա</option>
                     </select>
 
@@ -261,3 +274,9 @@
 
 </div>
 @endsection
+
+@section('footer')
+
+
+@endsection
+

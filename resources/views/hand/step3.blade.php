@@ -195,13 +195,13 @@
         </div>
 
       
-        <div class="col-md-3 bg2 paper activediv text-center">
+        <div class="col-md-3 bg2active paper activediv text-center">
           <img class="type" src="{{asset('evertree/activetype.png')}}"/>
           <h4 class="papertext active mx-auto">Հասցե</h4>
 
         </div>
 
-        <div class="col-md-3 bg3 paper activediv text-center">
+        <div class="col-md-3 bg3active paper activediv text-center">
           <img class="type" src="{{asset('evertree/activetype.png')}}"/>
           <h4 class="papertext active mx-auto">Շնորհակալություն</h4>
 

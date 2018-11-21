@@ -7,6 +7,8 @@ body{
     overflow: hidden;
 }
 
+
+
 .single-post {
     height: 700px;
     overflow: auto;
@@ -342,13 +344,19 @@ h1{
 }
 
 .bg2active {
-    background-image: url(evertree/officeicongrey.png);
+    background-image: url(/img/officeicongreen.png);
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .bg3 {
     background-image: url(evertree/successicongrey.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bg3active {
+    background-image: url(img/successicongreen.png);
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -423,7 +431,7 @@ input{
     margin-right: 15px;
     background-color: #00c88e !important;
     position: relative;
-    top: 100px;
+    top: 70px;
     left: -125px;
     border-color: #4cae4c;
     display: inline-block;

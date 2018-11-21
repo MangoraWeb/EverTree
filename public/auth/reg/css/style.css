@@ -1120,7 +1120,6 @@ blockquote.testimonial p {
 input.form-control,
 select.form-control,
 textarea.form-control {
-  background: none;
   background-color: #fff;
   border: 1px solid #d9e1e6;
   -webkit-border-radius: 3px;
@@ -1137,6 +1136,7 @@ textarea.form-control {
   font-weight: 400;
   margin-bottom: 25px;
   padding: 6px 10px 6px 15px;
+  text-align: -webkit-auto;
 }
 
 input.form-control:focus,
@@ -1163,8 +1163,8 @@ span.error {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  top: -20px;
-  left: 15px;
+  top: -30px;
+    left: 15px;
   z-index: 2;
   height: 25px;
   line-height: 1;
