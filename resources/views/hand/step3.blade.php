@@ -218,8 +218,8 @@
 
                 @if (Auth::check())
                 
-            Շնորհակալություն հարգելի {{Auth::user()->name}}։ Մեր թիմը ստացավ ձեր հայտը։ 
-            Վերցնելուց հետո միավորները կփոխանցվեն Ձեր հաշվին։ <br>
+							Շնորհակալություն հարգելի {{Auth::user()->name}}։ Մեր թիմը ստացավ ձեր հայտը։ 
+							Վերցնելուց հետո միավորները կփոխանցվեն Ձեր հաշվին։ <br>
               <a href="#">Իմ հաշիվը</a><br>
               <a href="#">Միավորների օգտագործում</a>
 
@@ -247,13 +247,3 @@
 
 @endsection
 
-@section('footer')
-<script>
-  $(document).ready(function () {
-    // Handler for .ready() called.
-    window.setTimeout(function () {
-        location.href = "/profile/#success";
-    }, 5);
-});
-</script>
-@endsection

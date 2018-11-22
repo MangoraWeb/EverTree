@@ -186,6 +186,14 @@
 
 
 @section('content')
+
+<div class="headersec">
+<img src="{{asset('/img/EvT.jpg')}} " style="
+width: 330px;
+margin-left: 32%;
+">
+</div>
+
 <div>
     <p class="tabbed"><b>"MangoraWeb"</b> թիմը իր <b>"EverTree"</b> հասարակական ծրագրով փորձում է լրացնել  թղթի պահանջարկը, որը հանդիսանում է անտառահատումների հիմնական պատճառ։ <br> </p>
        Ի՞նչ եղանակով ։ <br>

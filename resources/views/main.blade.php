@@ -24,7 +24,6 @@
               Հանձնելով՝  որպես   աղբ  դիտարկվող  թուղթը,
               դուք   կկարողանաք  կյանք  տալ  բնությանը ։ »
             </div>
-
         <img class="fly" src="{{asset('evertree/paperfly.png')}}"/>
         </div>
       </div>
@@ -206,21 +205,12 @@
 
       <div class="forms container col-lg-11 ">
           
-        
-					<div class="section-header" style="
-					font-weight: 100;
-					color: #01c88e;
-					padding: 0;
-					margin: 35px -22px;
-			">               
+        <div class=" section-header" style="font-weight: 100;color: #01c88e;padding: 0;margin: 35px -22px;">               
 			
 			<div class="author-thumb">
 
 			<img style="width: 59px !important;" src="http://127.0.0.1:8000/images/big.png" alt="" class="section-header-image">
-			<div class="label-avatar bg-green" style="
-			right: 18px;
-			background-color: #01c88e !important;
-	">1</div>			</div>
+						</div>
 			<div class="section-header-content" style="min-height: 17px;min-width: 475px;margin-top: 10px;">
 				                    <span class="typing start">Խնդրում ենք նշել թղթի քանակությունը և չափման միավորը</span><span class="typed-cursor">|</span><span class="typed-cursor">|</span>
                 </div>

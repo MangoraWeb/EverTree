@@ -247,9 +247,9 @@
                                             
                                             <div class="col-md-4 mb-3">
                                                 @if(isset($tel))
-                                                <input type="number" name="tel" class="form-control" value="{{$tel}}"  required="" id="tel">
+                                                <input type="text" name="tel" class="form-control" value="{{$tel}}"  required="" id="tel">
                                                 @else 
-                                                <input type="number" name="tel" class="form-control" placeholder="Հեռ."  required="" id="tel">
+                                                <input type="text" name="tel" class="form-control" placeholder="Հեռ."  required="" id="tel">
                                                 @endif
                                           </div>
 
