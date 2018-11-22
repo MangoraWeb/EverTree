@@ -13,7 +13,7 @@
 	$("#budget_slider1").roundSlider({
 		radius: 100,
 		min: 0,
-		max: 5000,
+		max: 1000,
 		step: 5,
 		editableTooltip: true,
 		width: 20,
