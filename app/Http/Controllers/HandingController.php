@@ -11,6 +11,9 @@ use Session;
 use DB;
 use City;
 Use Province;
+use Redirect;
+
+
 class HandingController extends Controller
 {
  
@@ -149,6 +152,11 @@ public function step2(Request $request) {
 
             $hand->save();
 
+            return redirect('/profile/#success')
+                            ->with('count',$count)
+                            ->with('unit',$unit);
+
+
 
         } else {
 
@@ -163,12 +171,22 @@ public function step2(Request $request) {
            $hand->province_id = $request['province'];
            $hand->info = $request->header('User-Agent');
            $hand->save();
+
+           return redirect('/register')
+                        ->with('count',$count)
+                        ->with('unit',$unit)
+                        ->with('address',$address)
+                        ->with('telephone',$telephone)
+                        ->with('city',$request['city'])
+                        ->with('province',$request['province'])
+                        ->with('welcome',true);
         }
 
-        return view('hand.step3')
-                ->with('menu', $pages)
-                ->with('step1',$step1)
-                ->with('step2',$request)
+
+       // return view('hand.step3')
+             //   ->with('menu', $pages)
+            //    ->with('step1',$step1)
+            //    ->with('step2',$request)
 
                 
 ;     }

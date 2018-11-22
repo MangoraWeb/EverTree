@@ -84,6 +84,9 @@
 						<div class="step" data-state="branchtype">
 							<div class="question_title">
 								<h3>Մի փոքր պատմեք ձեր մասին</h3>
+
+								
+
 								<p>Նշեք տեղեկություններ Ձեր մասին համակարգի<strong> ճիշտ աշխատանքի համար</strong>.</p>
 							</div>
 							<div class="row">

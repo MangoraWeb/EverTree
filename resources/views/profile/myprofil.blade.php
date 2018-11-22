@@ -471,7 +471,11 @@ background-color: #edf2f6;
                         <div class="ui-block">
 
                         <div class="ui-block-title ui-block-title-small">
-                          <h6 class="title">Մոտակա իրադարձությունները</h6>
+													<h6 class="title">Մոտակա իրադարձությունները</h6>
+													
+										
+													
+													
 												</div>
 
 												@if ($event)
@@ -561,7 +565,9 @@ background-color: #edf2f6;
 												height: 110px !important;
 												padding: 45px;
 										">
-											<span> Նոր իրադարձություններ չկան</span>
+											<span> Նոր իրադարձություններ չկան  			@if(isset($message))
+												{{$message}}
+												@endif</span>
 													
 											</div>
 												@endif

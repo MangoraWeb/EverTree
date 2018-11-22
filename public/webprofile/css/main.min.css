@@ -150,10 +150,11 @@
   }
   
   .right {
-    margin-left: 12.5vw;
+    margin-left: 8.5vw;
     bottom: 0;
     position: absolute;
     float: right;
+    margin-bottom: 15px;
   }
   
   .right > p {
