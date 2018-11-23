@@ -177,7 +177,32 @@ background-color: #edf2f6;
             <div class="top-header-thumb content-bg-wrap bg-profile" style="height: 213px; background-image: url({{asset($user->cover)}});">
               <div class="top-header-author">
 							<div class="author-thumb">
-							<img src="{{asset($user->avatar)}}" alt="{{$user->name}}">
+								
+								@if($avatar = 'users/default.png')
+									<div class="containeravatar">
+											<div class="avatarpic">
+											<form enctype="multipart/form-data" id="form" action="{{route('changeava')}}" method="POST">
+												@csrf
+												<input  name="image"  id="fileUpload" type="file" />
+												 <svg version="1.1" id="camera" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+														viewBox="0 0 25 15" enable-background="new 0 0 25 15" xml:space="preserve">
+												 <path id="cameraFrame" fill="none" stroke="white" stroke-miterlimit="10" d="M23.1,14.1H1.9c-0.6,0-1-0.4-1-1V1.9c0-0.6,0.4-1,1-1h21.2
+														c0.6,0,1,0.4,1,1v11.3C24.1,13.7,23.7,14.1,23.1,14.1z"/>
+												 <path id="circle" fill="none" stroke="#ffffff" stroke-width="1.4" stroke-miterlimit="12" d="M17.7,7.5c0-2.8-2.3-5.2-5.2-5.2S7.3,4.7,7.3,7.5s2.3,5.2,5.2,5.2
+														S17.7,10.3,17.7,7.5z"/>
+												 <g id="plus">
+														<path fill="none" id="plusLine" class="line" stroke="#ffffff" stroke-linecap="round" stroke-miterlimit="10" d="M20.9,2.3v4.4"/>
+														<path fill="none" class="line"stroke="#ffffff" stroke-linecap="round" stroke-miterlimit="10" d="M18.7,4.6h4.4"/>
+												 </g>
+												</svg>
+											</form>
+												<div id="openModal">
+													<span>Ընտրեք նկարը</span>
+												</div>
+											 </div>
+											</div>
+@endif
+							<img src="{{asset(Auth::user()->avatar)}}" alt="{{$user->name}}">
 							</div>
 							<div class="author-content">
 								<a href="#" class="h3 author-name">{{$user->name}} {{$user->surname}}</a>
@@ -194,7 +219,7 @@ background-color: #edf2f6;
 
 										<li>
                         <span class="title">Իմ մասին:</span>
-												<span class="text">{{Auth::user()->about}}
+												<span class="text">
 												</span>
                     </li>
 
@@ -205,10 +230,13 @@ background-color: #edf2f6;
 						</div>
 
 						<div class="control-block-button">
-							<div class="btn btn-control bg-primary more">
+							
+						<a href="{{route('profileSettings')}}" class="btn btn-control bg-primary more">
 								<svg class="olymp-settings-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-settings-icon"></use></svg>
-							<div class="ripple-container"></div></div>
-
+							
+								<div class="ripple-container"></div>
+						
+							</a>
 							<a href="#" class="btn btn-control bg-purple">
 								<svg class="olymp-chat---messages-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-share-icon"></use></svg>
 							</a>
@@ -227,7 +255,10 @@ background-color: #edf2f6;
           <div class="ui-block">
               <div class="birthday-item inline-items badges">
                 <div class="author-thumb">
-                  <img src="{{asset('webprofile/img/badge14.png')}}" alt="author">
+									<img src="{{asset('webprofile/img/badge14.png')}}" alt="author">
+									
+									<div class="label-avatar bg-green">{{ intval( Auth::user()->tree / 10) }}</div>
+
                 </div>
                 <div class="birthday-author-name">
                   <a href="#" class="h6 author-name">Բնությունը փրկող</a>
@@ -236,7 +267,8 @@ background-color: #edf2f6;
 
                 <div class="skills-item">
                   <div class="skills-item-meter">
-                    <span class="skills-item-meter-active skills-animate" style="width: 80%; opacity: 1;"></span>
+
+                    <span class="skills-item-meter-active skills-animate" style="width: {{ Auth::user()->tree %10  }}0%; opacity: 1;"></span>
                   </div>
                 </div>
 
@@ -246,16 +278,18 @@ background-color: #edf2f6;
         <div class="ui-block">
           <div class="birthday-item inline-items badges">
             <div class="author-thumb">
-              <img src="{{asset('webprofile/img/badge2.png')}}">
+							<img src="{{asset('webprofile/img/badge2.png')}}">
+							<div class="label-avatar bg-green">{{ intval( App\Accepted::where('user_id', Auth::user()->id)->count() / 10) }}</div>
+
             </div>
             <div class="birthday-author-name">
               <a href="#" class="h6 author-name">Ակտիվ պաշտպան</a>
-              <div class="birthday-date"> Տրվում է 15 հանձնման դիմաց </div>
+              <div class="birthday-date"> Տրվում է 10 հանձնման դիմաց </div>
             </div>
 
             <div class="skills-item">
               <div class="skills-item-meter">
-                <span class="skills-item-meter-active skills-animate" style="width: 100%; opacity: 1;"></span>
+                <span class="skills-item-meter-active skills-animate" style="width: {{ App\Accepted::where('user_id', Auth::user()->id)->count() %10  }}0%; opacity: 1;"></span>
               </div>
             </div>
 
@@ -265,7 +299,7 @@ background-color: #edf2f6;
         <div class="ui-block">
           <div class="birthday-item inline-items badges">
             <div class="author-thumb">
-              <img src="{{asset('webprofile/img/badge3.png')}}" alt="author">
+              <img src="{{asset('webprofile/img/badge3.png')}}">
               <div class="label-avatar bg-green">0</div>
             </div>
             <div class="birthday-author-name">
@@ -285,12 +319,12 @@ background-color: #edf2f6;
         <div class="ui-block">
 						<div class="birthday-item inline-items badges">
 							<div class="author-thumb">
-								<img src="{{asset('webprofile/img/badge3.png')}}" alt="author">
-								<div class="label-avatar bg-green">1</div>
+								<img src="{{asset('webprofile/img/badge9.png')}}">
+								<div class="label-avatar bg-green">0</div>
 							</div>
 							<div class="birthday-author-name">
-								<a href="#" class="h6 author-name">EverTree կամավոր</a>
-								<div class="birthday-date">Տրվում է կամավոր աշխատանքների <br> կատարման ժամանակ </div>
+								<a href="#" class="h6 author-name">EverTree բարերար</a>
+								<div class="birthday-date">Տրվում է հանգանակությունների <br> կատարման ժամանակ </div>
 							</div>
 
 							<div class="skills-item">
@@ -325,12 +359,12 @@ background-color: #edf2f6;
                         <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="form-group label-floating">
                                 <label class="control-label">Անուն</label>
-														<input class="form-control" placeholder="" type="text" value="{{Auth::user()->name}}">
+														<input class="settform form-control" placeholder="" type="text" value="{{Auth::user()->name}}">
                             <span class="material-input"></span></div>
                 
                             <div class="form-group label-floating">
                                 <label class="control-label">E-mail</label>
-                                <input class="form-control" placeholder="" type="email" value="{{Auth::user()->email}}">
+                                <input class="settform form-control " placeholder="" type="email" value="{{Auth::user()->email}}">
                             <span class="material-input"></span></div>
                 
                             <div class="form-group date-time-picker label-floating">

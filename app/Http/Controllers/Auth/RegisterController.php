@@ -30,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/welcome';
 
     /**
      * Create a new controller instance.
@@ -53,9 +53,13 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'string|min:8|required_with:password_confirmation|same:password_confirmation',
-            'password_confirmation' => 'min:8'
-        ]);
+            'password' => 'string|min:8',
+        ],[   
+            'email.required'    => 'Էլ-փոստի հասցեն չի կարող լինել դատարկ',
+            'email.unique'      => $data['email'] . ' էլ հասցեն արդեն օգտագործվում է։ Խնդրում ենք մուտք գործել համակարգ կամ փորձել այլ հասցե։',      
+        ]
+    
+    );
     }
 
     public function showRegistrationForm() {
@@ -63,12 +67,9 @@ class RegisterController extends Controller
         $city = City::all();
         $province = Province::all();
 
-        
-
         return view ('auth.register')
             ->with('cities',$city)
             ->with('provinces',$province);
-
     }
 
     /**
@@ -79,16 +80,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        
-        return User::create([
+       return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'surname' => $data['surname'],
-            'city' =>$data['city'],
+            'city_id' => $data['city_id'],
+            'province_id' =>$data['province_id'],
             'address' => $data['address'],
-            'telephone' => $data['tel'],
+            'telephone' => $data['tel'], 
+            'accgroup' => $data['accgroup'],
+            'acctype' => $data['acctype'],
         ]);
+        
+
+       
+
+        
 
         
     }

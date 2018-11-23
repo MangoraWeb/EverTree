@@ -565,9 +565,15 @@ background-color: #edf2f6;
 												height: 110px !important;
 												padding: 45px;
 										">
-											<span> Նոր իրադարձություններ չկան  			@if(isset($message))
+											<span> 
+												
+												@if(isset($message))  			
 												{{$message}}
-												@endif</span>
+												@else 
+												Նոր իրադարձություններ չկան
+												@endif
+											
+											</span>
 													
 											</div>
 												@endif

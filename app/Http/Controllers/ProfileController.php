@@ -30,22 +30,33 @@ class ProfileController extends Controller
         $latestCount = Accepted::where('user_id',$user->id)->first();
         $totalEtc = Accepted::where('user_id',$user->id)->sum('etc');
         $totalCount = Accepted::where('user_id',$user->id)->sum('count');
-        $incrementationEtc = $totalEtc - $latestEtc->etc;
-        $incrementationCount = $totalCount - $latestCount->count;
+        if(!$user->etc == 0){
+            $incrementationEtc = $totalEtc - $latestEtc->etc;
+            $incrementationCount = $totalCount - $latestCount->count;
+        }else {
+             $incrementationEtc = 0;
+             $incrementationCount = 0;
+        }
     //Change this
 
     $avatar = Auth::user()->avatar ;
 
-            $eventToGo = Auth::user()->events()->get();
+                $eventToGo = Auth::user()->events()->get();
+
+
+            if (isset($eventToGo)) {
+                $events = 0;
+            }else {
+
                 foreach($eventToGo as $etogo) {
                     $events = Event::orderBy('created_at', 'desc')->first();
-
                     if($etogo->pivot->user_id == Auth::user()->id && $etogo->pivot->event_id == $events->id ) {
                        $events = 0;
                     } else {
                         $events = Event::orderBy('created_at', 'desc')->orderBy('created_at', 'desc')->first();
                     }
                 }
+            }
 
             $actions = Action::where('user_id',$user->id)->take(4)->orderBy('created_at', 'desc')->get();
 
@@ -105,7 +116,6 @@ class ProfileController extends Controller
                     ->with('user',$user)
                     ->with('province',$province)
                     ->with('city',$city);
-
     }
 
     public function changeava(Request $request) {

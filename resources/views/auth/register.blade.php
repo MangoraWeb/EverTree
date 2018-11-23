@@ -84,27 +84,31 @@
 						<div class="step" data-state="branchtype">
 							<div class="question_title">
 								<h3>Մի փոքր պատմեք ձեր մասին</h3>
-
 								
+								@if ($errors->any())
+								@foreach ($errors->all() as $error)
+									<div><span class="error" style="top: 45px;left: 170px;">{{$error}}</span></div>
+								@endforeach
+								@endif
 
-								<p>Նշեք տեղեկություններ Ձեր մասին համակարգի<strong> ճիշտ աշխատանքի համար</strong>.</p>
+								<p>Նշեք տեղեկություններ Ձեր մասին համակարգի<strong> ճիշտ աշխատանքի համար</strong></p>
 							</div>
 							<div class="row">
 								<div class="col-lg-4">
 									<div class="item">
-										<input id="answer_1" type="radio" name="branch_1_group_1" value="individual" class="required">
+										<input id="answer_1" type="radio" name="accgroup" value="individual" class="required">
 										<label for="answer_1"><img src="auth/reg/img/individual.svg" style="width:130px;height:130px" alt=""><strong>Անհատ</strong> Ես անհատ եմ և ցանկանում եմ հանձել թուղթ իմ անունից։</label>
 									</div>
 								</div>
 								<div class="col-lg-4">
 									<div class="item">
-										<input id="answer_2" name="branch_1_group_1" type="radio" value="school" class="required">
+										<input id="answer_2" name="accgroup" type="radio" value="school" class="required">
 										<label for="answer_2"><img src="auth/reg/img/university.svg" style="width:130px;height:130px"  alt=""><strong>Կրթական հաստատություն</strong>Ես համալսարանի կամ դպրոցի ներկայացուցիչ եմ։</label>
 									</div>
 								</div>
 								<div class="col-lg-4">
 									<div class="item">
-										<input id="answer_3" name="branch_1_group_1" type="radio"  value="company" class="required">
+										<input id="answer_3" name="accgroup" type="radio"  value="company" class="required">
 										<label for="answer_3"><img  style="width:130px;height:130px" src="auth/reg/img/company.svg" alt=""><strong>Կազմակերպություն</strong>Ներկայացնում եմ կազմակերպություն։</label>
 									</div>
                                 </div>
@@ -123,20 +127,20 @@
 								<div class="row">
 									<div class="col-lg-4">
 										<div class="item" >
-											<input id="branch_1_answer_1" type="checkbox" name="branch_1_answers[]" value="individual" class="required">
+											<input id="branch_1_answer_1" type="radio" name="acctype" value="Անհատ" class="required">
 											<label for="branch_1_answer_1"><img style="width:130px;height:130px" src="auth/reg/img/individual1.svg" alt=""><strong>Անհատ</strong>Ես անհատ եմ և կփոխանցեմ թուղթը իմ տանից</label>
 										</div>
 									</div>
 									<div class="col-lg-4">
 										<div class="item" >
-											<input id="branch_1_answer_2"  name="branch_1_answers[]" type="checkbox" value="valanter" class="required">
+											<input id="branch_1_answer_2"  name="acctype" type="radio" value="Կամավոր" class="required">
 											<label for="branch_1_answer_2"><img style="width:130px;height:130px"  src="auth/reg/img/volunteer.svg" alt=""><strong>Կամավոր</strong>Ես պատրաստ եմ մասնակցել կամավոր աշխատանքներին</label>
 										</div>
 									</div>
 									<div class="col-lg-4">
 										<div class="item">
-											<input id="branch_1_answer_3" name="branch_1_answers[]" type="checkbox" value="entrepreneur" class="required">
-											<label for="branch_1_answer_3"><img style="width:130px;height:130px"   src="auth/reg/img/store.svg" alt=""><strong>Անհատ ձեռներեց</strong>Ես որպես անհատ կտրամադրեմ թուղթ իմ ձեռնարկությունից</label>
+											<input id="branch_1_answer_3" name="acctype" type="radio" value="Անհատ ձեռներեց" class="required">
+											<label for="branch_1_answer_3"><img style="width:130px;height:130px"  src="auth/reg/img/store.svg" alt=""><strong>Անհատ ձեռներեց</strong>Ես որպես անհատ կտրամադրեմ թուղթ իմ ձեռնարկությունից</label>
 										</div>
 									</div>
 								</div>
@@ -364,12 +368,12 @@
 											
 											<div class="form-row">	
 									<div class="form-group col-md-6" style="margin:0">
-										<input type="text" name="first_last_name" class="required form-control" placeholder="Անուն">
+										<input type="text" name="name" class="required form-control" placeholder="Անուն">
 											</div>
 
 											<div class="form-group col-md-6 "style="margin:0">
-												<input type="text" name="first_last_name" class="required form-control" placeholder="Ազգանուն">
-													</div>
+												<input type="text" name="surname" class="required form-control" placeholder="Ազգանուն">
+											</div>
 
 										</div>
 											<div class="form-group">
@@ -380,11 +384,11 @@
 												<input type="password" name="password" id="password" class="required form-control" placeholder="Գաղտնաբառ">
 											</div>
 											<div class="form-group">
-												<input type="password" name="password_confirm"  id="password_confirm" class="required form-control" placeholder="Գաղտնաբառի հաստատում">
+												<input type="password" name="confirm"  id="confirm" class="required form-control" placeholder="Գաղտնաբառի հաստատում">
 											</div>
 
 											<div class="form-group">
-												<input type="number" name="telephone" id="telephone" class="required form-control" placeholder="Հեռախոսահամար">
+												<input type="number" name="tel" id="tel" class="required form-control" placeholder="Հեռախոսահամար">
 											</div>
 
 											<div class="form-row">	
@@ -395,7 +399,7 @@
 											<div class="form-group add_bottom_30  col-md-6">
 												
 												<div class="styled-select">
-													<select name="province" class="custom-select d-block w-100" required="" id="province" required="">
+													<select name="province_id" class="custom-select d-block w-100" required="" id="province" required="">
 														<option style="display: none;"selected disabled  value="">Ընտրեք մարզը</option>
 														@foreach($provinces as $province)
 														<option value='{{$province->id}}'>{{$province->name}}</option>
@@ -406,13 +410,18 @@
 
 											<div class="form-group add_bottom_30  col-md-6">
 												<div class="styled-select ">
-													   <select name="city" class="custom-select d-block w-100" required="" id="city">
+													   <select name="city_id" class="custom-select d-block w-100" required="" id="city">
 														<option  style="display: none;" selected disabled  value="">Ընտրեք քաղաքը</option>
 														@foreach($cities as $city)
-														<option data-group='{{$city->province_id}}' value='{{$city->name}}'>{{$city->name}}</option>
+														<option data-group='{{$city->province_id}}' value='{{$city->id}}'>{{$city->name}}</option>
 													  @endforeach
 													</select>
 												</div></div>
+
+
+												<div class="form-group col-md-12" style="margin:0">
+													<input type="text" name="address" class="required form-control" placeholder="Հասցե">
+														</div>
 											
 										</div>
 
@@ -464,7 +473,7 @@ jQuery.extend(jQuery.validator.messages, {
     equalTo: "Ծածկագիրը և դրա հաստատումը տարբեր են",
     accept: "Please enter a value with a valid extension.",
     maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
-    minlength: jQuery.validator.format("Please enter at least {0} characters."),
+    minlength: jQuery.validator.format("Գաղտնաբառը պետք է պարունակի ամենաքիչը {0} նիշ"),
     rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
     range: jQuery.validator.format("Please enter a value between {0} and {1}."),
     max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
@@ -472,12 +481,15 @@ jQuery.extend(jQuery.validator.messages, {
 });
 
 $( "#wrapped" ).validate({
-  rules: {
-    password: "required",
-    password_confirm: {
-      equalTo: "#password"
-    }
-  }
+      rules: {
+         password: {
+            required: true,
+			minlength: 8,
+			},
+		confirm: {
+     	    equalTo: "#password",
+    	},
+      }
 });
 
 </script>
