@@ -37,7 +37,7 @@
                                                               
 
     <a style="text-decoration: none;" class="p-2 text-muted" href="/handstep">
-            <h2 class="active text1">Թղթի հանձնում</h2>  
+            <h2 class="text1">Թղթի հանձնում</h2>  
     </a>
 
 

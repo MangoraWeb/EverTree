@@ -51,7 +51,10 @@ Route::group(['prefix' => 'profile'], function(){
  ]);
 
 
-
+Route::get('/welcome',[
+    'as' => 'welcome',
+    'uses' => 'WelcomeController@index'
+]);
  
 Route::get('/gardens', [
     'as' => 'gardens',

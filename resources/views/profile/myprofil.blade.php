@@ -68,12 +68,12 @@ background-color: #edf2f6;
 								<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
 							</div>
 								<span class="notification-icon">
-									<svg class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+									<svg class="olymp-comments-post-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-comments-post-icon"></use></svg>
 								</span>
 
 							<div class="more">
-								<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-								<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+								<svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg>
+								<svg class="olymp-little-delete"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-little-delete"></use></svg>
 							</div>
 						</li>
 
@@ -86,12 +86,12 @@ background-color: #edf2f6;
 								<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">9 hours ago</time></span>
 							</div>
 								<span class="notification-icon">
-									<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+									<svg class="olymp-happy-face-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-happy-face-icon"></use></svg>
 								</span>
 
 							<div class="more">
-								<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-								<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+								<svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg>
+								<svg class="olymp-little-delete"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-little-delete"></use></svg>
 							</div>
 						</li>
 
@@ -104,7 +104,7 @@ background-color: #edf2f6;
 								<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">Yesterday at 5:32am</time></span>
 							</div>
 								<span class="notification-icon">
-									<svg class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+									<svg class="olymp-comments-post-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-comments-post-icon"></use></svg>
 								</span>
 
 							<div class="comment-photo">
@@ -113,8 +113,8 @@ background-color: #edf2f6;
 							</div>
 
 							<div class="more">
-								<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-								<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+								<svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg>
+								<svg class="olymp-little-delete"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-little-delete"></use></svg>
 							</div>
 						</li>
 
@@ -127,12 +127,12 @@ background-color: #edf2f6;
 								<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">March 5th at 6:43pm</time></span>
 							</div>
 								<span class="notification-icon">
-									<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+									<svg class="olymp-happy-face-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-happy-face-icon"></use></svg>
 								</span>
 
 							<div class="more">
-								<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-								<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+								<svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg>
+								<svg class="olymp-little-delete"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-little-delete"></use></svg>
 							</div>
 						</li>
 
@@ -145,12 +145,12 @@ background-color: #edf2f6;
 								<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">March 2nd at 8:29pm</time></span>
 							</div>
 								<span class="notification-icon">
-									<svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+									<svg class="olymp-heart-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-heart-icon"></use></svg>
 								</span>
 
 							<div class="more">
-								<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-								<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+								<svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg>
+								<svg class="olymp-little-delete"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-little-delete"></use></svg>
 							</div>
 						</li>
 					</ul>
@@ -565,9 +565,15 @@ background-color: #edf2f6;
 												height: 110px !important;
 												padding: 45px;
 										">
-											<span> Նոր իրադարձություններ չկան  			@if(isset($message))
+											<span> 
+												
+												@if(isset($message))  			
 												{{$message}}
-												@endif</span>
+												@else 
+												Նոր իրադարձություններ չկան
+												@endif
+											
+											</span>
 													
 											</div>
 												@endif
@@ -584,9 +590,11 @@ background-color: #edf2f6;
                             <span> Գործողություններ <br>չեն գտվնել</span>
 												</div>
 												@else 
-												
+
 												<ul class="notification-list">
 																@foreach($actions as $action)
+																	@if($action->type == 'event')
+
 																<li>
 																	<div class="author-thumb">
 																		<img src="{{$user->avatar}}" alt="author" style="width: 40px;">
@@ -595,16 +603,45 @@ background-color: #edf2f6;
 																	<a href="#" class="h6 notification-friend">{{$user->name}} {{$user->surname}}ը</a> կմասնակցի  {{ App\Event::where('id',$action->event_id)->get()->first()->date->format('d.m.Y H:m') }}-ին կայանալիք <a href="{{route('eventt',$action->event_id)}}" style="padding-left:0px;" class="notification-link">{{$action->name}}</a> իրադարձությանը։																		<span class="notification-date"><time class="entry-date updated">{{$action->created_at->format('d.m.Y H:m')}}</time></span>
 																	</div>
 																	<span class="notification-icon">
-																							<svg class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+																							<svg class="olymp-comments-post-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-comments-post-icon"></use></svg>
 																						</span>
 															
 																	<div class="more">
-																		<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-																		<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+																		<svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg>
+																		<svg class="olymp-little-delete"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-little-delete"></use></svg>
 																	</div>
 																</li>
+																   @endif
+
+																   @if($action->type == 'reg')
+																   			<li>
+																	<div class="author-thumb">
+																		<img src="{{$user->avatar}}" alt="author" style="width: 40px;">
+																	</div>
+																	<div class="notification-event">
+																	<a href="#" class="h6 notification-friend">{{$user->name}} {{$user->surname}}ը</a> գրանցվեց EverTree կայքում։ </span>		
+																	<span class="notification-date"><time class="entry-date updated">{{$action->created_at->format('d.m.Y H:m')}}</time></span>
+																	</div>
+																	<span class="notification-icon">
+																							<svg class="olymp-comments-post-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-comments-post-icon"></use></svg>
+																						</span>
+															
+																	<div class="more">
+																		<svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg>
+																		<svg class="olymp-little-delete"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-little-delete"></use></svg>
+																	</div>
+																</li>
+																   @endif
+
+
 															@endforeach
 															</ul>
+
+														
+										
+
+														
+												
 												@endif
 
                       </div>
@@ -956,7 +993,7 @@ background-color: #edf2f6;
 	<div class="modal-dialog window-popup event-private-public private-event" role="document">
 		<div class="modal-content">
 			<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
-				<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+				<svg class="olymp-close-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-close-icon"></use></svg>
 			</a>
 			<div class="modal-body">
 				<article class="hentry post has-post-thumbnail thumb-full-width private-event">
@@ -973,7 +1010,7 @@ background-color: #edf2f6;
 						</div>
 					</div>
 
-					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg>
 						<ul class="more-dropdown">
 							<li>
 								<a href="#">Edit Event Settings</a>
@@ -1017,12 +1054,12 @@ background-color: #edf2f6;
 						<div class="event-description">
 							<h6 class="event-description-title">Private Event</h6>
 							<div class="place inline-items">
-								<svg class="olymp-add-a-place-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-add-a-place-icon"></use></svg>
+								<svg class="olymp-add-a-place-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-add-a-place-icon"></use></svg>
 								<span>Daydreamz Agency</span>
 							</div>
 
 							<div class="place inline-items">
-								<svg class="olymp-small-calendar-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-small-calendar-icon"></use></svg>
+								<svg class="olymp-small-calendar-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-small-calendar-icon"></use></svg>
 								<span>Mar 26, 2016 at 9:00am UTC-8</span>
 							</div>
 
@@ -1068,7 +1105,7 @@ background-color: #edf2f6;
 				<div class="post-additional-info inline-items">
 
 					<a href="#" class="post-add-icon inline-items">
-						<svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+						<svg class="olymp-heart-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-heart-icon"></use></svg>
 						<span>8</span>
 					</a>
 
@@ -1108,7 +1145,7 @@ background-color: #edf2f6;
 
 					<div class="comments-shared">
 						<a href="#" class="post-add-icon inline-items">
-							<svg class="olymp-speech-balloon-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
+							<svg class="olymp-speech-balloon-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-speech-balloon-icon"></use></svg>
 							<span>16 Comments</span>
 						</a>
 					</div>
@@ -1119,11 +1156,11 @@ background-color: #edf2f6;
 				<div class="control-block-button post-control-button">
 
 					<a href="#" class="btn btn-control">
-						<svg class="olymp-like-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-like-post-icon"></use></svg>
+						<svg class="olymp-like-post-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-like-post-icon"></use></svg>
 					</a>
 
 					<a href="#" class="btn btn-control">
-						<svg class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+						<svg class="olymp-comments-post-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-comments-post-icon"></use></svg>
 					</a>
 
 				</div>
@@ -1146,14 +1183,14 @@ background-color: #edf2f6;
 								</div>
 							</div>
 
-							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg></a>
 
 						</div>
 
 						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium der doloremque laudantium.</p>
 
 						<a href="#" class="post-add-icon inline-items">
-							<svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+							<svg class="olymp-heart-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-heart-icon"></use></svg>
 							<span>3</span>
 						</a>
 						<a href="#" class="reply">Reply</a>
@@ -1171,7 +1208,7 @@ background-color: #edf2f6;
 								</div>
 							</div>
 
-							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg></a>
 
 						</div>
 
@@ -1180,7 +1217,7 @@ background-color: #edf2f6;
 						</p>
 
 						<a href="#" class="post-add-icon inline-items">
-							<svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+							<svg class="olymp-heart-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-heart-icon"></use></svg>
 							<span>8</span>
 						</a>
 						<a href="#" class="reply">Reply</a>
@@ -1198,14 +1235,14 @@ background-color: #edf2f6;
 								</div>
 							</div>
 
-							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+							<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-three-dots-icon"></use></svg></a>
 
 						</div>
 
 						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium der doloremque laudantium.</p>
 
 						<a href="#" class="post-add-icon inline-items">
-							<svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+							<svg class="olymp-heart-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-heart-icon"></use></svg>
 							<span>8</span>
 						</a>
 						<a href="#" class="reply">Reply</a>
@@ -1223,7 +1260,7 @@ background-color: #edf2f6;
 					<textarea class="form-control" placeholder=""  ></textarea>
 					<div class="add-options-message">
 						<a href="#" class="options-message">
-							<svg class="olymp-camera-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-camera-icon"></use></svg>
+							<svg class="olymp-camera-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-camera-icon"></use></svg>
 						</a>
 					</div>
 				</div>
@@ -1246,7 +1283,7 @@ background-color: #edf2f6;
     <div class="modal-dialog window-popup create-event" role="document">
       <div class="modal-content">
         <a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
-          <svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+          <svg class="olymp-close-icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-close-icon"></use></svg>
         </a>
         <div class="modal-header">
           <h6 class="title">Create an Event</h6>
@@ -1275,7 +1312,7 @@ background-color: #edf2f6;
             <label class="control-label">Event Date</label>
             <input name="datetimepicker" value="26/03/2016">
             <span class="input-group-addon">
-            <svg class="olymp-calendar-icon icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
+            <svg class="olymp-calendar-icon icon"><use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-calendar-icon"></use></svg>
           </span>
           </div>
 
@@ -1315,7 +1352,7 @@ background-color: #edf2f6;
 
           <form class="form-group label-floating is-select">
             <svg class="olymp-happy-face-icon">
-              <use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use>
+              <use xlink:href="{{asset('webprofile/icons/icons.svg')}}#olymp-happy-face-icon"></use>
             </svg>
 
             <select class="selectpicker form-control style-2 show-tick" multiple data-live-search="true">
