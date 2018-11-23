@@ -617,7 +617,7 @@ form{
     top: -75px;
     padding: 6%;
     overflow: overlay;
-    height: 290px;
+    height: 290px;  
     }
     .none{
         height: 618px !important;

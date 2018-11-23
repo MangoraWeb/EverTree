@@ -1257,7 +1257,7 @@ input.qtyminus {
   font-family: "Roboto Condensed", Arial, sans-serif !important;
   font-weight: bold;
   font-size: 28px !important;
-  font-size: 28px !important/16pxrem;
+  font-size: 28px !important;
   color: #333;
 }
 
@@ -1458,4 +1458,30 @@ input.qtyminus {
   .hidden_mobile {
     display: none !important;
   }
+}
+
+@media only screen and (max-width: 1366px) {
+  body{
+    /* overflow: hidden; */
+  }
+#middle-wizard{
+  position: relative;
+top: -166px;
+}
+label{
+  padding: 5% !important;
+  height: 263px !important;
+}
+button{
+  position: relative;
+    top: -180px;
+}
+.submit{
+  position: relative;
+  top: -40px;
+}
+.box_general{
+  padding: 5% !important;
+    height: 500px;
+}
 }
