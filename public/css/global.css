@@ -612,6 +612,17 @@ form{
     .album{
         margin-top: -24px;
     }
+    .headersec{
+        position: relative;
+        top: -85px;
+    }
+    .about-list{
+        position: relative;
+    top: -75px;
+    padding: 6%;
+    overflow: overlay;
+    height: 290px;
+    }
     .none{
         height: 618px !important;
     }
