@@ -60,6 +60,7 @@ class ProfileController extends Controller
 
             $actions = Action::where('user_id',$user->id)->take(4)->orderBy('created_at', 'desc')->get();
 
+
         return view('profile.myprofil')
                     ->with('user',$user)
                     ->with('etc',(float)substr($totalEtc, 0, 5))

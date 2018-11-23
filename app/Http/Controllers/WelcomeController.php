@@ -2,27 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\News;
 use Illuminate\Http\Request;
-
-class NewsController extends Controller
+use Auth;
+use App\Action;
+class WelcomeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
-        $news = News::orderBy('id', 'desc')->take(3)->get();
-        return view('news')->with('article',$news);
-    }
 
-
-    public function show($id) {
-        $article = News::where('id', $id)->first();
-        return view('article')->with('art',$article);
+       $user_id = Auth::user()->id;
+       
+       $action = new Action;
+       $action->user_id = $user_id;
+       $action->name = 'Գրանցում';
+       $action->event_id = 0;
+       $action->action = 'registration';
+       $action->type = 'reg';
+       $action->save();
+       
+       return view('welcome')
+                    ->with('id',$user_id);
     }
 
     /**
@@ -49,18 +53,21 @@ class NewsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\News  $news
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-   
+    public function show($id)
+    {
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\News  $news
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(News $news)
+    public function edit($id)
     {
         //
     }
@@ -69,10 +76,10 @@ class NewsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\News  $news
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -80,10 +87,10 @@ class NewsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\News  $news
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(News $news)
+    public function destroy($id)
     {
         //
     }
