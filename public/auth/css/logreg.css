@@ -245,3 +245,20 @@
         background-image: url("../images/logo-light.svg");
     }
 }
+@media (max-width: 1366px) {
+    body{
+        overflow: hidden;
+    }
+.form-items{
+    position: relative;
+      top: -150px !important;
+  }
+  .other-links{
+    position: relative;
+    top: -40px !important;
+  }
+  #login{
+    position: relative;
+    top: -20px;
+  }
+}
