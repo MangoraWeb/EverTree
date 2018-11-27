@@ -603,7 +603,7 @@ form{
     justify-content: space-between;
     margin-left: 15px;
 }
-@media only screen and (max-width: 1366px) {
+@media (max-width: 1366px) {
     .fly{
     top: -473px;
     width: 50%;
@@ -615,6 +615,21 @@ form{
     .headersec{
         position: relative;
         top: -85px;
+    }
+    .post{
+        height: auto !important;
+    }
+    .post-title{
+        position: relative;
+        left: -60%;
+        top: -55px;
+    }
+    .container{
+        height: auto !important;
+    }
+    .masonry{
+        position: relative;
+        height: auto !important;
     }
     .about-list{
         position: relative;
