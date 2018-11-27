@@ -1460,7 +1460,7 @@ input.qtyminus {
   }
 }
 
-@media only screen and (max-width: 1366px) {
+@media (max-width: 1366px) {
   body{
     overflow: hidden;
   }
